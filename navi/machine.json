@@ -2,5 +2,5 @@
   "schema": 1,
   "sdk": "1.10",
   "kind": "synth",
-  "description": "Vector phaseshaping: one movable inflection point bends a cosine into formants and sync-like tones, click-free at every cycle edge, with the family's bipolar Sweep."
+  "description": "Vector phaseshaping: one movable inflection point bends a cosine into formants and sync-like tones, click-free, with the family's bipolar Sweep."
 }
