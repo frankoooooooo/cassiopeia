@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "id": "cz101",
+  "name": "CZ-101",
+  "parameters": [
+    {"id":"amount","label":"Amount","default":0.45,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"},
+    {"id":"width","label":"Width","default":0,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"},
+    {"id":"wave","label":"Wave","default":0,"display":"enum","mapping":{"kind":"enum","labels":["Saw","Sqr","Pulse","Dbl","SawP","Res1","Res2","Res3"]}},
+    {"id":"sweep","label":"Sweep","default":0.75,"mapping":{"kind":"linear","minimum":-1,"maximum":1},"display":"bipolar"}
+  ],
+  "presets": {
+    "CZ-101":{"amount":0.45,"width":0,"wave":0,"sweep":0.75},
+    "Brass":{"amount":0.3,"width":0,"wave":0.5625,"sweep":0.95},
+    "Hollow":{"amount":0.6,"width":0.2,"wave":0.1875,"sweep":0.5},
+    "Pluck":{"amount":0.1,"width":0,"wave":0.6875,"sweep":1},
+    "Vox":{"amount":0.55,"width":0.35,"wave":0.8125,"sweep":0.6},
+    "Swell":{"amount":0.7,"width":0,"wave":0.3125,"sweep":0.1}
+  },
+  "resources": {
+    "voiceBytes":96,"voiceAlignment":4,"voiceCapacity":8,"sharedBytes":0,
+    "outputPeakQ31":1073741824,
+    "display":{"stateBytes":4,"stateAlignment":4,"paths":2,"points":64,"nodes":2,"texts":0,"palette":16}
+  }
+}
