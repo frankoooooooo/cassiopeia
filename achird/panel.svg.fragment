@@ -1,20 +1,275 @@
 <g id="achird_panel">
-  <path id="achird_node_0" d="M-32 -32 L-28 -32 L-24 -32 L-20 -32 L-16 -32 L-12 -32 L-8 -32 L-4 -32 L0 -32 L4 -32 L8 -32 L12 -32 L16 -32 L20 -32 L24 -32 L28 -32 L32 -32 L32 -28 L32 -24 L32 -20 L32 -16 L32 -12 L32 -8 L32 -4 L32 0 L32 4 L32 8 L32 12 L32 16 L32 20 L32 24 L32 28 L32 32 L28 32 L24 32 L20 32 L16 32 L12 32 L8 32 L4 32 L0 32 L-4 32 L-8 32 L-12 32 L-16 32 L-20 32 L-24 32 L-28 32 L-32 32 L-32 28 L-32 24 L-32 20 L-32 16 L-32 12 L-32 8 L-32 4 L-32 0 L-32 -4 L-32 -8 L-32 -12 L-32 -16 L-32 -20 L-32 -24 L-32 -28 Z" fill="none" stroke="#ffffff" stroke-width="1"/>
-  <path id="achird_node_1" d="M-32 -32 L-28 -32 L-24 -32 L-20 -32 L-16 -32 L-12 -32 L-8 -32 L-4 -32 L0 -32 L4 -32 L8 -32 L12 -32 L16 -32 L20 -32 L24 -32 L28 -32 L32 -32 L32 -28 L32 -24 L32 -20 L32 -16 L32 -12 L32 -8 L32 -4 L32 0 L32 4 L32 8 L32 12 L32 16 L32 20 L32 24 L32 28 L32 32 L28 32 L24 32 L20 32 L16 32 L12 32 L8 32 L4 32 L0 32 L-4 32 L-8 32 L-12 32 L-16 32 L-20 32 L-24 32 L-28 32 L-32 32 L-32 28 L-32 24 L-32 20 L-32 16 L-32 12 L-32 8 L-32 4 L-32 0 L-32 -4 L-32 -8 L-32 -12 L-32 -16 L-32 -20 L-32 -24 L-32 -28 Z" fill="none" stroke="#ffffff" stroke-width="1"/>
-  <circle id="achird_palette_0" cx="640" cy="0" r="1" fill="#000000" stroke="#000000" stroke-width="1"/>
-  <circle id="achird_palette_1" cx="640" cy="0" r="1" fill="#111111" stroke="#111111" stroke-width="1"/>
-  <circle id="achird_palette_2" cx="640" cy="0" r="1" fill="#222222" stroke="#222222" stroke-width="1"/>
-  <circle id="achird_palette_3" cx="640" cy="0" r="1" fill="#333333" stroke="#333333" stroke-width="1"/>
-  <circle id="achird_palette_4" cx="640" cy="0" r="1" fill="#444444" stroke="#444444" stroke-width="1"/>
-  <circle id="achird_palette_5" cx="640" cy="0" r="1" fill="#555555" stroke="#555555" stroke-width="1"/>
-  <circle id="achird_palette_6" cx="640" cy="0" r="1" fill="#666666" stroke="#666666" stroke-width="1"/>
-  <circle id="achird_palette_7" cx="640" cy="0" r="1" fill="#777777" stroke="#777777" stroke-width="1"/>
-  <circle id="achird_palette_8" cx="640" cy="0" r="1" fill="#888888" stroke="#888888" stroke-width="1"/>
-  <circle id="achird_palette_9" cx="640" cy="0" r="1" fill="#999999" stroke="#999999" stroke-width="1"/>
-  <circle id="achird_palette_10" cx="640" cy="0" r="1" fill="#aaaaaa" stroke="#aaaaaa" stroke-width="1"/>
-  <circle id="achird_palette_11" cx="640" cy="0" r="1" fill="#bbbbbb" stroke="#bbbbbb" stroke-width="1"/>
-  <circle id="achird_palette_12" cx="640" cy="0" r="1" fill="#cccccc" stroke="#cccccc" stroke-width="1"/>
-  <circle id="achird_palette_13" cx="640" cy="0" r="1" fill="#dddddd" stroke="#dddddd" stroke-width="1"/>
-  <circle id="achird_palette_14" cx="640" cy="0" r="1" fill="#eeeeee" stroke="#eeeeee" stroke-width="1"/>
-  <circle id="achird_palette_15" cx="640" cy="0" r="1" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
+<!-- terrace cells, back row first; transform before d, as paths draw on the device -->
+  <path id="achird_node_0" transform="matrix(1 0 0 1 102.2 75.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_1" transform="matrix(1 0 0 1 102.2 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_2" transform="matrix(1 0 0 1 124.8 75.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_3" transform="matrix(1 0 0 1 124.8 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_4" transform="matrix(1 0 0 1 147.2 75.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_5" transform="matrix(1 0 0 1 147.2 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_6" transform="matrix(1 0 0 1 169.8 75.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_7" transform="matrix(1 0 0 1 169.8 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_8" transform="matrix(1 0 0 1 192.2 75.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_9" transform="matrix(1 0 0 1 192.2 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_10" transform="matrix(1 0 0 1 214.8 75.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_11" transform="matrix(1 0 0 1 214.8 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_12" transform="matrix(1 0 0 1 237.2 75.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_13" transform="matrix(1 0 0 1 237.2 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_14" transform="matrix(1 0 0 1 259.8 75.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_15" transform="matrix(1 0 0 1 259.8 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_16" transform="matrix(1 0 0 1 282.2 75.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_17" transform="matrix(1 0 0 1 282.2 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_18" transform="matrix(1 0 0 1 304.8 75.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_19" transform="matrix(1 0 0 1 304.8 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_20" transform="matrix(1 0 0 1 327.2 75.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_21" transform="matrix(1 0 0 1 327.2 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_22" transform="matrix(1 0 0 1 349.8 75.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_23" transform="matrix(1 0 0 1 349.8 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_24" transform="matrix(1 0 0 1 372.2 75.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_25" transform="matrix(1 0 0 1 372.2 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_26" transform="matrix(1 0 0 1 394.8 75.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_27" transform="matrix(1 0 0 1 394.8 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_28" transform="matrix(1 0 0 1 417.2 75.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_29" transform="matrix(1 0 0 1 417.2 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_30" transform="matrix(1 0 0 1 439.8 75.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_31" transform="matrix(1 0 0 1 439.8 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_32" transform="matrix(1 0 0 1 91.2 90.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_33" transform="matrix(1 0 0 1 91.2 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_34" transform="matrix(1 0 0 1 113.8 90.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_35" transform="matrix(1 0 0 1 113.8 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_36" transform="matrix(1 0 0 1 136.2 90.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_37" transform="matrix(1 0 0 1 136.2 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_38" transform="matrix(1 0 0 1 158.8 90.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_39" transform="matrix(1 0 0 1 158.8 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_40" transform="matrix(1 0 0 1 181.2 90.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_41" transform="matrix(1 0 0 1 181.2 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_42" transform="matrix(1 0 0 1 203.8 90.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_43" transform="matrix(1 0 0 1 203.8 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_44" transform="matrix(1 0 0 1 226.2 90.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_45" transform="matrix(1 0 0 1 226.2 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_46" transform="matrix(1 0 0 1 248.8 90.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_47" transform="matrix(1 0 0 1 248.8 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_48" transform="matrix(1 0 0 1 271.2 90.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_49" transform="matrix(1 0 0 1 271.2 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_50" transform="matrix(1 0 0 1 293.8 90.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_51" transform="matrix(1 0 0 1 293.8 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_52" transform="matrix(1 0 0 1 316.2 90.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_53" transform="matrix(1 0 0 1 316.2 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_54" transform="matrix(1 0 0 1 338.8 90.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_55" transform="matrix(1 0 0 1 338.8 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_56" transform="matrix(1 0 0 1 361.2 90.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_57" transform="matrix(1 0 0 1 361.2 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_58" transform="matrix(1 0 0 1 383.8 90.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_59" transform="matrix(1 0 0 1 383.8 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_60" transform="matrix(1 0 0 1 406.2 90.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_61" transform="matrix(1 0 0 1 406.2 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_62" transform="matrix(1 0 0 1 428.8 90.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_63" transform="matrix(1 0 0 1 428.8 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_64" transform="matrix(1 0 0 1 80.2 105.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_65" transform="matrix(1 0 0 1 80.2 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_66" transform="matrix(1 0 0 1 102.8 105.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_67" transform="matrix(1 0 0 1 102.8 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_68" transform="matrix(1 0 0 1 125.2 105.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_69" transform="matrix(1 0 0 1 125.2 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_70" transform="matrix(1 0 0 1 147.8 105.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_71" transform="matrix(1 0 0 1 147.8 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_72" transform="matrix(1 0 0 1 170.2 105.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_73" transform="matrix(1 0 0 1 170.2 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_74" transform="matrix(1 0 0 1 192.8 105.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_75" transform="matrix(1 0 0 1 192.8 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_76" transform="matrix(1 0 0 1 215.2 105.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_77" transform="matrix(1 0 0 1 215.2 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_78" transform="matrix(1 0 0 1 237.8 105.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_79" transform="matrix(1 0 0 1 237.8 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_80" transform="matrix(1 0 0 1 260.2 105.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_81" transform="matrix(1 0 0 1 260.2 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_82" transform="matrix(1 0 0 1 282.8 105.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_83" transform="matrix(1 0 0 1 282.8 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_84" transform="matrix(1 0 0 1 305.2 105.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_85" transform="matrix(1 0 0 1 305.2 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_86" transform="matrix(1 0 0 1 327.8 105.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_87" transform="matrix(1 0 0 1 327.8 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_88" transform="matrix(1 0 0 1 350.2 105.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_89" transform="matrix(1 0 0 1 350.2 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_90" transform="matrix(1 0 0 1 372.8 105.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_91" transform="matrix(1 0 0 1 372.8 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_92" transform="matrix(1 0 0 1 395.2 105.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_93" transform="matrix(1 0 0 1 395.2 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_94" transform="matrix(1 0 0 1 417.8 105.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_95" transform="matrix(1 0 0 1 417.8 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_96" transform="matrix(1 0 0 1 69.2 120.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_97" transform="matrix(1 0 0 1 69.2 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_98" transform="matrix(1 0 0 1 91.8 120.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_99" transform="matrix(1 0 0 1 91.8 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_100" transform="matrix(1 0 0 1 114.2 120.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_101" transform="matrix(1 0 0 1 114.2 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_102" transform="matrix(1 0 0 1 136.8 120.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_103" transform="matrix(1 0 0 1 136.8 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_104" transform="matrix(1 0 0 1 159.2 120.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_105" transform="matrix(1 0 0 1 159.2 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_106" transform="matrix(1 0 0 1 181.8 120.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_107" transform="matrix(1 0 0 1 181.8 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_108" transform="matrix(1 0 0 1 204.2 120.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_109" transform="matrix(1 0 0 1 204.2 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_110" transform="matrix(1 0 0 1 226.8 120.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_111" transform="matrix(1 0 0 1 226.8 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_112" transform="matrix(1 0 0 1 249.2 120.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_113" transform="matrix(1 0 0 1 249.2 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_114" transform="matrix(1 0 0 1 271.8 120.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_115" transform="matrix(1 0 0 1 271.8 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_116" transform="matrix(1 0 0 1 294.2 120.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_117" transform="matrix(1 0 0 1 294.2 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_118" transform="matrix(1 0 0 1 316.8 120.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_119" transform="matrix(1 0 0 1 316.8 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_120" transform="matrix(1 0 0 1 339.2 120.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_121" transform="matrix(1 0 0 1 339.2 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_122" transform="matrix(1 0 0 1 361.8 120.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_123" transform="matrix(1 0 0 1 361.8 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_124" transform="matrix(1 0 0 1 384.2 120.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_125" transform="matrix(1 0 0 1 384.2 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_126" transform="matrix(1 0 0 1 406.8 120.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_127" transform="matrix(1 0 0 1 406.8 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_128" transform="matrix(1 0 0 1 58.2 135.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_129" transform="matrix(1 0 0 1 58.2 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_130" transform="matrix(1 0 0 1 80.8 135.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_131" transform="matrix(1 0 0 1 80.8 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_132" transform="matrix(1 0 0 1 103.2 135.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_133" transform="matrix(1 0 0 1 103.2 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_134" transform="matrix(1 0 0 1 125.8 135.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_135" transform="matrix(1 0 0 1 125.8 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_136" transform="matrix(1 0 0 1 148.2 135.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_137" transform="matrix(1 0 0 1 148.2 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_138" transform="matrix(1 0 0 1 170.8 135.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_139" transform="matrix(1 0 0 1 170.8 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_140" transform="matrix(1 0 0 1 193.2 135.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_141" transform="matrix(1 0 0 1 193.2 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_142" transform="matrix(1 0 0 1 215.8 135.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_143" transform="matrix(1 0 0 1 215.8 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_144" transform="matrix(1 0 0 1 238.2 135.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_145" transform="matrix(1 0 0 1 238.2 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_146" transform="matrix(1 0 0 1 260.8 135.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_147" transform="matrix(1 0 0 1 260.8 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_148" transform="matrix(1 0 0 1 283.2 135.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_149" transform="matrix(1 0 0 1 283.2 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_150" transform="matrix(1 0 0 1 305.8 135.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_151" transform="matrix(1 0 0 1 305.8 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_152" transform="matrix(1 0 0 1 328.2 135.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_153" transform="matrix(1 0 0 1 328.2 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_154" transform="matrix(1 0 0 1 350.8 135.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_155" transform="matrix(1 0 0 1 350.8 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_156" transform="matrix(1 0 0 1 373.2 135.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_157" transform="matrix(1 0 0 1 373.2 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_158" transform="matrix(1 0 0 1 395.8 135.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_159" transform="matrix(1 0 0 1 395.8 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_160" transform="matrix(1 0 0 1 47.2 150.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_161" transform="matrix(1 0 0 1 47.2 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_162" transform="matrix(1 0 0 1 69.8 150.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_163" transform="matrix(1 0 0 1 69.8 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_164" transform="matrix(1 0 0 1 92.2 150.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_165" transform="matrix(1 0 0 1 92.2 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_166" transform="matrix(1 0 0 1 114.8 150.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_167" transform="matrix(1 0 0 1 114.8 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_168" transform="matrix(1 0 0 1 137.2 150.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_169" transform="matrix(1 0 0 1 137.2 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_170" transform="matrix(1 0 0 1 159.8 150.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_171" transform="matrix(1 0 0 1 159.8 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_172" transform="matrix(1 0 0 1 182.2 150.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_173" transform="matrix(1 0 0 1 182.2 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_174" transform="matrix(1 0 0 1 204.8 150.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_175" transform="matrix(1 0 0 1 204.8 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_176" transform="matrix(1 0 0 1 227.2 150.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_177" transform="matrix(1 0 0 1 227.2 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_178" transform="matrix(1 0 0 1 249.8 150.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_179" transform="matrix(1 0 0 1 249.8 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_180" transform="matrix(1 0 0 1 272.2 150.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_181" transform="matrix(1 0 0 1 272.2 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_182" transform="matrix(1 0 0 1 294.8 150.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_183" transform="matrix(1 0 0 1 294.8 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_184" transform="matrix(1 0 0 1 317.2 150.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_185" transform="matrix(1 0 0 1 317.2 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_186" transform="matrix(1 0 0 1 339.8 150.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_187" transform="matrix(1 0 0 1 339.8 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_188" transform="matrix(1 0 0 1 362.2 150.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_189" transform="matrix(1 0 0 1 362.2 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_190" transform="matrix(1 0 0 1 384.8 150.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_191" transform="matrix(1 0 0 1 384.8 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_192" transform="matrix(1 0 0 1 36.2 165.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_193" transform="matrix(1 0 0 1 36.2 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_194" transform="matrix(1 0 0 1 58.8 165.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_195" transform="matrix(1 0 0 1 58.8 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_196" transform="matrix(1 0 0 1 81.2 165.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_197" transform="matrix(1 0 0 1 81.2 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_198" transform="matrix(1 0 0 1 103.8 165.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_199" transform="matrix(1 0 0 1 103.8 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_200" transform="matrix(1 0 0 1 126.2 165.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_201" transform="matrix(1 0 0 1 126.2 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_202" transform="matrix(1 0 0 1 148.8 165.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_203" transform="matrix(1 0 0 1 148.8 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_204" transform="matrix(1 0 0 1 171.2 165.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_205" transform="matrix(1 0 0 1 171.2 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_206" transform="matrix(1 0 0 1 193.8 165.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_207" transform="matrix(1 0 0 1 193.8 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_208" transform="matrix(1 0 0 1 216.2 165.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_209" transform="matrix(1 0 0 1 216.2 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_210" transform="matrix(1 0 0 1 238.8 165.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_211" transform="matrix(1 0 0 1 238.8 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_212" transform="matrix(1 0 0 1 261.2 165.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_213" transform="matrix(1 0 0 1 261.2 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_214" transform="matrix(1 0 0 1 283.8 165.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_215" transform="matrix(1 0 0 1 283.8 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_216" transform="matrix(1 0 0 1 306.2 165.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_217" transform="matrix(1 0 0 1 306.2 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_218" transform="matrix(1 0 0 1 328.8 165.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_219" transform="matrix(1 0 0 1 328.8 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_220" transform="matrix(1 0 0 1 351.2 165.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_221" transform="matrix(1 0 0 1 351.2 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_222" transform="matrix(1 0 0 1 373.8 165.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_223" transform="matrix(1 0 0 1 373.8 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_224" transform="matrix(1 0 0 1 25.2 180.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_225" transform="matrix(1 0 0 1 25.2 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_226" transform="matrix(1 0 0 1 47.8 180.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_227" transform="matrix(1 0 0 1 47.8 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_228" transform="matrix(1 0 0 1 70.2 180.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_229" transform="matrix(1 0 0 1 70.2 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_230" transform="matrix(1 0 0 1 92.8 180.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_231" transform="matrix(1 0 0 1 92.8 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_232" transform="matrix(1 0 0 1 115.2 180.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_233" transform="matrix(1 0 0 1 115.2 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_234" transform="matrix(1 0 0 1 137.8 180.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_235" transform="matrix(1 0 0 1 137.8 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_236" transform="matrix(1 0 0 1 160.2 180.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_237" transform="matrix(1 0 0 1 160.2 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_238" transform="matrix(1 0 0 1 182.8 180.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_239" transform="matrix(1 0 0 1 182.8 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_240" transform="matrix(1 0 0 1 205.2 180.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_241" transform="matrix(1 0 0 1 205.2 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_242" transform="matrix(1 0 0 1 227.8 180.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_243" transform="matrix(1 0 0 1 227.8 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_244" transform="matrix(1 0 0 1 250.2 180.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_245" transform="matrix(1 0 0 1 250.2 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_246" transform="matrix(1 0 0 1 272.8 180.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_247" transform="matrix(1 0 0 1 272.8 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_248" transform="matrix(1 0 0 1 295.2 180.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_249" transform="matrix(1 0 0 1 295.2 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_250" transform="matrix(1 0 0 1 317.8 180.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_251" transform="matrix(1 0 0 1 317.8 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_252" transform="matrix(1 0 0 1 340.2 180.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_253" transform="matrix(1 0 0 1 340.2 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="achird_node_254" transform="matrix(1 0 0 1 362.8 180.0)" d="M-0.6 0 H0.6 V-32 H-0.6 Z" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="0.5"/>
+  <path id="achird_node_255" transform="matrix(1 0 0 1 362.8 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <circle id="achird_palette_0" cx="640" cy="0" r="1" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="1"/>
+  <circle id="achird_palette_1" cx="640" cy="0" r="1" fill="#2C2C2C" stroke="#2C2C2C" stroke-width="1"/>
+  <circle id="achird_palette_2" cx="640" cy="0" r="1" fill="#393939" stroke="#393939" stroke-width="1"/>
+  <circle id="achird_palette_3" cx="640" cy="0" r="1" fill="#464646" stroke="#464646" stroke-width="1"/>
+  <circle id="achird_palette_4" cx="640" cy="0" r="1" fill="#545454" stroke="#545454" stroke-width="1"/>
+  <circle id="achird_palette_5" cx="640" cy="0" r="1" fill="#626262" stroke="#626262" stroke-width="1"/>
+  <circle id="achird_palette_6" cx="640" cy="0" r="1" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="1"/>
+  <circle id="achird_palette_7" cx="640" cy="0" r="1" fill="#7C7C7C" stroke="#7C7C7C" stroke-width="1"/>
+  <circle id="achird_palette_8" cx="640" cy="0" r="1" fill="#8A8A8A" stroke="#8A8A8A" stroke-width="1"/>
+  <circle id="achird_palette_9" cx="640" cy="0" r="1" fill="#989898" stroke="#989898" stroke-width="1"/>
+  <circle id="achird_palette_10" cx="640" cy="0" r="1" fill="#A5A5A5" stroke="#A5A5A5" stroke-width="1"/>
+  <circle id="achird_palette_11" cx="640" cy="0" r="1" fill="#B2B2B2" stroke="#B2B2B2" stroke-width="1"/>
+  <circle id="achird_palette_12" cx="640" cy="0" r="1" fill="#C0C0C0" stroke="#C0C0C0" stroke-width="1"/>
+  <circle id="achird_palette_13" cx="640" cy="0" r="1" fill="#CECECE" stroke="#CECECE" stroke-width="1"/>
+  <circle id="achird_palette_14" cx="640" cy="0" r="1" fill="#DBDBDB" stroke="#DBDBDB" stroke-width="1"/>
+  <circle id="achird_palette_15" cx="640" cy="0" r="1" fill="#E8E8E8" stroke="#E8E8E8" stroke-width="1"/>
 </g>

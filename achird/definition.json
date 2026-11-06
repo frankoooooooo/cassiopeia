@@ -3,18 +3,103 @@
   "id": "achird",
   "name": "Achird",
   "parameters": [
-    {"id":"blend","label":"Blend","default":0,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"},
-    {"id":"width","label":"Width","default":0.5,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"},
-    {"id":"level","label":"Level","default":0.65,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"},
-    {"id":"motion","label":"Motion","default":0.5,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"}
+    {
+      "id": "tilt",
+      "label": "Tilt",
+      "default": 0.3,
+      "mapping": {
+        "kind": "linear",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "display": "percent"
+    },
+    {
+      "id": "balance",
+      "label": "Balance",
+      "default": 0.5,
+      "mapping": {
+        "kind": "linear",
+        "minimum": -1,
+        "maximum": 1
+      },
+      "display": "bipolar"
+    },
+    {
+      "id": "fold",
+      "label": "Fold",
+      "default": 0,
+      "mapping": {
+        "kind": "linear",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "display": "percent"
+    },
+    {
+      "id": "sweep",
+      "label": "Sweep",
+      "default": 0.5,
+      "mapping": {
+        "kind": "linear",
+        "minimum": -1,
+        "maximum": 1
+      },
+      "display": "bipolar"
+    }
   ],
   "presets": {
-    "Triangle":{"blend":0,"width":0.5,"level":0.65,"motion":0.5},
-    "Pulse":{"blend":1,"width":0.5,"level":0.5,"motion":0.5}
+    "Achird": {
+      "tilt": 0.3,
+      "balance": 0.5,
+      "fold": 0,
+      "sweep": 0.5
+    },
+    "Chip": {
+      "tilt": 0.7,
+      "balance": 0.85,
+      "fold": 0,
+      "sweep": 0.5
+    },
+    "Organ": {
+      "tilt": 0.15,
+      "balance": 0.25,
+      "fold": 0,
+      "sweep": 0.5
+    },
+    "Grit": {
+      "tilt": 0.6,
+      "balance": 0.5,
+      "fold": 0.55,
+      "sweep": 0.7
+    },
+    "Ladder": {
+      "tilt": 0.45,
+      "balance": 0.65,
+      "fold": 0.25,
+      "sweep": 1
+    },
+    "Swell": {
+      "tilt": 0.85,
+      "balance": 0.4,
+      "fold": 0.15,
+      "sweep": 0
+    }
   },
   "resources": {
-    "voiceBytes":4,"voiceAlignment":4,"voiceCapacity":8,"sharedBytes":0,
-    "outputPeakQ31":1073741824,
-    "display":{"stateBytes":4,"stateAlignment":4,"paths":2,"points":64,"nodes":2,"texts":0,"palette":16}
+    "voiceBytes": 104,
+    "voiceAlignment": 4,
+    "voiceCapacity": 8,
+    "sharedBytes": 0,
+    "outputPeakQ31": 1073741824,
+    "display": {
+      "stateBytes": 1572,
+      "stateAlignment": 4,
+      "paths": 0,
+      "points": 0,
+      "nodes": 256,
+      "texts": 0,
+      "palette": 16
+    }
   }
 }
