@@ -2,5 +2,5 @@
   "schema": 1,
   "sdk": "1.10",
   "kind": "synth",
-  "description": "CZ Scan"
+  "description": "Scanned synthesis: each note strikes a ring of 32 masses that moves and settles while a scanner reads it as a living wavetable, with the family's Sweep."
 }
