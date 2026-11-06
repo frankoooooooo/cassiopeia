@@ -3,18 +3,103 @@
   "id": "navi",
   "name": "Navi",
   "parameters": [
-    {"id":"blend","label":"Blend","default":0,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"},
-    {"id":"width","label":"Width","default":0.5,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"},
-    {"id":"level","label":"Level","default":0.65,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"},
-    {"id":"motion","label":"Motion","default":0.5,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"}
+    {
+      "id": "formant",
+      "label": "Formant",
+      "default": 0.3,
+      "mapping": {
+        "kind": "linear",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "display": "percent"
+    },
+    {
+      "id": "inflect",
+      "label": "Inflect",
+      "default": 0.5,
+      "mapping": {
+        "kind": "linear",
+        "minimum": 0.1,
+        "maximum": 0.9
+      },
+      "display": "ratio"
+    },
+    {
+      "id": "range",
+      "label": "Range",
+      "default": 0.4,
+      "mapping": {
+        "kind": "linear",
+        "minimum": 1.5,
+        "maximum": 8
+      },
+      "display": "ratio"
+    },
+    {
+      "id": "sweep",
+      "label": "Sweep",
+      "default": 0.5,
+      "mapping": {
+        "kind": "linear",
+        "minimum": -1,
+        "maximum": 1
+      },
+      "display": "bipolar"
+    }
   ],
   "presets": {
-    "Triangle":{"blend":0,"width":0.5,"level":0.65,"motion":0.5},
-    "Pulse":{"blend":1,"width":0.5,"level":0.5,"motion":0.5}
+    "Navi": {
+      "formant": 0.3,
+      "inflect": 0.5,
+      "range": 0.4,
+      "sweep": 0.5
+    },
+    "Vowel": {
+      "formant": 0.55,
+      "inflect": 0.3,
+      "range": 0.5,
+      "sweep": 0.6
+    },
+    "Sync": {
+      "formant": 0.8,
+      "inflect": 0.85,
+      "range": 0.9,
+      "sweep": 0.8
+    },
+    "Hollow": {
+      "formant": 0.2,
+      "inflect": 0.15,
+      "range": 0.2,
+      "sweep": 0.5
+    },
+    "Glass": {
+      "formant": 0.65,
+      "inflect": 0.6,
+      "range": 1,
+      "sweep": 0.95
+    },
+    "Swell": {
+      "formant": 0.6,
+      "inflect": 0.4,
+      "range": 0.6,
+      "sweep": 0.05
+    }
   },
   "resources": {
-    "voiceBytes":4,"voiceAlignment":4,"voiceCapacity":8,"sharedBytes":0,
-    "outputPeakQ31":1073741824,
-    "display":{"stateBytes":4,"stateAlignment":4,"paths":2,"points":64,"nodes":2,"texts":0,"palette":16}
+    "voiceBytes": 36,
+    "voiceAlignment": 4,
+    "voiceCapacity": 8,
+    "sharedBytes": 0,
+    "outputPeakQ31": 1073741824,
+    "display": {
+      "stateBytes": 936,
+      "stateAlignment": 4,
+      "paths": 0,
+      "points": 0,
+      "nodes": 144,
+      "texts": 0,
+      "palette": 16
+    }
   }
 }

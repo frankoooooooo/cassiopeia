@@ -1,29 +1,54 @@
+// Navi: vector phaseshaping (after Kleimola, Lazzarini, Timoney and Välimäki, 2011), clean-room. The
+// phase is bent through one movable inflection point (d, v) before a cosine read: Inflect slides d
+// across the cycle, Formant lifts v so the first part of the cycle runs several cosine periods (a
+// formant that stays put across the keyboard's timbre), Range sets how far Formant can lift it, and
+// Sweep is the family's envelope on Formant. The map ends at 1 whatever (d, v), so the cycle edge
+// never clicks.
 #include "core.h"
-#include <opxy/q31.hpp>
 
 namespace navi {
-// Callbacks run serially per voice; owner is a stable nonzero voice ID.
-inline void initialize(Voice& voice, Shared&, opxy::u32) { voice.phase = 0; }
-inline void start(Voice& voice, Shared&, opxy::u32) { voice.phase = 0; }
-inline void destroy(Voice&, Shared&, opxy::u32) {}
 
-// Learning oscillator: triangle/pulse blend. Add band-limiting and sound tests
-// before treating a modified oscillator as a production instrument.
-inline void render(Voice& voice, Shared&, opxy::u32, opxy::Output output,
-                   opxy::Parameters parameters, opxy::Pitch pitch) {
-    const opxy::i32 half = 0x40000000;  // 0.5 in Q31: half-scale output
-    const opxy::i32 blend = parameters[0];
-    // Width 0..1 sets the pulse's duty cycle from 25% to 75% of the 32-bit phase.
-    const opxy::u32 width = 0x40000000u + static_cast<opxy::u32>(parameters[1]);
+__attribute__((noinline)) void bend_pass(Voice& v, opxy::Output out, opxy::Pitch pitch, const Bend& b) {
+    u32 p = v.phase;
+    i32 x1 = v.dc_x, y1 = v.dc_y;
     for (unsigned i = 0; i < opxy::block_frames; ++i) {
-        opxy::u32 folded = voice.phase & 0x7fffffffu;
-        if (voice.phase & 0x80000000u) folded = 0x7fffffffu - folded;
-        const opxy::i32 triangle = static_cast<opxy::i32>(folded) - half;
-        const opxy::i32 pulse = voice.phase < width ? half : -half;
-        const opxy::i32 mixed = opxy::q31::multiply(triangle, 0x7fffffff - blend)
-                             + opxy::q31::multiply(pulse, blend);
-        output[i] = opxy::q31::multiply(mixed, parameters[2]);
-        voice.phase += pitch[i];
+        out[i] = cz::dc_out(sample(p >> 16, b), x1, y1);
+        p += pitch[i];
     }
+    v.phase = p;
+    v.dc_x = x1;
+    v.dc_y = y1;
+}
+
+inline void start(Voice& v, Shared&, u32) {
+    v.phase = 0;
+    v.env = opxy::q31::maximum;
+}
+
+inline void initialize(Voice& v, Shared& shared, u32 owner) {
+    v.primed = 0;
+    v.dc_x = v.dc_y = 0;
+    start(v, shared, owner);
+}
+
+inline void destroy(Voice&, Shared&, u32) {}
+
+inline void render(Voice& v, Shared&, u32, opxy::Output output, opxy::Parameters parameters,
+                   opxy::Pitch pitch) {
+    cz::glide(v.smooth, parameters, control_count, v.primed);
+    const i32 formant = cz::swept(v.smooth[c_formant] >> 16, v.smooth[c_sweep], v.env);
+    v.env = opxy::q31::multiply(v.env, cz::sweep_decay);
+    const u32 d = inflect16(v.smooth[c_inflect] >> 16);
+    u32 vv = formant16(formant, v.smooth[c_range] >> 16);
+    // Anti-alias: each segment's local rate (v/d, |v − 1|/(1 − d) times the note) stays under fs/6.
+    // r = (fs/6)/f in Q6, capped at 16 (beyond it nothing binds); 32-bit only, no 64-bit divide links.
+    const u32 inc = pitch[0] >> 8 ? pitch[0] >> 8 : 1;  // the note's rate, Q24 of fs
+    u32 r = (2796203u << 6) / inc;
+    if (r > 1024u) r = 1024u;
+    const u32 lim1 = (d * r) >> 6, lim2 = 65536u + (((65536u - d) * r) >> 6);
+    if (vv > lim1 && lim1 >= 32768u) vv = lim1;
+    if (vv > lim2) vv = lim2;
+    if (vv < 32768u) vv = 32768u;
+    bend_pass(v, output, pitch, bend(d, vv));
 }
 }
