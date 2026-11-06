@@ -2,5 +2,6 @@
   "schema": 1,
   "sdk": "1.10",
   "kind": "synth",
-  "description": "VOSIM: each cycle fires a burst of fading sin² pulses at a fixed formant, so every note speaks the same vowel, with the family's bipolar Sweep."
+  "description": "VOSIM: each cycle fires a burst of fading sin² pulses at a fixed formant, so every note speaks the same vowel, with the family's bipolar Sweep.",
+  "presets": "presets"
 }
