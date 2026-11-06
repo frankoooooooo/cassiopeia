@@ -2,8 +2,8 @@
 #include <opxy/draw.hpp>
 
 namespace navi {
-// The cell terrace as tilted plates: 16 columns of phase by 9 rows of recent history, each cell's top
-// turned and stretched so its ends sit at the wave's height at either edge. Back row first; node
+// The cell terrace as tilted slats: 16 columns of phase by 9 rows of recent history, each cell a thin
+// slat turned and stretched so its ends sit at the wave's height at either edge. Back row first; node
 // n = (rows − 1 − row)·cols + column.
 const opxy::u32 cols = 16, rows = 9, cells = cols * rows;
 

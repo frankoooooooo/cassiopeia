@@ -3,12 +3,12 @@
 #include "core.h"
 
 namespace ruchbah {
-// The cell terrace as pillars: 12 columns of the ring by 9 rows of recent history, each cell a dark
-// front face under a lit top. Back row first; node n = ((rows − 1 − row)·cols + column)·2 + (0 face, 1 top).
-const opxy::u32 cols = 12, rows = 9, cells = cols * rows, parts = 2 * cells;
+// The cell terrace of masses: 14 columns of the ring by 9 rows of recent history, each cell a top that
+// swells with how fast its stretch of the ring is moving. Back row first; node n = (rows − 1 − row)·cols + column.
+const opxy::u32 cols = 14, rows = 9, cells = cols * rows;
 
 // Matches resources.display in definition.json: paths, points, nodes, texts, palette.
-using Frame = opxy::draw::Frame<0, 0, parts, 0, 16>;
+using Frame = opxy::draw::Frame<0, 0, cells, 0, 16>;
 
 struct DisplayState {
     opxy::draw::NoteTracker notes;
@@ -23,7 +23,8 @@ struct DisplayState {
     opxy::i32 env;        // the Sweep envelope, Q31, restarted by each note
     opxy::i32 clock;      // Q10 seconds toward the next history step
     opxy::i32 due;        // ring steps owed, Q10 (689 a second)
-    opxy::i16 cv[rows][cols];   // each pillar's height: the ring there, Q15
-    opxy::u32 drawn[parts];     // what each node shows: y and shade, packed
+    opxy::i16 cv[rows][cols];   // each cell's height: the ring there, Q15
+    opxy::u16 cs[rows][cols];   // each cell's size: how fast the ring moves there, as a node scale (Q10)
+    opxy::u32 drawn[cells];     // what each node shows: y, scale and shade, packed
 };
 }

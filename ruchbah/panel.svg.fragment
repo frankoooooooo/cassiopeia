@@ -1,221 +1,131 @@
 <g id="ruchbah_panel">
 <!-- terrace cells, back row first; transform before d, as paths draw on the device -->
-  <path id="ruchbah_node_0" transform="matrix(1 0 0 1 117.0 60.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_1" transform="matrix(1 0 0 1 117.0 60.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_2" transform="matrix(1 0 0 1 147.0 60.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_3" transform="matrix(1 0 0 1 147.0 60.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_4" transform="matrix(1 0 0 1 177.0 60.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_5" transform="matrix(1 0 0 1 177.0 60.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_6" transform="matrix(1 0 0 1 207.0 60.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_7" transform="matrix(1 0 0 1 207.0 60.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_8" transform="matrix(1 0 0 1 237.0 60.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_9" transform="matrix(1 0 0 1 237.0 60.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_10" transform="matrix(1 0 0 1 267.0 60.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_11" transform="matrix(1 0 0 1 267.0 60.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_12" transform="matrix(1 0 0 1 297.0 60.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_13" transform="matrix(1 0 0 1 297.0 60.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_14" transform="matrix(1 0 0 1 327.0 60.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_15" transform="matrix(1 0 0 1 327.0 60.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_16" transform="matrix(1 0 0 1 357.0 60.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_17" transform="matrix(1 0 0 1 357.0 60.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_18" transform="matrix(1 0 0 1 387.0 60.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_19" transform="matrix(1 0 0 1 387.0 60.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_20" transform="matrix(1 0 0 1 417.0 60.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_21" transform="matrix(1 0 0 1 417.0 60.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_22" transform="matrix(1 0 0 1 447.0 60.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_23" transform="matrix(1 0 0 1 447.0 60.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_24" transform="matrix(1 0 0 1 106.0 75.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_25" transform="matrix(1 0 0 1 106.0 75.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_26" transform="matrix(1 0 0 1 136.0 75.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_27" transform="matrix(1 0 0 1 136.0 75.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_28" transform="matrix(1 0 0 1 166.0 75.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_29" transform="matrix(1 0 0 1 166.0 75.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_30" transform="matrix(1 0 0 1 196.0 75.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_31" transform="matrix(1 0 0 1 196.0 75.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_32" transform="matrix(1 0 0 1 226.0 75.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_33" transform="matrix(1 0 0 1 226.0 75.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_34" transform="matrix(1 0 0 1 256.0 75.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_35" transform="matrix(1 0 0 1 256.0 75.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_36" transform="matrix(1 0 0 1 286.0 75.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_37" transform="matrix(1 0 0 1 286.0 75.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_38" transform="matrix(1 0 0 1 316.0 75.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_39" transform="matrix(1 0 0 1 316.0 75.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_40" transform="matrix(1 0 0 1 346.0 75.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_41" transform="matrix(1 0 0 1 346.0 75.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_42" transform="matrix(1 0 0 1 376.0 75.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_43" transform="matrix(1 0 0 1 376.0 75.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_44" transform="matrix(1 0 0 1 406.0 75.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_45" transform="matrix(1 0 0 1 406.0 75.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_46" transform="matrix(1 0 0 1 436.0 75.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_47" transform="matrix(1 0 0 1 436.0 75.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_48" transform="matrix(1 0 0 1 95.0 90.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_49" transform="matrix(1 0 0 1 95.0 90.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_50" transform="matrix(1 0 0 1 125.0 90.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_51" transform="matrix(1 0 0 1 125.0 90.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_52" transform="matrix(1 0 0 1 155.0 90.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_53" transform="matrix(1 0 0 1 155.0 90.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_54" transform="matrix(1 0 0 1 185.0 90.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_55" transform="matrix(1 0 0 1 185.0 90.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_56" transform="matrix(1 0 0 1 215.0 90.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_57" transform="matrix(1 0 0 1 215.0 90.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_58" transform="matrix(1 0 0 1 245.0 90.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_59" transform="matrix(1 0 0 1 245.0 90.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_60" transform="matrix(1 0 0 1 275.0 90.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_61" transform="matrix(1 0 0 1 275.0 90.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_62" transform="matrix(1 0 0 1 305.0 90.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_63" transform="matrix(1 0 0 1 305.0 90.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_64" transform="matrix(1 0 0 1 335.0 90.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_65" transform="matrix(1 0 0 1 335.0 90.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_66" transform="matrix(1 0 0 1 365.0 90.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_67" transform="matrix(1 0 0 1 365.0 90.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_68" transform="matrix(1 0 0 1 395.0 90.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_69" transform="matrix(1 0 0 1 395.0 90.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_70" transform="matrix(1 0 0 1 425.0 90.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_71" transform="matrix(1 0 0 1 425.0 90.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_72" transform="matrix(1 0 0 1 84.0 105.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_73" transform="matrix(1 0 0 1 84.0 105.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_74" transform="matrix(1 0 0 1 114.0 105.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_75" transform="matrix(1 0 0 1 114.0 105.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_76" transform="matrix(1 0 0 1 144.0 105.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_77" transform="matrix(1 0 0 1 144.0 105.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_78" transform="matrix(1 0 0 1 174.0 105.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_79" transform="matrix(1 0 0 1 174.0 105.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_80" transform="matrix(1 0 0 1 204.0 105.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_81" transform="matrix(1 0 0 1 204.0 105.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_82" transform="matrix(1 0 0 1 234.0 105.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_83" transform="matrix(1 0 0 1 234.0 105.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_84" transform="matrix(1 0 0 1 264.0 105.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_85" transform="matrix(1 0 0 1 264.0 105.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_86" transform="matrix(1 0 0 1 294.0 105.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_87" transform="matrix(1 0 0 1 294.0 105.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_88" transform="matrix(1 0 0 1 324.0 105.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_89" transform="matrix(1 0 0 1 324.0 105.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_90" transform="matrix(1 0 0 1 354.0 105.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_91" transform="matrix(1 0 0 1 354.0 105.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_92" transform="matrix(1 0 0 1 384.0 105.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_93" transform="matrix(1 0 0 1 384.0 105.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_94" transform="matrix(1 0 0 1 414.0 105.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_95" transform="matrix(1 0 0 1 414.0 105.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_96" transform="matrix(1 0 0 1 73.0 120.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_97" transform="matrix(1 0 0 1 73.0 120.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_98" transform="matrix(1 0 0 1 103.0 120.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_99" transform="matrix(1 0 0 1 103.0 120.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_100" transform="matrix(1 0 0 1 133.0 120.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_101" transform="matrix(1 0 0 1 133.0 120.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_102" transform="matrix(1 0 0 1 163.0 120.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_103" transform="matrix(1 0 0 1 163.0 120.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_104" transform="matrix(1 0 0 1 193.0 120.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_105" transform="matrix(1 0 0 1 193.0 120.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_106" transform="matrix(1 0 0 1 223.0 120.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_107" transform="matrix(1 0 0 1 223.0 120.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_108" transform="matrix(1 0 0 1 253.0 120.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_109" transform="matrix(1 0 0 1 253.0 120.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_110" transform="matrix(1 0 0 1 283.0 120.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_111" transform="matrix(1 0 0 1 283.0 120.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_112" transform="matrix(1 0 0 1 313.0 120.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_113" transform="matrix(1 0 0 1 313.0 120.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_114" transform="matrix(1 0 0 1 343.0 120.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_115" transform="matrix(1 0 0 1 343.0 120.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_116" transform="matrix(1 0 0 1 373.0 120.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_117" transform="matrix(1 0 0 1 373.0 120.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_118" transform="matrix(1 0 0 1 403.0 120.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_119" transform="matrix(1 0 0 1 403.0 120.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_120" transform="matrix(1 0 0 1 62.0 135.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_121" transform="matrix(1 0 0 1 62.0 135.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_122" transform="matrix(1 0 0 1 92.0 135.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_123" transform="matrix(1 0 0 1 92.0 135.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_124" transform="matrix(1 0 0 1 122.0 135.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_125" transform="matrix(1 0 0 1 122.0 135.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_126" transform="matrix(1 0 0 1 152.0 135.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_127" transform="matrix(1 0 0 1 152.0 135.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_128" transform="matrix(1 0 0 1 182.0 135.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_129" transform="matrix(1 0 0 1 182.0 135.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_130" transform="matrix(1 0 0 1 212.0 135.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_131" transform="matrix(1 0 0 1 212.0 135.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_132" transform="matrix(1 0 0 1 242.0 135.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_133" transform="matrix(1 0 0 1 242.0 135.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_134" transform="matrix(1 0 0 1 272.0 135.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_135" transform="matrix(1 0 0 1 272.0 135.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_136" transform="matrix(1 0 0 1 302.0 135.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_137" transform="matrix(1 0 0 1 302.0 135.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_138" transform="matrix(1 0 0 1 332.0 135.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_139" transform="matrix(1 0 0 1 332.0 135.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_140" transform="matrix(1 0 0 1 362.0 135.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_141" transform="matrix(1 0 0 1 362.0 135.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_142" transform="matrix(1 0 0 1 392.0 135.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_143" transform="matrix(1 0 0 1 392.0 135.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_144" transform="matrix(1 0 0 1 51.0 150.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_145" transform="matrix(1 0 0 1 51.0 150.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_146" transform="matrix(1 0 0 1 81.0 150.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_147" transform="matrix(1 0 0 1 81.0 150.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_148" transform="matrix(1 0 0 1 111.0 150.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_149" transform="matrix(1 0 0 1 111.0 150.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_150" transform="matrix(1 0 0 1 141.0 150.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_151" transform="matrix(1 0 0 1 141.0 150.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_152" transform="matrix(1 0 0 1 171.0 150.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_153" transform="matrix(1 0 0 1 171.0 150.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_154" transform="matrix(1 0 0 1 201.0 150.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_155" transform="matrix(1 0 0 1 201.0 150.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_156" transform="matrix(1 0 0 1 231.0 150.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_157" transform="matrix(1 0 0 1 231.0 150.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_158" transform="matrix(1 0 0 1 261.0 150.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_159" transform="matrix(1 0 0 1 261.0 150.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_160" transform="matrix(1 0 0 1 291.0 150.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_161" transform="matrix(1 0 0 1 291.0 150.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_162" transform="matrix(1 0 0 1 321.0 150.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_163" transform="matrix(1 0 0 1 321.0 150.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_164" transform="matrix(1 0 0 1 351.0 150.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_165" transform="matrix(1 0 0 1 351.0 150.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_166" transform="matrix(1 0 0 1 381.0 150.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_167" transform="matrix(1 0 0 1 381.0 150.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_168" transform="matrix(1 0 0 1 40.0 165.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_169" transform="matrix(1 0 0 1 40.0 165.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_170" transform="matrix(1 0 0 1 70.0 165.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_171" transform="matrix(1 0 0 1 70.0 165.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_172" transform="matrix(1 0 0 1 100.0 165.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_173" transform="matrix(1 0 0 1 100.0 165.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_174" transform="matrix(1 0 0 1 130.0 165.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_175" transform="matrix(1 0 0 1 130.0 165.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_176" transform="matrix(1 0 0 1 160.0 165.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_177" transform="matrix(1 0 0 1 160.0 165.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_178" transform="matrix(1 0 0 1 190.0 165.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_179" transform="matrix(1 0 0 1 190.0 165.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_180" transform="matrix(1 0 0 1 220.0 165.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_181" transform="matrix(1 0 0 1 220.0 165.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_182" transform="matrix(1 0 0 1 250.0 165.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_183" transform="matrix(1 0 0 1 250.0 165.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_184" transform="matrix(1 0 0 1 280.0 165.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_185" transform="matrix(1 0 0 1 280.0 165.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_186" transform="matrix(1 0 0 1 310.0 165.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_187" transform="matrix(1 0 0 1 310.0 165.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_188" transform="matrix(1 0 0 1 340.0 165.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_189" transform="matrix(1 0 0 1 340.0 165.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_190" transform="matrix(1 0 0 1 370.0 165.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_191" transform="matrix(1 0 0 1 370.0 165.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_192" transform="matrix(1 0 0 1 29.0 180.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_193" transform="matrix(1 0 0 1 29.0 180.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_194" transform="matrix(1 0 0 1 59.0 180.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_195" transform="matrix(1 0 0 1 59.0 180.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_196" transform="matrix(1 0 0 1 89.0 180.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_197" transform="matrix(1 0 0 1 89.0 180.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_198" transform="matrix(1 0 0 1 119.0 180.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_199" transform="matrix(1 0 0 1 119.0 180.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_200" transform="matrix(1 0 0 1 149.0 180.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_201" transform="matrix(1 0 0 1 149.0 180.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_202" transform="matrix(1 0 0 1 179.0 180.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_203" transform="matrix(1 0 0 1 179.0 180.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_204" transform="matrix(1 0 0 1 209.0 180.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_205" transform="matrix(1 0 0 1 209.0 180.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_206" transform="matrix(1 0 0 1 239.0 180.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_207" transform="matrix(1 0 0 1 239.0 180.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_208" transform="matrix(1 0 0 1 269.0 180.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_209" transform="matrix(1 0 0 1 269.0 180.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_210" transform="matrix(1 0 0 1 299.0 180.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_211" transform="matrix(1 0 0 1 299.0 180.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_212" transform="matrix(1 0 0 1 329.0 180.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_213" transform="matrix(1 0 0 1 329.0 180.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
-  <path id="ruchbah_node_214" transform="matrix(1 0 0 1 359.0 180.0)" d="M-19.4 3.8 H5.6 V96 H-19.4 Z" fill="#393939" stroke="#393939" stroke-width="0.5"/>
-  <path id="ruchbah_node_215" transform="matrix(1 0 0 1 359.0 180.0)" d="M-19.4 3.8 L-5.6 -3.8 L19.4 -3.8 L5.6 3.8 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_0" transform="matrix(1 0 0 1 114.9 60.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_1" transform="matrix(1 0 0 1 140.6 60.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_2" transform="matrix(1 0 0 1 166.3 60.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_3" transform="matrix(1 0 0 1 192.0 60.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_4" transform="matrix(1 0 0 1 217.7 60.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_5" transform="matrix(1 0 0 1 243.4 60.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_6" transform="matrix(1 0 0 1 269.1 60.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_7" transform="matrix(1 0 0 1 294.9 60.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_8" transform="matrix(1 0 0 1 320.6 60.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_9" transform="matrix(1 0 0 1 346.3 60.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_10" transform="matrix(1 0 0 1 372.0 60.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_11" transform="matrix(1 0 0 1 397.7 60.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_12" transform="matrix(1 0 0 1 423.4 60.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_13" transform="matrix(1 0 0 1 449.1 60.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_14" transform="matrix(1 0 0 1 103.9 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_15" transform="matrix(1 0 0 1 129.6 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_16" transform="matrix(1 0 0 1 155.3 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_17" transform="matrix(1 0 0 1 181.0 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_18" transform="matrix(1 0 0 1 206.7 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_19" transform="matrix(1 0 0 1 232.4 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_20" transform="matrix(1 0 0 1 258.1 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_21" transform="matrix(1 0 0 1 283.9 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_22" transform="matrix(1 0 0 1 309.6 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_23" transform="matrix(1 0 0 1 335.3 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_24" transform="matrix(1 0 0 1 361.0 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_25" transform="matrix(1 0 0 1 386.7 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_26" transform="matrix(1 0 0 1 412.4 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_27" transform="matrix(1 0 0 1 438.1 75.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_28" transform="matrix(1 0 0 1 92.9 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_29" transform="matrix(1 0 0 1 118.6 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_30" transform="matrix(1 0 0 1 144.3 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_31" transform="matrix(1 0 0 1 170.0 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_32" transform="matrix(1 0 0 1 195.7 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_33" transform="matrix(1 0 0 1 221.4 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_34" transform="matrix(1 0 0 1 247.1 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_35" transform="matrix(1 0 0 1 272.9 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_36" transform="matrix(1 0 0 1 298.6 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_37" transform="matrix(1 0 0 1 324.3 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_38" transform="matrix(1 0 0 1 350.0 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_39" transform="matrix(1 0 0 1 375.7 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_40" transform="matrix(1 0 0 1 401.4 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_41" transform="matrix(1 0 0 1 427.1 90.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_42" transform="matrix(1 0 0 1 81.9 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_43" transform="matrix(1 0 0 1 107.6 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_44" transform="matrix(1 0 0 1 133.3 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_45" transform="matrix(1 0 0 1 159.0 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_46" transform="matrix(1 0 0 1 184.7 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_47" transform="matrix(1 0 0 1 210.4 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_48" transform="matrix(1 0 0 1 236.1 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_49" transform="matrix(1 0 0 1 261.9 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_50" transform="matrix(1 0 0 1 287.6 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_51" transform="matrix(1 0 0 1 313.3 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_52" transform="matrix(1 0 0 1 339.0 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_53" transform="matrix(1 0 0 1 364.7 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_54" transform="matrix(1 0 0 1 390.4 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_55" transform="matrix(1 0 0 1 416.1 105.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_56" transform="matrix(1 0 0 1 70.9 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_57" transform="matrix(1 0 0 1 96.6 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_58" transform="matrix(1 0 0 1 122.3 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_59" transform="matrix(1 0 0 1 148.0 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_60" transform="matrix(1 0 0 1 173.7 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_61" transform="matrix(1 0 0 1 199.4 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_62" transform="matrix(1 0 0 1 225.1 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_63" transform="matrix(1 0 0 1 250.9 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_64" transform="matrix(1 0 0 1 276.6 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_65" transform="matrix(1 0 0 1 302.3 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_66" transform="matrix(1 0 0 1 328.0 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_67" transform="matrix(1 0 0 1 353.7 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_68" transform="matrix(1 0 0 1 379.4 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_69" transform="matrix(1 0 0 1 405.1 120.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_70" transform="matrix(1 0 0 1 59.9 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_71" transform="matrix(1 0 0 1 85.6 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_72" transform="matrix(1 0 0 1 111.3 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_73" transform="matrix(1 0 0 1 137.0 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_74" transform="matrix(1 0 0 1 162.7 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_75" transform="matrix(1 0 0 1 188.4 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_76" transform="matrix(1 0 0 1 214.1 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_77" transform="matrix(1 0 0 1 239.9 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_78" transform="matrix(1 0 0 1 265.6 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_79" transform="matrix(1 0 0 1 291.3 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_80" transform="matrix(1 0 0 1 317.0 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_81" transform="matrix(1 0 0 1 342.7 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_82" transform="matrix(1 0 0 1 368.4 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_83" transform="matrix(1 0 0 1 394.1 135.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_84" transform="matrix(1 0 0 1 48.9 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_85" transform="matrix(1 0 0 1 74.6 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_86" transform="matrix(1 0 0 1 100.3 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_87" transform="matrix(1 0 0 1 126.0 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_88" transform="matrix(1 0 0 1 151.7 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_89" transform="matrix(1 0 0 1 177.4 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_90" transform="matrix(1 0 0 1 203.1 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_91" transform="matrix(1 0 0 1 228.9 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_92" transform="matrix(1 0 0 1 254.6 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_93" transform="matrix(1 0 0 1 280.3 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_94" transform="matrix(1 0 0 1 306.0 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_95" transform="matrix(1 0 0 1 331.7 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_96" transform="matrix(1 0 0 1 357.4 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_97" transform="matrix(1 0 0 1 383.1 150.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_98" transform="matrix(1 0 0 1 37.9 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_99" transform="matrix(1 0 0 1 63.6 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_100" transform="matrix(1 0 0 1 89.3 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_101" transform="matrix(1 0 0 1 115.0 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_102" transform="matrix(1 0 0 1 140.7 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_103" transform="matrix(1 0 0 1 166.4 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_104" transform="matrix(1 0 0 1 192.1 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_105" transform="matrix(1 0 0 1 217.9 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_106" transform="matrix(1 0 0 1 243.6 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_107" transform="matrix(1 0 0 1 269.3 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_108" transform="matrix(1 0 0 1 295.0 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_109" transform="matrix(1 0 0 1 320.7 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_110" transform="matrix(1 0 0 1 346.4 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_111" transform="matrix(1 0 0 1 372.1 165.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_112" transform="matrix(1 0 0 1 26.9 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_113" transform="matrix(1 0 0 1 52.6 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_114" transform="matrix(1 0 0 1 78.3 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_115" transform="matrix(1 0 0 1 104.0 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_116" transform="matrix(1 0 0 1 129.7 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_117" transform="matrix(1 0 0 1 155.4 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_118" transform="matrix(1 0 0 1 181.1 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_119" transform="matrix(1 0 0 1 206.9 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_120" transform="matrix(1 0 0 1 232.6 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_121" transform="matrix(1 0 0 1 258.3 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_122" transform="matrix(1 0 0 1 284.0 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_123" transform="matrix(1 0 0 1 309.7 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_124" transform="matrix(1 0 0 1 335.4 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
+  <path id="ruchbah_node_125" transform="matrix(1 0 0 1 361.1 180.0)" d="M-15.5 3 L-4.5 -3 L15.5 -3 L4.5 3 Z" fill="#6F6F6F" stroke="#6F6F6F" stroke-width="0.5"/>
   <circle id="ruchbah_palette_0" cx="640" cy="0" r="1" fill="#1E1E1E" stroke="#1E1E1E" stroke-width="1"/>
   <circle id="ruchbah_palette_1" cx="640" cy="0" r="1" fill="#2C2C2C" stroke="#2C2C2C" stroke-width="1"/>
   <circle id="ruchbah_palette_2" cx="640" cy="0" r="1" fill="#393939" stroke="#393939" stroke-width="1"/>

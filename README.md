@@ -7,8 +7,8 @@ oscillator of [PD Hybrid Synth](https://github.com/ChuckFleming/pd-hybrid-synth)
 |---|---|---|---|---|---|---|
 | Schedar `schedar` | Phase distortion, 8 CZ waves | Amount (DCW) | Width (cycle gap) | Wave | Sweep | warped columns, spaced by the phase map |
 | Caph `caph` | Analog pair, triangle → pulse → saw, polyBLEP | Shape | Width (duty, apex) | Detune (cents) | Sweep | split cells: A, then its detuned twin |
-| Navi `navi` | Vector phaseshaping | Formant | Inflect | Range | Sweep | tilted plates, inflection seam lit |
-| Ruchbah `ruchbah` | Scanned synthesis, 32-mass ring | Stiff | Damping | Excite | Sweep | mass pillars, the screen runs the same ring |
+| Navi `navi` | Vector phaseshaping | Formant | Inflect | Range | Sweep | tilted slats, inflection seam lit |
+| Ruchbah `ruchbah` | Scanned synthesis, 32-mass ring | Stiff | Damping | Excite | Sweep | masses that swell as they move, on the screen's own copy of the ring |
 | Segin `segin` | VOSIM | Formant (Hz) | Decay | Pulses | Sweep | burst islands over an outlined floor |
 | Achird `achird` | Walsh functions, 16-step cycle | Tilt | Balance | Fold | Sweep | stepped blocks with lit risers |
 

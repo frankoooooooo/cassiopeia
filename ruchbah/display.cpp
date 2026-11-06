@@ -1,8 +1,9 @@
 #include "display.h"
 
-// Ruchbah's screen: the cell terrace as pillars, one per stretch of the ring the scanner reads. The
+// Ruchbah's screen: the cell terrace of masses, one cell per stretch of the ring the scanner reads. The
 // screen strikes and steps its own copy of the voice's ring at the voice's rate (once per audio block,
-// 689 a second), so the pillars move as the sound does: a pluck's bump travels and spreads, Stiff
+// 689 a second), so the cells move as the sound does, and each swells with how fast its masses are moving:
+// at rest a field of small, still cells; a strike sends a swell through it: a pluck's bump travels and spreads, Stiff
 // speeds it, Damping settles it, Excite chooses what each note throws in (turning it strikes once, to
 // show the shape). Rows going back are 35 ms
 // apart, so the motion shows as a wake. Heights carry up to 4× gain as the strike disperses (grey keeps the
@@ -15,8 +16,8 @@ using opxy::u32;
 using opxy::draw::unit;
 
 const i32 left_px = 14, span_px = 360;
-const i32 row_dx = 11, row_dy = 15, base_y = 182, height_px = 24;
-const u32 redraw_budget = 64;
+const i32 row_dx = 11, row_dy = 15, base_y = 182, height_px = 28;
+const u32 redraw_budget = 56;
 const i32 history_step = 36;                  // Q10 seconds between rows (35 ms)
 const i32 steps_per_second = 689;             // 44100 / 64, the voice's block rate
 }
@@ -80,30 +81,37 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
         const u32 at = (2 * i + 1) * (0x80000000u / cols);  // each column's centre round the ring
         const i32 v = ((scan(state.ring, at) * state.gain) >> 8) + ((((scan(pose, at) * 14746) >> 15) * state.rest_mix) >> 15);
         state.cv[0][i] = static_cast<opxy::i16>(clamp(v, -32767, 32767));
+        // Speed: the ring's velocity there (the same interpolation), with the display gain: 0.55× still .. 1.25×.
+        const u32 m = at >> 27, m2 = (m + 1) & (masses - 1);
+        const i32 f = static_cast<i32>((at >> 12) & 0x7fffu);
+        i32 speed = state.ring.v[m] + (((state.ring.v[m2] - state.ring.v[m]) * f) >> 15);
+        speed = (speed < 0 ? -speed : speed) * state.gain >> 5;  // a full-size swell near 1/8 of full-scale per step
+        state.cs[0][i] = static_cast<opxy::u16>(563 + ((clamp(speed, 0, 32767) * 717) >> 15));
     }
     if (!state.started || input.reduced_motion) {
         for (u32 j = 1; j < rows; ++j)
-            for (u32 i = 0; i < cols; ++i) state.cv[j][i] = state.cv[0][i];
+            for (u32 i = 0; i < cols; ++i) { state.cv[j][i] = state.cv[0][i]; state.cs[j][i] = state.cs[0][i]; }
     } else if ((state.clock += dt) >= history_step) {
         state.clock = state.clock >= 4 * history_step ? 0 : state.clock - history_step;
         for (u32 j = rows - 1; j > 0; --j)
-            for (u32 i = 0; i < cols; ++i) state.cv[j][i] = state.cv[j - 1][i];
+            for (u32 i = 0; i < cols; ++i) { state.cv[j][i] = state.cv[j - 1][i]; state.cs[j][i] = state.cs[j - 1][i]; }
     }
 
-    u32 left = state.started ? redraw_budget : parts;
-    for (u32 k = 0; k < parts && left; ++k) {
-        const u32 n = (state.cursor + k) % parts, c = n >> 1, top = n & 1, j = rows - 1 - c / cols, i = c % cols;
-        const i32 v = state.cv[j][i];
+    u32 left = state.started ? redraw_budget : cells;
+    for (u32 k = 0; k < cells && left; ++k) {
+        const u32 n = (state.cursor + k) % cells, j = rows - 1 - n / cols, i = n % cols;
+        const i32 v = state.cv[j][i], scale = state.cs[j][i];
         const i32 x_q2 = left_px * 4 + static_cast<i32>(((2 * i + 1) * span_px * 2) / cols) + static_cast<i32>(j) * row_dx * 4;
         const i32 y_q2 = (base_y - static_cast<i32>(j) * row_dy) * 4 - ((v * height_px * 4) >> 15);
-        const i32 lum = top ? 165 + ((75 * v) >> 15) - 6 * static_cast<i32>(j) : 48 + ((18 * v) >> 15) - 2 * static_cast<i32>(j);
+        // Grey follows height, and moving cells are brighter: a swell reads as a passing light.
+        const i32 lum = 120 + ((70 * v) >> 15) + ((scale - 563) * 60) / 717 - 6 * static_cast<i32>(j);
         const u32 shade = static_cast<u32>(clamp(((lum - 30) * 2) / 27, 0, 15));
-        const u32 want = static_cast<u32>(y_q2 & 0xffff) | shade << 16;
+        const u32 want = static_cast<u32>(y_q2 & 0xffff) | static_cast<u32>(scale >> 5) << 16 | shade << 24;
         if (state.started && want == state.drawn[n]) continue;
-        opxy::draw::place(frame, n, x_q2 * (unit / 4), y_q2 * (unit / 4), unit, shade, opxy::draw::fill_and_stroke);
+        opxy::draw::place(frame, n, x_q2 * (unit / 4), y_q2 * (unit / 4), scale, shade, opxy::draw::fill_and_stroke);
         state.drawn[n] = want;
         --left;
-        if (state.started && !left) state.cursor = (n + 1) % parts;
+        if (state.started && !left) state.cursor = (n + 1) % cells;
     }
     state.started = 1;
 }

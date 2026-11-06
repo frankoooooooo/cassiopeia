@@ -3,22 +3,107 @@
   "id": "ruchbah",
   "name": "Ruchbah",
   "parameters": [
-    {"id":"stiff","label":"Stiff","default":0.4,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"},
-    {"id":"damping","label":"Damping","default":0.3,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"},
-    {"id":"excite","label":"Excite","default":0,"display":"enum","mapping":{"kind":"enum","labels":["Pluck","Hit","Noise","Tri"]}},
-    {"id":"sweep","label":"Sweep","default":0.5,"mapping":{"kind":"linear","minimum":-1,"maximum":1},"display":"bipolar"}
+    {
+      "id": "stiff",
+      "label": "Stiff",
+      "default": 0.4,
+      "mapping": {
+        "kind": "linear",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "display": "percent"
+    },
+    {
+      "id": "damping",
+      "label": "Damping",
+      "default": 0.3,
+      "mapping": {
+        "kind": "linear",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "display": "percent"
+    },
+    {
+      "id": "excite",
+      "label": "Excite",
+      "default": 0,
+      "display": "enum",
+      "mapping": {
+        "kind": "enum",
+        "labels": [
+          "Pluck",
+          "Hit",
+          "Noise",
+          "Tri"
+        ]
+      }
+    },
+    {
+      "id": "sweep",
+      "label": "Sweep",
+      "default": 0.5,
+      "mapping": {
+        "kind": "linear",
+        "minimum": -1,
+        "maximum": 1
+      },
+      "display": "bipolar"
+    }
   ],
   "presets": {
-    "Ruchbah":{"stiff":0.4,"damping":0.3,"excite":0,"sweep":0.5},
-    "Bowl":{"stiff":0.15,"damping":0.05,"excite":0.875,"sweep":0.5},
-    "Spark":{"stiff":0.8,"damping":0.6,"excite":0.375,"sweep":0.9},
-    "Static":{"stiff":0.55,"damping":0.2,"excite":0.625,"sweep":0.5},
-    "Drift":{"stiff":0.05,"damping":0,"excite":0.125,"sweep":0.2},
-    "Wire":{"stiff":1,"damping":0.4,"excite":0.375,"sweep":0.5}
+    "Ruchbah": {
+      "stiff": 0.4,
+      "damping": 0.3,
+      "excite": 0,
+      "sweep": 0.5
+    },
+    "Bowl": {
+      "stiff": 0.15,
+      "damping": 0.05,
+      "excite": 0.875,
+      "sweep": 0.5
+    },
+    "Spark": {
+      "stiff": 0.8,
+      "damping": 0.6,
+      "excite": 0.375,
+      "sweep": 0.9
+    },
+    "Static": {
+      "stiff": 0.55,
+      "damping": 0.2,
+      "excite": 0.625,
+      "sweep": 0.5
+    },
+    "Drift": {
+      "stiff": 0.05,
+      "damping": 0,
+      "excite": 0.125,
+      "sweep": 0.2
+    },
+    "Wire": {
+      "stiff": 1,
+      "damping": 0.4,
+      "excite": 0.375,
+      "sweep": 0.5
+    }
   },
   "resources": {
-    "voiceBytes":168,"voiceAlignment":4,"voiceCapacity":8,"sharedBytes":0,
-    "outputPeakQ31":1073741824,
-    "display":{"stateBytes":1328,"stateAlignment":4,"paths":0,"points":0,"nodes":216,"texts":0,"palette":16}
+    "voiceBytes": 168,
+    "voiceAlignment": 4,
+    "voiceCapacity": 8,
+    "sharedBytes": 0,
+    "outputPeakQ31": 1073741824,
+    "display": {
+      "stateBytes": 1256,
+      "stateAlignment": 4,
+      "paths": 0,
+      "points": 0,
+      "nodes": 126,
+      "texts": 0,
+      "palette": 16
+    }
   }
 }

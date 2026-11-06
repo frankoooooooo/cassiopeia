@@ -1,9 +1,10 @@
 #include "display.h"
 #include "core.h"
 
-// Navi's screen: the cell terrace as tilted plates. Each plate is turned and stretched so its left and
-// right ends sit at the wave's height at either column edge, so the formant's fast cosines read as runs
-// of steep, alternating plates. The column holding the inflection point draws brightest: a seam across
+// Navi's screen: the cell terrace as tilted slats. Each cell is a thin slat turned to the wave's slope
+// across its column and stretched so its ends sit at the wave's height either side, while its width
+// across the screen stays inside the column: separate slats that never overlap their neighbours. The
+// formant's fast cosines read as runs of steep, alternating slats. The column holding the inflection point draws brightest: a seam across
 // the terrace that Inflect moves. Formant and Range add teeth before the seam. Going back, each row is
 // the terrace 70 ms earlier, so Sweep's strike rolls away. At rest nothing redraws.
 namespace navi {
@@ -14,7 +15,7 @@ using opxy::draw::unit;
 
 const i32 left_px = 14, span_px = 360;
 const i32 row_dx = 11, row_dy = 15, base_y = 180, height_px = 30;
-const i32 plate_px = 20;                         // the authored top's width at scale 1
+const i32 plate_px = 16;                         // the authored slat's length at scale 1 (column pitch 22.5)
 const u32 redraw_budget = 48;
 const i32 history_step = 72;                     // Q10 seconds between rows (70 ms)
 
@@ -76,7 +77,8 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
         const u32 n = (state.cursor + k) % cells, j = rows - 1 - n / cols, i = n % cols;
         const i32 vl = state.ev[j][i], vr = state.ev[j][i + 1];
         // Ends at the edge heights, in px Q4: run across the plate, rise between its ends.
-        const i32 run = plate_px * 16, rise = ((vl - vr) * height_px * 16) >> 15;  // vl above vr: the right end sits lower
+        // The wave falls (vl − vr)·height across the 22.5 px column; over the slat's 16 px that is 32/45 of it.
+        const i32 run = plate_px * 16, rise = ((((vl - vr) * height_px * 16) >> 15) * 32) / 45;  // vl above vr: the right end sits lower
         const i32 len = static_cast<i32>(isqrt(static_cast<u32>(run * run + rise * rise)));
         const i32 cosv = (run * unit) / len, sinv = (rise * unit) / len;  // clockwise when the right end is lower
         const i32 scale = clamp((len * unit) / run, unit, 2 * unit);
