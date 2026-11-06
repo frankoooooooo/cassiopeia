@@ -1,5 +1,5 @@
 #!/bin/sh
-# Renders every preset (phrase) and every enum choice of control 3 (tour) of one engine: render_all.sh cz101
+# Renders every preset (phrase) and every enum choice of control 3 (tour) of one engine: render_all.sh schedar
 set -e
 cd "$(dirname "$0")/.."
 E=$1; R=reference/renders/$E; mkdir -p $R

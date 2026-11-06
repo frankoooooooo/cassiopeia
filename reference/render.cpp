@@ -1,5 +1,5 @@
 // Host render of one family engine into a mono 16-bit WAV, for listening. ENGINE is the machine folder.
-// c++ -std=c++17 -O2 -DENGINE=cz101 -I ../open-xy-staging/sdk/include reference/render.cpp -o renders/r
+// c++ -std=c++17 -O2 -DENGINE=schedar -I ../open-xy-staging/sdk/include reference/render.cpp -o renders/r
 // r <out.wav> <phrase|tour> p0 p1 p2 p3   (normalized control words, as in definition.json presets)
 // phrase: C2 G2 C3 Eb3 G3 C4, 0.7 s each, held 0.5 s. tour: one C3 for 4 s with Amount ramped 0 → 1.
 #define STR2(x) #x
