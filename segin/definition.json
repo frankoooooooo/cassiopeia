@@ -3,18 +3,111 @@
   "id": "segin",
   "name": "Segin",
   "parameters": [
-    {"id":"blend","label":"Blend","default":0,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"},
-    {"id":"width","label":"Width","default":0.5,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"},
-    {"id":"level","label":"Level","default":0.65,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"},
-    {"id":"motion","label":"Motion","default":0.5,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"}
+    {
+      "id": "formant",
+      "label": "Formant",
+      "default": 0.45,
+      "mapping": {
+        "kind": "exponential",
+        "minimum": 150,
+        "maximum": 4040
+      },
+      "display": "ratio"
+    },
+    {
+      "id": "decay",
+      "label": "Decay",
+      "default": 0.3,
+      "mapping": {
+        "kind": "linear",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "display": "percent"
+    },
+    {
+      "id": "pulses",
+      "label": "Pulses",
+      "default": 0.3125,
+      "display": "enum",
+      "mapping": {
+        "kind": "enum",
+        "labels": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      }
+    },
+    {
+      "id": "sweep",
+      "label": "Sweep",
+      "default": 0.5,
+      "mapping": {
+        "kind": "linear",
+        "minimum": -1,
+        "maximum": 1
+      },
+      "display": "bipolar"
+    }
   ],
   "presets": {
-    "Triangle":{"blend":0,"width":0.5,"level":0.65,"motion":0.5},
-    "Pulse":{"blend":1,"width":0.5,"level":0.5,"motion":0.5}
+    "Segin": {
+      "formant": 0.45,
+      "decay": 0.3,
+      "pulses": 0.3125,
+      "sweep": 0.5
+    },
+    "Ah": {
+      "formant": 0.55,
+      "decay": 0.15,
+      "pulses": 0.4375,
+      "sweep": 0.55
+    },
+    "Oo": {
+      "formant": 0.25,
+      "decay": 0.4,
+      "pulses": 0.1875,
+      "sweep": 0.5
+    },
+    "Chip": {
+      "formant": 0.75,
+      "decay": 0,
+      "pulses": 0.9375,
+      "sweep": 0.5
+    },
+    "Wah": {
+      "formant": 0.35,
+      "decay": 0.25,
+      "pulses": 0.5625,
+      "sweep": 1
+    },
+    "Breath": {
+      "formant": 0.85,
+      "decay": 0.7,
+      "pulses": 0.0625,
+      "sweep": 0.15
+    }
   },
   "resources": {
-    "voiceBytes":4,"voiceAlignment":4,"voiceCapacity":8,"sharedBytes":0,
-    "outputPeakQ31":1073741824,
-    "display":{"stateBytes":4,"stateAlignment":4,"paths":2,"points":64,"nodes":2,"texts":0,"palette":16}
+    "voiceBytes": 48,
+    "voiceAlignment": 4,
+    "voiceCapacity": 8,
+    "sharedBytes": 0,
+    "outputPeakQ31": 1073741824,
+    "display": {
+      "stateBytes": 1044,
+      "stateAlignment": 4,
+      "paths": 0,
+      "points": 0,
+      "nodes": 144,
+      "texts": 0,
+      "palette": 16
+    }
   }
 }

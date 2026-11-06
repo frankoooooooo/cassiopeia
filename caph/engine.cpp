@@ -5,15 +5,6 @@
 
 namespace caph {
 
-// inc × ratio / 2^28 from 16-bit halves (no 64-bit arithmetic), held below Nyquist.
-inline u32 mul_u32_q28(u32 inc, u32 ratio) {
-    const u32 ih = inc >> 16, il = inc & 0xffffu, rh = ratio >> 16, rl = ratio & 0xffffu;
-    const u32 hi = ih * rh;
-    if (hi >= (1u << 27)) return 0x7fffffffu;
-    const u32 mid = ((ih * rl) >> 4) + ((il * rh) >> 4) + ((il * rl) >> 20);
-    const u32 out = (hi << 4) + ((mid + 128) >> 8);
-    return out > 0x7fffffffu ? 0x7fffffffu : out;
-}
 // 1 + cents·ln2/1200 in Q28 from Q8 cents; first order, 0.07 cent error at 16 cents.
 inline u32 cents_ratio_q28(i32 cents_q8) { return static_cast<u32>((1 << 28) + ((cents_q8 * 155054) >> 8)); }
 // Reciprocal for polyBLEP: ((p >> 8) * r) >> 16 = p / inc in Q15.
@@ -87,8 +78,8 @@ inline void render(Voice& v, Shared&, u32, opxy::Output output, opxy::Parameters
     // Detune: 0..35 cents between the pair, split either side of the note.
     const i32 half_cents_q8 = (v.smooth[c_detune] >> 16) * 35 * 128 >> 15;
     const u32 root = pitch[0];
-    const u32 ia = mul_u32_q28(root, cents_ratio_q28(-half_cents_q8));
-    const u32 ib = mul_u32_q28(root, cents_ratio_q28(half_cents_q8));
+    const u32 ia = cz::mul_u32_q28(root, cents_ratio_q28(-half_cents_q8));
+    const u32 ib = cz::mul_u32_q28(root, cents_ratio_q28(half_cents_q8));
 
     Shape s;
     s.upper = shape >= 16384;

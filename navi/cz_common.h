@@ -25,6 +25,23 @@ inline u32 scale16(u32 dx, i32 slope25) {
 // Δg/Δx as slope·2^25 for scale16; once per block (an unsigned divide), Δx > 0, Δg ≤ 2^16.
 inline i32 slope25(u32 dg, u32 dx) { return static_cast<i32>(((dg << 15) / dx) << 10); }
 
+// inc × ratio / 2^28 from 16-bit halves (no 64-bit arithmetic), held below Nyquist.
+inline u32 mul_u32_q28(u32 inc, u32 ratio) {
+    const u32 ih = inc >> 16, il = inc & 0xffffu, rh = ratio >> 16, rl = ratio & 0xffffu;
+    const u32 hi = ih * rh;
+    if (hi >= (1u << 27)) return 0x7fffffffu;
+    const u32 mid = ((ih * rl) >> 4) + ((il * rh) >> 4) + ((il * rl) >> 20);
+    const u32 out = (hi << 4) + ((mid + 128) >> 8);
+    return out > 0x7fffffffu ? 0x7fffffffu : out;
+}
+
+// 2^(octaves) as a Q28 ratio for octaves in Q16, 0 ≤ octaves < 3·2^16 (quadratic fraction, 0.3% error).
+inline u32 exp2_q28(u32 octaves16) {
+    const u32 k = octaves16 >> 16, f = octaves16 & 0xffffu;
+    const u32 m = 65536u + ((f * (43025u + ((22512u * f) >> 16))) >> 16);  // 2^f, Q16
+    return (m << 12) << k;
+}
+
 // Enum control: index 0..n−1 from its normalized word.
 inline u32 choice(i32 word, u32 n) { return ((static_cast<u32>(word < 0 ? 0 : word) >> 16) * n) >> 15; }
 
