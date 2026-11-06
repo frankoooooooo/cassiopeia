@@ -1,5 +1,5 @@
 #!/bin/sh
-# Exports rest, playing and c<N>-000/050/100 frames of a terrace engine from its real display():
+# Exports rest, playing and c<N>-000/050/100 frames of an engine from its real display():
 # reference/frames/export.sh schedar  → reference/frames/schedar/*.svg
 set -e
 cd "$(dirname "$0")/../.."
@@ -19,7 +19,8 @@ def caption(i, v):
 def run(name, mode, vals):
     hdr = []
     for i, p in enumerate(ps): hdr += [p["label"].lower(), caption(i, vals[i])]
-    subprocess.run([f"{o}/d", f"{o}/{name}.svg", mode] + [str(v) for v in vals] + hdr, check=True)
+    subprocess.run([f"{o}/d", f"{o}/{name}.txt", mode] + [str(v) for v in vals], check=True)
+    subprocess.run(["python3", "reference/frames/compose.py", e, f"{o}/{name}.txt", f"{o}/{name}.svg"] + hdr, check=True)
 base = [p["default"] for p in ps]
 run("rest", "rest", base); run("playing", "playing", base)
 for i in range(4):
@@ -27,4 +28,4 @@ for i in range(4):
         vals = list(base); vals[i] = v if ps[i]["mapping"]["kind"] != "enum" else min(0.999, v)
         run(f"c{i + 1}-{tag}", "rest", vals)
 PY
-rm $O/d
+rm $O/d $O/*.txt

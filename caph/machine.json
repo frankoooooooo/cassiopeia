@@ -2,5 +2,5 @@
   "schema": 1,
   "sdk": "1.10",
   "kind": "synth",
-  "description": "CZ Analog"
+  "description": "An analog pair a few cents apart: each a triangle-to-pulse-to-saw morph with band-limited edges, a Width for duty and apex, and the family's bipolar Sweep."
 }

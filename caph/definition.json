@@ -3,18 +3,103 @@
   "id": "caph",
   "name": "Caph",
   "parameters": [
-    {"id":"blend","label":"Blend","default":0,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"},
-    {"id":"width","label":"Width","default":0.5,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"},
-    {"id":"level","label":"Level","default":0.65,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"},
-    {"id":"motion","label":"Motion","default":0.5,"mapping":{"kind":"linear","minimum":0,"maximum":1},"display":"percent"}
+    {
+      "id": "shape",
+      "label": "Shape",
+      "default": 1,
+      "mapping": {
+        "kind": "linear",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "display": "percent"
+    },
+    {
+      "id": "width",
+      "label": "Width",
+      "default": 0,
+      "mapping": {
+        "kind": "linear",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "display": "percent"
+    },
+    {
+      "id": "detune",
+      "label": "Detune",
+      "default": 0.2,
+      "mapping": {
+        "kind": "linear",
+        "minimum": 0,
+        "maximum": 35
+      },
+      "display": "ratio"
+    },
+    {
+      "id": "sweep",
+      "label": "Sweep",
+      "default": 0.5,
+      "mapping": {
+        "kind": "linear",
+        "minimum": -1,
+        "maximum": 1
+      },
+      "display": "bipolar"
+    }
   ],
   "presets": {
-    "Triangle":{"blend":0,"width":0.5,"level":0.65,"motion":0.5},
-    "Pulse":{"blend":1,"width":0.5,"level":0.5,"motion":0.5}
+    "Caph": {
+      "shape": 1,
+      "width": 0,
+      "detune": 0.2,
+      "sweep": 0.5
+    },
+    "Square": {
+      "shape": 0.5,
+      "width": 0,
+      "detune": 0.1,
+      "sweep": 0.5
+    },
+    "Reed": {
+      "shape": 0.5,
+      "width": 0.75,
+      "detune": 0.15,
+      "sweep": 0.65
+    },
+    "Flute": {
+      "shape": 0.08,
+      "width": 0.2,
+      "detune": 0.05,
+      "sweep": 0.7
+    },
+    "Strings": {
+      "shape": 1,
+      "width": 0,
+      "detune": 0.55,
+      "sweep": 0.2
+    },
+    "Brass": {
+      "shape": 0.85,
+      "width": 0.3,
+      "detune": 0.25,
+      "sweep": 0.95
+    }
   },
   "resources": {
-    "voiceBytes":4,"voiceAlignment":4,"voiceCapacity":8,"sharedBytes":0,
-    "outputPeakQ31":1073741824,
-    "display":{"stateBytes":4,"stateAlignment":4,"paths":2,"points":64,"nodes":2,"texts":0,"palette":16}
+    "voiceBytes": 40,
+    "voiceAlignment": 4,
+    "voiceCapacity": 8,
+    "sharedBytes": 0,
+    "outputPeakQ31": 1073741824,
+    "display": {
+      "stateBytes": 1384,
+      "stateAlignment": 4,
+      "paths": 0,
+      "points": 0,
+      "nodes": 224,
+      "texts": 0,
+      "palette": 16
+    }
   }
 }
