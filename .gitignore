@@ -10,3 +10,6 @@ node_modules/
 *.tfw
 .DS_Store
 *.wav
+reference/frames/*/*.svg
+reference/frames/*/*.png
+reference/frames/*/results.txt

@@ -9,8 +9,6 @@ using opxy::i32;
 using opxy::u32;
 using cz::scale16;
 
-enum Wave { w_saw, w_square, w_pulse, w_double, w_sawpulse, w_res1, w_res2, w_res3, wave_count };
-
 // Q16 points (x, g) → segments, dropping zero-length ones (a knee at rest collapses a hold away).
 inline void build(Voice& v, const u32* x, const u32* g, unsigned n, unsigned& count) {
     count = 0;
@@ -66,15 +64,7 @@ __attribute__((noinline)) void res_pass(Voice& v, opxy::Output out, opxy::Pitch 
     for (unsigned i = 0; i < opxy::block_frames; ++i) {
         u32 x = scale16(p >> 16, gap);
         if (x > 65535u) x = 65535u;
-        i32 w;
-        if (Window == 0) w = 32767 - static_cast<i32>(x >> 1);  // falling saw
-        else if (Window == 1) {                                   // triangle
-            const i32 d = static_cast<i32>(x) - 32768;
-            w = 32767 - (d < 0 ? -d : d);
-        } else {                                                  // trapezoid, quarter-cycle edges
-            w = x < 16384u ? static_cast<i32>(x << 1) : x > 49152u ? static_cast<i32>((65536u - x) << 1) : 32767;
-            if (w > 32767) w = 32767;
-        }
+        const i32 w = res_window<Window>(x);
         const i32 s = cz::sine(scale16(x, k) << 16);
         out[i] = cz::dc_out((w * s) >> 15, x1, y1);
         p += pitch[i];
@@ -119,29 +109,8 @@ inline void render(Voice& v, Shared&, u32, opxy::Output output, opxy::Parameters
         return res_pass<2>(v, output, pitch, gap, k);
     }
 
-    const u32 one = 65536u, half = 32768u;
     u32 x[6], g[6];
-    unsigned n = 0;
-    if (wave == w_square) {  // holds at the top and bottom of the cosine widen with Amount
-        const u32 hd = (au * 29491u) >> 15;  // 0.45·a, each hold
-        const u32 r = half - hd;             // each ramp
-        const u32 xs[5] = {0, hd, hd + r, 2 * hd + r, one}, gs[5] = {0, 0, half, half, one};
-        for (n = 0; n < 5; ++n) { x[n] = xs[n]; g[n] = gs[n]; }
-    } else {
-        const u32 m = half - ((au * 32113u) >> 15);  // the knee: 0.5 − 0.49·a
-        if (wave == w_saw) {
-            const u32 xs[3] = {0, m, one}, gs[3] = {0, half, one};
-            for (n = 0; n < 3; ++n) { x[n] = xs[n]; g[n] = gs[n]; }
-        } else if (wave == w_pulse) {  // the whole cosine squeezed into 2m, then rests at the top
-            const u32 xs[4] = {0, m, 2 * m, one}, gs[4] = {0, half, one, one};
-            for (n = 0; n < 4; ++n) { x[n] = xs[n]; g[n] = gs[n]; }
-        } else {  // saw-pulse: the knee applied twice
-            const u32 m2 = (2 * m * m) >> 16;
-            const u32 g2 = half + (half * (half - m)) / (one - m);
-            const u32 xs[4] = {0, m2, m, one}, gs[4] = {0, half, g2, one};
-            for (n = 0; n < 4; ++n) { x[n] = xs[n]; g[n] = gs[n]; }
-        }
-    }
+    const unsigned n = map_points(wave, au, x, g);
     unsigned count;
     build(v, x, g, n, count);
     map_pass(v, output, pitch, gap, count);
