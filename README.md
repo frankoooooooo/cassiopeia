@@ -1,16 +1,16 @@
-# cz-101
+# cassiopeia
 
 A family of six [Open-XY](https://github.com/etcetc000/open-xy) synth engines for the OP-XY, one per
 oscillator of [PD Hybrid Synth](https://github.com/ChuckFleming/pd-hybrid-synth), each named after a star of Cassiopeia:
 
 | star | engine | Amount | Width | 3rd | Sweep |
 |---|---|---|---|---|---|
-| Schedar (α) `schedar` | Phase distortion, 8 CZ waves | DCW depth | cycle gap | Wave | DCW envelope |
-| Caph (β) `caph` | polyBLEP saw / square / triangle / pulse | | | | |
-| Navi (γ) `navi` | Vector phaseshaping | | | | |
-| Ruchbah (δ) `ruchbah` | Scanned synthesis | | | | |
-| Segin (ε) `segin` | VOSIM | | | | |
-| Achird (η) `achird` | Walsh functions | | | | |
+| Schedar `schedar` | Phase distortion, 8 CZ waves | DCW depth | cycle gap | Wave | DCW envelope |
+| Caph `caph` | polyBLEP saw / square / triangle / pulse | | | | |
+| Navi `navi` | Vector phaseshaping | | | | |
+| Ruchbah `ruchbah` | Scanned synthesis | | | | |
+| Segin `segin` | VOSIM | | | | |
+| Achird `achird` | Walsh functions | | | | |
 
 **Clean-room.** PD Hybrid Synth is GPLv3, and its code is not used here. These engines re-implement the
 published techniques in fixed point for the Blackfin: Casio CZ phase distortion, Kleimola et al.'s vector

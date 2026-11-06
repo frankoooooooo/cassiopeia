@@ -1,5 +1,5 @@
 #pragma once
-// Shared by every cz-101 family engine; tools/sync_common.sh copies it into each folder.
+// Shared by every Cassiopeia engine; tools/sync_common.sh copies it into each folder.
 #include <opxy/audio.hpp>
 #include <opxy/q31.hpp>
 
