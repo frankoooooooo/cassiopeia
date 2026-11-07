@@ -3,8 +3,9 @@
 # reference/frames/export.sh schedar  → reference/frames/schedar/*.svg
 set -e
 cd "$(dirname "$0")/../.."
-E=$1; O=reference/frames/$E; mkdir -p $O
-c++ -std=c++17 -O1 -DENGINE=$E -I ../open-xy-staging/sdk/include reference/frames/dump.cpp -o $O/d
+# EXPORT_FLAGS adds compile flags (a screen variant); EXPORT_TAG suffixes the output folder.
+E=$1; O=reference/frames/$E${EXPORT_TAG}; mkdir -p $O
+c++ -std=c++17 -O1 $EXPORT_FLAGS -DENGINE=$E -I ../open-xy-staging/sdk/include reference/frames/dump.cpp -o $O/d
 python3 - "$E" "$O" <<'PY'
 import json, subprocess, sys
 e, o = sys.argv[1:]

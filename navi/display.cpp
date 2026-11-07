@@ -1,33 +1,40 @@
 #include "display.h"
 #include "core.h"
 
-// Navi's screen: the cell terrace as tilted slats. Each cell is a thin slat turned to the wave's slope
-// across its column and stretched so its ends sit at the wave's height either side, while its width
-// across the screen stays inside the column: separate slats that never overlap their neighbours. The
-// formant's fast cosines read as runs of steep, alternating slats. The column holding the inflection point draws brightest: a seam across
-// the terrace that Inflect moves. Formant and Range add teeth before the seam. Going back, each row is
-// the terrace 70 ms earlier, so Sweep's strike rolls away. At rest nothing redraws.
+// Navi's screen: cycle bands (revision pass 01, v2, the owner's pick). A low, flat field of the family's
+// floating tops seen from above, 16 columns by 9 rows of recent history (70 ms apart, so Sweep's strike
+// rolls away). Height is the bent wave; cells alternate filled and outlined with each cosine cycle the
+// bend squeezes in, so Formant's cycles can be counted as bands and Inflect moves where they end.
 namespace navi {
 namespace screen {
 using opxy::i32;
 using opxy::u32;
 using opxy::draw::unit;
 
-const i32 left_px = 14, span_px = 360;
-const i32 row_dx = 11, row_dy = 15, base_y = 180, height_px = 30;
-const i32 plate_px = 16;                         // the authored slat's length at scale 1 (column pitch 22.5)
-const u32 redraw_budget = 48;
-const i32 history_step = 72;                     // Q10 seconds between rows (70 ms)
+const u32 redraw_budget = 64;
+const i32 history_step = 72;  // Q10 seconds between rows (70 ms)
 
-inline u32 isqrt(u32 v) {
-    u32 r = 0, bit = 1u << 30;
-    while (bit > v) bit >>= 2;
-    while (bit) {
-        if (v >= r + bit) { v -= r + bit; r = (r >> 1) + bit; }
-        else r >>= 1;
-        bit >>= 2;
+struct Place { i32 x_q2, y_q2, scale; u32 shade; opxy::draw::Paint paint; bool shown; };
+
+inline u32 grey(i32 lum) { return static_cast<u32>(opxy::draw::clamp(((lum - 30) * 2) / 27, 0, 15)); }
+
+// Where node n goes: back row first, node n = (8 − row)·16 + column.
+inline Place where(const DisplayState& s, u32 n) {
+    Place p = {0, 0, unit, 0, opxy::draw::fill_and_stroke, false};
+    const i32 left = 14, span = 360;
+    // A low, flat field: rows 9 px apart and 6 px across, heights kept small (±14 px).
+    if (n < 144) {
+        const u32 j = 8 - n / 16, i = n % 16;
+        const i32 w = s.wave[j][2 * i];
+        const bool odd = s.cycle[j][2 * i] & 1u;
+        p.x_q2 = left * 4 + static_cast<i32>(((2 * i + 1) * span * 2) / 16) + static_cast<i32>(j) * 24;
+        p.y_q2 = (196 - static_cast<i32>(j) * 9) * 4 - ((w * 14 * 4) >> 15);
+        p.shade = grey((odd ? 120 : 205) - 7 * static_cast<i32>(j));
+        p.paint = odd ? opxy::draw::stroke : opxy::draw::fill_and_stroke;
+        p.shown = true;
     }
-    return r;
+
+    return p;
 }
 }
 
@@ -52,48 +59,37 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
     state.env -= (state.env >> 9) * dt;
     if (state.env < 0) state.env = 0;
 
+    // The front row: the bent wave at 32 points, and which cycle of the bent phase each falls in.
     const auto slot = [&](u32 c) { return input.slots[c] < 0 ? 0 : input.slots[c] >> 16; };
     const i32 formant = cz::swept(slot(c_formant), input.slots[c_sweep] < 0 ? 0 : input.slots[c_sweep], state.env);
-    const u32 d = inflect16(slot(c_inflect));
-    const Bend b = bend(d, formant16(formant, slot(c_range)));
-    for (u32 e = 0; e <= cols; ++e) state.ev[0][e] = static_cast<opxy::i16>(sample(e == cols ? 65535u : (e << 16) / cols, b));
-    state.seam[0] = static_cast<opxy::u16>((d * cols) >> 16);
-
+    const Bend b = bend(inflect16(slot(c_inflect)), formant16(formant, slot(c_range)));
+    for (u32 k = 0; k < samples; ++k) {
+        const u32 x = (2 * k + 1) << 10, g = bent(x, b);
+        state.wave[0][k] = static_cast<opxy::i16>(sample(x, b));
+        state.cycle[0][k] = static_cast<opxy::u8>(g >> 16);
+    }
+    const auto copy_row = [&](u32 to, u32 from) {
+        for (u32 k = 0; k < samples; ++k) { state.wave[to][k] = state.wave[from][k]; state.cycle[to][k] = state.cycle[from][k]; }
+    };
     if (!state.started || input.reduced_motion) {
-        for (u32 j = 1; j < rows; ++j) {
-            state.seam[j] = state.seam[0];
-            for (u32 e = 0; e <= cols; ++e) state.ev[j][e] = state.ev[0][e];
-        }
+        for (u32 j = 1; j < history; ++j) copy_row(j, 0);
     } else if ((state.clock += dt) >= history_step) {
         state.clock = state.clock >= 4 * history_step ? 0 : state.clock - history_step;
-        for (u32 j = rows - 1; j > 0; --j) {
-            state.seam[j] = state.seam[j - 1];
-            for (u32 e = 0; e <= cols; ++e) state.ev[j][e] = state.ev[j - 1][e];
-        }
+        for (u32 j = history - 1; j > 0; --j) copy_row(j, j - 1);
     }
 
-    u32 left = state.started ? redraw_budget : cells;
-    for (u32 k = 0; k < cells && left; ++k) {
-        const u32 n = (state.cursor + k) % cells, j = rows - 1 - n / cols, i = n % cols;
-        const i32 vl = state.ev[j][i], vr = state.ev[j][i + 1];
-        // Ends at the edge heights, in px Q4: run across the plate, rise between its ends.
-        // The wave falls (vl − vr)·height across the 22.5 px column; over the slat's 16 px that is 32/45 of it.
-        const i32 run = plate_px * 16, rise = ((((vl - vr) * height_px * 16) >> 15) * 32) / 45;  // vl above vr: the right end sits lower
-        const i32 len = static_cast<i32>(isqrt(static_cast<u32>(run * run + rise * rise)));
-        const i32 cosv = (run * unit) / len, sinv = (rise * unit) / len;  // clockwise when the right end is lower
-        const i32 scale = clamp((len * unit) / run, unit, 2 * unit);
-        const i32 x_q2 = left_px * 4 + static_cast<i32>(((2 * i + 1) * span_px * 2) / cols) + static_cast<i32>(j) * row_dx * 4;
-        const i32 y_q2 = (base_y - static_cast<i32>(j) * row_dy) * 4 - ((((vl + vr) >> 1) * height_px * 4) >> 15);
-        const bool seam = i == state.seam[j];
-        const i32 lum = seam ? 236 - 8 * static_cast<i32>(j) : 70 + ((85 * ((vl + vr) >> 1)) >> 15) + 85 - 6 * static_cast<i32>(j);
-        const u32 shade = static_cast<u32>(clamp(((lum - 30) * 2) / 27, 0, 15));
-        const u32 want = static_cast<u32>(y_q2 & 1023) | static_cast<u32>((sinv + 1024) & 2047) << 10 | shade << 21;
+    u32 left = state.started ? redraw_budget : node_budget;
+    for (u32 k = 0; k < node_budget && left; ++k) {
+        const u32 n = (state.cursor + k) % node_budget;
+        const Place p = where(state, n);
+        const u32 want = p.shown ? (static_cast<u32>(p.y_q2 & 0x3ff) | static_cast<u32>(p.x_q2 & 0x7ff) << 10 | static_cast<u32>((p.scale >> 6) & 31) << 21 | p.shade << 26 | static_cast<u32>(p.paint == opxy::draw::stroke) << 30)
+                                 : 0xffffffffu;
         if (state.started && want == state.drawn[n]) continue;
-        opxy::draw::place(frame, n, x_q2 * (unit / 4), y_q2 * (unit / 4), scale, shade, opxy::draw::fill_and_stroke);
-        opxy::draw::turn(frame, n, opxy::draw::Turn{cosv, sinv});
+        if (p.shown) opxy::draw::place(frame, n, p.x_q2 * (unit / 4), p.y_q2 * (unit / 4), p.scale, p.shade, p.paint);
+        else opxy::draw::hide(frame, n);
         state.drawn[n] = want;
         --left;
-        if (state.started && !left) state.cursor = (n + 1) % cells;
+        if (state.started && !left) state.cursor = (n + 1) % node_budget;
     }
     state.started = 1;
 }
