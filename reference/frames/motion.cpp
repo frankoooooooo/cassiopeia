@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
     in.elapsed = 34;
     in.amp.attack = in.amp.decay = in.amp.sustain = in.amp.release = -1;
     E::display_reset(st);
-    static int last[E::Frame::node_count][5];
+    static int last[E::Frame::node_count][7];
     static char last_header[4][8];
     FILE* o = std::fopen(argv[1], "w");
     std::fprintf(o, "[");
@@ -37,10 +37,10 @@ int main(int argc, char** argv) {
         bool first = true;
         for (unsigned n = 0; n < E::Frame::node_count; ++n) {
             const opxy::draw::Node& d = fr.nodes[n];
-            const int v[5] = {d.x / 256, d.y / 256, d.scale / 16, static_cast<int>(d.shade), static_cast<int>(d.paint)};  // x, y Q2; scale /64
+            const int v[7] = {d.x / 256, d.y / 256, d.scale / 16, static_cast<int>(d.shade), static_cast<int>(d.paint), d.cos, d.sin};  // x, y Q2; scale /64; turn Q10
             if (f && !std::memcmp(v, last[n], sizeof(v))) continue;
             std::memcpy(last[n], v, sizeof(v));
-            std::fprintf(o, "%s[%u,%d,%d,%d,%d,%d]", first ? "" : ",", n, v[0], v[1], v[2], v[3], v[4]);
+            std::fprintf(o, "%s[%u,%d,%d,%d,%d,%d,%d,%d]", first ? "" : ",", n, v[0], v[1], v[2], v[3], v[4], v[5], v[6]);
             first = false;
         }
         std::fprintf(o, "],\"h\":[");
