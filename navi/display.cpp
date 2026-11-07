@@ -13,27 +13,8 @@ using opxy::u32;
 using opxy::draw::unit;
 
 const u32 redraw_budget = 64;
-const i32 history_step = 72;  // Q10 seconds between rows (70 ms)
-
-struct Place { i32 x_q2, y_q2, scale; u32 shade; opxy::draw::Paint paint; bool shown; };
-
+const i32 history_step = 72;  // Q10 seconds between history slots (70 ms)
 inline u32 grey(i32 lum) { return static_cast<u32>(opxy::draw::clamp(((lum - 30) * 2) / 27, 0, 15)); }
-
-// Where node n goes: n = ((2 − row)·12 + column)·7 + piece, back row first, each pile bottom-up.
-inline Place where(const DisplayState& s, u32 n) {
-    Place p = {0, 0, 512, 0, opxy::draw::fill_and_stroke, false};
-    const u32 piece = n % 7, c = n / 7, j = 2 - c / 12, i = c % 12;
-    const u32 k = ((2 * i + 1) * samples) / 24;  // the sample at the column's centre
-    const i32 w = s.wave[j * 3][k];
-    const bool hollow = s.cycle[j * 3][k] & 1u;
-    const u32 count = static_cast<u32>(((w + 32768) * 7 + 32767) >> 16);  // 0 .. 7 pieces
-    p.x_q2 = (24 + static_cast<i32>(i) * 36 + static_cast<i32>(j) * 22) * 4;
-    p.y_q2 = (206 - static_cast<i32>(j) * 34 - static_cast<i32>(piece) * 6) * 4;
-    p.shade = grey((hollow ? 150 : 110) + static_cast<i32>(piece) * (hollow ? 12 : 18) - 14 * static_cast<i32>(j));  // outlines need more light to read
-    p.paint = hollow ? opxy::draw::stroke : opxy::draw::fill_and_stroke;
-    p.shown = piece < count;
-    return p;
-}
 }
 
 inline void display_reset(DisplayState& state) {
@@ -57,37 +38,42 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
     state.env -= (state.env >> 9) * dt;
     if (state.env < 0) state.env = 0;
 
-    // The front row: the bent wave at 32 points, and which cycle of the bent phase each falls in.
+    // The front slot: the bent wave at each column's centre, and which cycle of the bent phase it is in.
     const auto slot = [&](u32 c) { return input.slots[c] < 0 ? 0 : input.slots[c] >> 16; };
     const i32 formant = cz::swept(slot(c_formant), input.slots[c_sweep] < 0 ? 0 : input.slots[c_sweep], state.env);
     const Bend b = bend(inflect16(slot(c_inflect)), formant16(formant, slot(c_range)));
-    for (u32 k = 0; k < samples; ++k) {
-        const u32 x = (2 * k + 1) << 10, g = bent(x, b);
-        state.wave[0][k] = static_cast<opxy::i16>(sample(x, b));
-        state.cycle[0][k] = static_cast<opxy::u8>(g >> 16);
+    for (u32 i = 0; i < cols; ++i) {
+        const u32 x = (2 * (((2 * i + 1) * 32) / 24) + 1) << 10;  // the nearest 1/32 of the cycle to its centre
+        state.wave[0][i] = static_cast<opxy::i16>(sample(x, b));
+        state.cycle[0][i] = static_cast<opxy::u8>(bent(x, b) >> 16);
     }
-    const auto copy_row = [&](u32 to, u32 from) {
-        for (u32 k = 0; k < samples; ++k) { state.wave[to][k] = state.wave[from][k]; state.cycle[to][k] = state.cycle[from][k]; }
+    const auto copy_slot = [&](u32 to, u32 from) {
+        for (u32 i = 0; i < cols; ++i) { state.wave[to][i] = state.wave[from][i]; state.cycle[to][i] = state.cycle[from][i]; }
     };
     if (!state.started || input.reduced_motion) {
-        for (u32 j = 1; j < history; ++j) copy_row(j, 0);
+        for (u32 j = 1; j < history; ++j) copy_slot(j, 0);
     } else if ((state.clock += dt) >= history_step) {
         state.clock = state.clock >= 4 * history_step ? 0 : state.clock - history_step;
-        for (u32 j = history - 1; j > 0; --j) copy_row(j, j - 1);
+        for (u32 j = history - 1; j > 0; --j) copy_slot(j, j - 1);
     }
 
-    u32 left = state.started ? redraw_budget : node_budget;
-    for (u32 k = 0; k < node_budget && left; ++k) {
-        const u32 n = (state.cursor + k) % node_budget;
-        const Place p = where(state, n);
-        const u32 want = p.shown ? (static_cast<u32>(p.y_q2 & 0x3ff) | static_cast<u32>(p.x_q2 & 0x7ff) << 10 | static_cast<u32>((p.scale >> 6) & 31) << 21 | p.shade << 26 | static_cast<u32>(p.paint == opxy::draw::stroke) << 30)
-                                 : 0xffffffffu;
+    u32 left = state.started ? redraw_budget : nodes;
+    for (u32 k = 0; k < nodes && left; ++k) {
+        const u32 n = (state.cursor + k) % nodes, piece = n % pieces, c = n / pieces, j = rows - 1 - c / cols, i = c % cols;
+        const i32 w = state.wave[j * 3][i];
+        const bool hollow = state.cycle[j * 3][i] & 1u, shown = piece < static_cast<u32>(((w + 32768) * 7 + 32767) >> 16);
+        const i32 x_q2 = (24 + static_cast<i32>(i) * 36 + static_cast<i32>(j) * 22) * 4;
+        const i32 y_q2 = (206 - static_cast<i32>(j) * 34 - static_cast<i32>(piece) * 6) * 4;
+        // Outlines need more light to read than filled tops.
+        const u32 shade = grey((hollow ? 150 : 110) + static_cast<i32>(piece) * (hollow ? 12 : 18) - 14 * static_cast<i32>(j));
+        const opxy::draw::Paint paint = hollow ? opxy::draw::stroke : opxy::draw::fill_and_stroke;
+        const u32 want = shown ? (shade | static_cast<u32>(hollow) << 4) : 0xffu;
         if (state.started && want == state.drawn[n]) continue;
-        if (p.shown) opxy::draw::place(frame, n, p.x_q2 * (unit / 4), p.y_q2 * (unit / 4), p.scale, p.shade, p.paint);
+        if (shown) opxy::draw::place(frame, n, x_q2 * (unit / 4), y_q2 * (unit / 4), 512, shade, paint);
         else opxy::draw::hide(frame, n);
         state.drawn[n] = want;
         --left;
-        if (state.started && !left) state.cursor = (n + 1) % node_budget;
+        if (state.started && !left) state.cursor = (n + 1) % nodes;
     }
     state.started = 1;
 }

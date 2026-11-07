@@ -59,10 +59,10 @@ inline void start(Voice& v, Shared&, u32) {
     v.pa = 0;
     v.pb = 0x40000000u;  // a quarter-cycle apart, so the pair doesn't start as one doubled wave
     v.env = opxy::q31::maximum;
+    v.primed = 0;  // the first block takes this note's knob values outright (a reused voice held the last note's)
 }
 
 inline void initialize(Voice& v, Shared& shared, u32 owner) {
-    v.primed = 0;
     v.dc_x = v.dc_y = 0;
     start(v, shared, owner);
 }

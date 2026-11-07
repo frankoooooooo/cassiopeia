@@ -27,5 +27,6 @@ others; CI checks that the copies match. Tools:
 - `reference/frames/export.sh <folder>`: the screen's frames from its real `display()`.
 - `reference/frames/motion.cpp`: a scripted five-second take through `display()`, as frame deltas for a moving review page.
 - `reference/frames/check.sh <folder>`: operator-design's checks.
+- `tools/screen_sweep.sh`: every screen under the sanitizers at the controls' extremes (CI runs it).
 - `tools/terrace_panel.py`: the terrace artwork.
 - `tools/make_presets.py`: the device presets.

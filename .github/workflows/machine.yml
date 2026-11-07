@@ -6,8 +6,8 @@ on:
 permissions:
   contents: read
 env:
-  # Development follows staging; pin a compatible SDK commit for a release.
-  OPEN_XY_REF: staging
+  # Pinned: the SDK commit everyday-012 was built and tested on. Bump it on purpose.
+  OPEN_XY_REF: 14d595b0c018238e69f9c9e30a19e0deae7d055e
 jobs:
   machine:
     runs-on: ubuntu-latest
@@ -35,6 +35,8 @@ jobs:
           python -m pip install numpy==2.3.5
       - name: Shared header copies match
         run: sh machine/tools/sync_common.sh --check
+      - name: Screens under the sanitizers
+        run: sh machine/tools/screen_sweep.sh "$PWD/open-xy/sdk/include" clang++ ${{ matrix.machine }}
       - name: Machine source, preview and sound checks
         run: python open-xy/sdk.py test --machine machine/${{ matrix.machine }} --cxx clang++ --host-cxx g++
   firmware:

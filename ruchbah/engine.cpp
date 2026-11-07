@@ -22,11 +22,10 @@ __attribute__((noinline)) void scan_pass(Voice& v, opxy::Output out, opxy::Pitch
 inline void start(Voice& v, Shared&, u32) {
     v.phase = 0;
     v.env = opxy::q31::maximum;
-    excite(v.ring, cz::choice(v.smooth[c_excite], excite_count));
+    v.primed = 0;  // the first block takes this note's knob values outright (a reused voice held the last note's)
 }
 
 inline void initialize(Voice& v, Shared& shared, u32 owner) {
-    v.primed = 0;
     v.dc_x = v.dc_y = 0;
     v.ring.lfsr = static_cast<opxy::u16>(0xace1u ^ owner);
     for (u32 k = 0; k < control_count; ++k) v.smooth[k] = 0;
@@ -39,7 +38,7 @@ inline void render(Voice& v, Shared&, u32, opxy::Output output, opxy::Parameters
                    opxy::Pitch pitch) {
     const bool first = !v.primed;
     cz::glide(v.smooth, parameters, control_count, v.primed);
-    if (first) excite(v.ring, cz::choice(parameters[c_excite], excite_count));  // start() ran before the controls arrived
+    if (first) excite(v.ring, cz::choice(parameters[c_excite], excite_count));  // each note strikes with the knob as it is now
     const i32 stiff = cz::swept(v.smooth[c_stiff] >> 16, v.smooth[c_sweep], v.env);
     v.env = opxy::q31::multiply(v.env, cz::sweep_decay);
     step(v.ring, stiffness(stiff), keep(v.smooth[c_damping] >> 16));
