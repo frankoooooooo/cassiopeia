@@ -2,23 +2,23 @@
 #include <opxy/draw.hpp>
 
 namespace caph {
-// The cell terrace as stacks: 12 columns by 3 rows, each column a pile of up to 7 small floating tops as
-// tall as the pair's summed wave there. Back row first; node n = ((2 − row)·12 + column)·7 + piece.
-const opxy::u32 cols = 12, rows = 3, pieces = 7, history = 9;
-const opxy::u32 nodes = cols * rows * pieces;
+// The cell terrace, split: 14 columns of phase by 8 rows of recent history, each cell two half tops,
+// oscillator A on the left and its detuned twin B on the right. Back row first; node
+// n = ((rows − 1 − row)·cols + column)·2 + half.
+const opxy::u32 cols = 14, rows = 8, cells = cols * rows, halves = 2 * cells;
 
 // Matches resources.display in definition.json: paths, points, nodes, texts, palette.
-using Frame = opxy::draw::Frame<0, 0, nodes, 0, 16>;
+using Frame = opxy::draw::Frame<0, 0, halves, 0, 16>;
 
 struct DisplayState {
     opxy::draw::NoteTracker notes;
     opxy::u32 serial;     // last note-start serial seen
-    opxy::u32 started;    // 0 until the first frame has placed every node
+    opxy::u32 started;    // 0 until the first frame has placed every half
     opxy::u32 cursor;     // where the redraw scan resumes
     opxy::u32 offset;     // B's phase lead over A, Q32: drifts at the beat rate while notes sound
     opxy::i32 env;        // the Sweep envelope, Q31, restarted by each note
     opxy::i32 clock;      // Q10 seconds toward the next history step
-    opxy::i16 mix[history][cols];   // the pair's summed wave per column, Q15; rows 0, 3, 6 are drawn
-    opxy::u32 drawn[nodes];         // what each node shows, packed
+    opxy::i16 cv[rows][2][cols];  // each half's height: the wave there, Q15
+    opxy::u32 drawn[halves];      // what each node shows: y and shade, packed
 };
 }

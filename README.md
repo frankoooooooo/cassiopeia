@@ -6,7 +6,7 @@ oscillator of [PD Hybrid Synth](https://github.com/ChuckFleming/pd-hybrid-synth)
 | star | engine | 1st (Amount) | 2nd | 3rd | 4th | screen: the cell terrace as… |
 |---|---|---|---|---|---|---|
 | Schedar `schedar` | Phase distortion, 8 CZ waves | Amount (DCW) | Width (cycle gap) | Wave | Sweep | warped columns, spaced by the phase map |
-| Caph `caph` | Analog pair, triangle → pulse → saw, polyBLEP | Shape | Width (duty, apex) | Detune (cents) | Sweep | stacks: piles as tall as the pair's sum, rising and falling with the beat |
+| Caph `caph` | Analog pair, triangle → pulse → saw, polyBLEP | Shape | Width (duty, apex) | Detune (cents) | Sweep | split cells: A, then its detuned twin |
 | Navi `navi` | Vector phaseshaping | Formant | Inflect | Range | Sweep | cycle bands: cells filled or outlined by each cosine cycle the bend packs in |
 | Ruchbah `ruchbah` | Scanned synthesis, 32-mass ring | Stiff | Damping | Excite | Sweep | masses that swell as they move, on the screen's own copy of the ring |
 | Segin `segin` | VOSIM | Formant (Hz) | Decay | Pulses | Sweep | burst islands over an outlined floor |

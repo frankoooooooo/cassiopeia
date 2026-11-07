@@ -1,20 +1,23 @@
 #include "display.h"
 #include "core.h"
 
-// Caph's screen: stacks. Twelve columns by three rows of piles, each pile a column of small floating tops
-// as tall as the pair's summed wave there, so Shape's profile (triangle, pulse, saw) is the skyline and
-// Width moves its edge. Each strike starts the pair together; while notes sound, B drifts against A at a
-// beat rate that follows Detune, so the piles rise and fall as the pair beats; at rest they ease back.
-// The rows go back in time (210 ms apart), so Sweep's strike rolls away. At rest nothing redraws.
+// Caph's screen: the cell terrace split down every cell. The left half is oscillator A at that phase,
+// the right half its detuned twin B, read a drifting phase lead later. Each strike starts them together;
+// while notes sound they slide apart and back at a beat rate that follows Detune, and at rest they ease
+// back into whole cells. Shape morphs the
+// profile from triangle to pulse to saw, Width moves the pulse edge and the triangle's apex. Going back,
+// each row is the terrace 70 ms earlier, so Sweep's strike rolls away. At rest nothing redraws.
 namespace caph {
 namespace screen {
 using opxy::i32;
 using opxy::u32;
 using opxy::draw::unit;
 
-const u32 redraw_budget = 64;
-const i32 history_step = 72;  // Q10 seconds between history slots (70 ms); rows are every third
-inline u32 grey(i32 lum) { return static_cast<u32>(opxy::draw::clamp(((lum - 30) * 2) / 27, 0, 15)); }
+const i32 left_px = 14, span_px = 360;
+const i32 row_dx = 11, row_dy = 15, base_y = 180, height_px = 30;
+const i32 half_dx = 11;                         // B's centre sits 11 px right of A's
+const u32 redraw_budget = 56;
+const i32 history_step = 72;                    // Q10 seconds between rows (70 ms)
 }
 
 inline void display_reset(DisplayState& state) {
@@ -41,8 +44,8 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
 
     const i32 detune = input.slots[c_detune] < 0 ? 0 : input.slots[c_detune] >> 16;  // Q15
     const bool sounding = input.held_notes != 0 && input.held_notes <= 128;
-    // The beat: up to 4 cycles a second at 35 cents (about a 220 Hz note's), only while notes sound;
-    // at rest the pair eases back together (the shorter way round).
+    // The beat: up to 4 cycles a second at 35 cents (about a 220 Hz note's), only while notes sound.
+    // At rest the halves ease back together (the shorter way round), so the split means beating now.
     if (sounding && !input.reduced_motion) state.offset += static_cast<u32>(detune) * 4u * static_cast<u32>(dt) * 128u;
     else {
         const i32 lead = static_cast<i32>(state.offset);
@@ -59,38 +62,40 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
     cents[w] = 't';
     opxy::draw::header(frame, c_detune, cents);
 
-    // The front slot: A and B at each column's centre, summed.
+    // The front row now.
     const i32 shape = cz::swept(input.slots[c_shape] < 0 ? 0 : input.slots[c_shape] >> 16, input.slots[c_sweep] < 0 ? 0 : input.slots[c_sweep], state.env);
     const u32 d = duty16(input.slots[c_width] < 0 ? 0 : input.slots[c_width] >> 16);
     for (u32 i = 0; i < cols; ++i) {
         const u32 x = ((2 * i + 1) << 16) / (2 * cols);
-        state.mix[0][i] = static_cast<opxy::i16>((naive_shape(x, shape, d) + naive_shape((x + (state.offset >> 16)) & 0xffffu, shape, d)) >> 1);
+        state.cv[0][0][i] = static_cast<opxy::i16>(naive_shape(x, shape, d));
+        state.cv[0][1][i] = static_cast<opxy::i16>(naive_shape((x + (state.offset >> 16)) & 0xffffu, shape, d));
     }
     if (!state.started || input.reduced_motion) {
-        for (u32 j = 1; j < history; ++j)
-            for (u32 i = 0; i < cols; ++i) state.mix[j][i] = state.mix[0][i];
+        for (u32 j = 1; j < rows; ++j)
+            for (u32 h = 0; h < 2; ++h)
+                for (u32 i = 0; i < cols; ++i) state.cv[j][h][i] = state.cv[0][h][i];
     } else if ((state.clock += dt) >= history_step) {
         state.clock = state.clock >= 4 * history_step ? 0 : state.clock - history_step;
-        for (u32 j = history - 1; j > 0; --j)
-            for (u32 i = 0; i < cols; ++i) state.mix[j][i] = state.mix[j - 1][i];
+        for (u32 j = rows - 1; j > 0; --j)
+            for (u32 h = 0; h < 2; ++h)
+                for (u32 i = 0; i < cols; ++i) state.cv[j][h][i] = state.cv[j - 1][h][i];
     }
 
-    u32 left = state.started ? redraw_budget : nodes;
-    for (u32 k = 0; k < nodes && left; ++k) {
-        const u32 n = (state.cursor + k) % nodes, piece = n % pieces, c = n / pieces, j = rows - 1 - c / cols, i = c % cols;
-        const i32 m = state.mix[j * 3][i];
-        const u32 count = static_cast<u32>(((m + 32768) * 7 + 32767) >> 16);  // 0 .. 7 pieces
-        const bool shown = piece < count;
-        const i32 x_q2 = (24 + static_cast<i32>(i) * 36 + static_cast<i32>(j) * 22) * 4;
-        const i32 y_q2 = (206 - static_cast<i32>(j) * 34 - static_cast<i32>(piece) * 6) * 4;
-        const u32 shade = grey(110 + static_cast<i32>(piece) * 18 - 14 * static_cast<i32>(j));
-        const u32 want = shown ? shade : 0xffu;
+    u32 left = state.started ? redraw_budget : halves;
+    for (u32 k = 0; k < halves && left; ++k) {
+        const u32 n = (state.cursor + k) % halves, c = n >> 1, h = n & 1, j = rows - 1 - c / cols, i = c % cols;
+        const i32 v = state.cv[j][h][i];
+        const i32 x_q2 = left_px * 4 + static_cast<i32>(((2 * i + 1) * span_px * 2) / cols) + static_cast<i32>(j) * row_dx * 4 + (h ? half_dx * 2 : -half_dx * 2);
+        const i32 y_q2 = (base_y - static_cast<i32>(j) * row_dy) * 4 - ((v * height_px * 4) >> 15);
+        // A lighter than B, both brighter with height and dimmer going back.
+        const i32 lum = (h ? 125 : 160) + (((h ? 70 : 80) * v) >> 15) - 6 * static_cast<i32>(j);
+        const u32 shade = static_cast<u32>(clamp(((lum - 30) * 2) / 27, 0, 15));
+        const u32 want = static_cast<u32>(y_q2 >> 2) | shade << 16;
         if (state.started && want == state.drawn[n]) continue;
-        if (shown) opxy::draw::place(frame, n, x_q2 * (unit / 4), y_q2 * (unit / 4), 512, shade, opxy::draw::fill_and_stroke);
-        else opxy::draw::hide(frame, n);
+        opxy::draw::place(frame, n, x_q2 * (unit / 4), y_q2 * (unit / 4), unit, shade, opxy::draw::fill_and_stroke);
         state.drawn[n] = want;
         --left;
-        if (state.started && !left) state.cursor = (n + 1) % nodes;
+        if (state.started && !left) state.cursor = (n + 1) % halves;
     }
     state.started = 1;
 }

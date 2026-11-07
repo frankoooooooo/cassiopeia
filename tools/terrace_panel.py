@@ -2,7 +2,7 @@
 """Writes a cell-terrace panel.svg.fragment: cols x rows oblique cell tops (nodes, back row first) under
 the stock four-control header, and 16 greys. Geometry must match the engine's display.h / display.cpp.
 python3 tools/terrace_panel.py schedar 16 9 > schedar/panel.svg.fragment
-python3 tools/terrace_panel.py caph 36 7 > caph/panel.svg.fragment   (252 plain tops for the stacks, placed by the screen)
+python3 tools/terrace_panel.py caph 14 8 split > caph/panel.svg.fragment   (two half tops per cell: A then B)
 python3 tools/terrace_panel.py ruchbah 14 9 > ruchbah/panel.svg.fragment
 python3 tools/terrace_panel.py achird 16 8 riser > achird/panel.svg.fragment   (a riser, then a top)
 python3 tools/terrace_panel.py navi 16 9 > navi/panel.svg.fragment
