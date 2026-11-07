@@ -1,10 +1,11 @@
 #include "display.h"
 #include "core.h"
 
-// Navi's screen: cycle bands (revision pass 01, v2, the owner's pick). A low, flat field of the family's
-// floating tops seen from above, 16 columns by 9 rows of recent history (70 ms apart, so Sweep's strike
-// rolls away). Height is the bent wave; cells alternate filled and outlined with each cosine cycle the
-// bend squeezes in, so Formant's cycles can be counted as bands and Inflect moves where they end.
+// Navi's screen: banded stacks (the owner's pick: stacks, with the cycle bands in them). Twelve columns
+// by three rows of piles of the family's small floating tops, each pile as tall as the bent wave there,
+// and filled or outlined by which cosine cycle of the bent phase the column falls in. Formant multiplies
+// the cycles before the inflection, so the piles alternate solid and hollow there; Inflect moves where the
+// alternation ends. Rows go back in time (210 ms apart), so Sweep's strike rolls away.
 namespace navi {
 namespace screen {
 using opxy::i32;
@@ -18,22 +19,19 @@ struct Place { i32 x_q2, y_q2, scale; u32 shade; opxy::draw::Paint paint; bool s
 
 inline u32 grey(i32 lum) { return static_cast<u32>(opxy::draw::clamp(((lum - 30) * 2) / 27, 0, 15)); }
 
-// Where node n goes: back row first, node n = (8 − row)·16 + column.
+// Where node n goes: n = ((2 − row)·12 + column)·7 + piece, back row first, each pile bottom-up.
 inline Place where(const DisplayState& s, u32 n) {
-    Place p = {0, 0, unit, 0, opxy::draw::fill_and_stroke, false};
-    const i32 left = 14, span = 360;
-    // A low, flat field: rows 9 px apart and 6 px across, heights kept small (±14 px).
-    if (n < 144) {
-        const u32 j = 8 - n / 16, i = n % 16;
-        const i32 w = s.wave[j][2 * i];
-        const bool odd = s.cycle[j][2 * i] & 1u;
-        p.x_q2 = left * 4 + static_cast<i32>(((2 * i + 1) * span * 2) / 16) + static_cast<i32>(j) * 24;
-        p.y_q2 = (196 - static_cast<i32>(j) * 9) * 4 - ((w * 14 * 4) >> 15);
-        p.shade = grey((odd ? 120 : 205) - 7 * static_cast<i32>(j));
-        p.paint = odd ? opxy::draw::stroke : opxy::draw::fill_and_stroke;
-        p.shown = true;
-    }
-
+    Place p = {0, 0, 512, 0, opxy::draw::fill_and_stroke, false};
+    const u32 piece = n % 7, c = n / 7, j = 2 - c / 12, i = c % 12;
+    const u32 k = ((2 * i + 1) * samples) / 24;  // the sample at the column's centre
+    const i32 w = s.wave[j * 3][k];
+    const bool hollow = s.cycle[j * 3][k] & 1u;
+    const u32 count = static_cast<u32>(((w + 32768) * 7 + 32767) >> 16);  // 0 .. 7 pieces
+    p.x_q2 = (24 + static_cast<i32>(i) * 36 + static_cast<i32>(j) * 22) * 4;
+    p.y_q2 = (206 - static_cast<i32>(j) * 34 - static_cast<i32>(piece) * 6) * 4;
+    p.shade = grey((hollow ? 150 : 110) + static_cast<i32>(piece) * (hollow ? 12 : 18) - 14 * static_cast<i32>(j));  // outlines need more light to read
+    p.paint = hollow ? opxy::draw::stroke : opxy::draw::fill_and_stroke;
+    p.shown = piece < count;
     return p;
 }
 }

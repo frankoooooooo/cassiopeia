@@ -2,10 +2,10 @@
 #include <opxy/draw.hpp>
 
 namespace navi {
-// Cycle bands: 16 columns x 9 rows of flat floating tops (the family's cell, never turned). Rows are
-// recent history, front first; the front row is sampled at 32 points across the cycle.
+// Banded stacks: 12 columns x 3 rows of piles of up to 7 flat floating tops. History keeps 9 slots, 70 ms
+// apart (rows draw every third); the front slot is sampled at 32 points across the cycle.
 const opxy::u32 samples = 32, history = 9;
-const opxy::u32 node_budget = 144;
+const opxy::u32 node_budget = 252;
 
 // Matches resources.display in definition.json: paths, points, nodes, texts, palette.
 using Frame = opxy::draw::Frame<0, 0, node_budget, 0, 16>;

@@ -5,7 +5,7 @@ python3 tools/terrace_panel.py schedar 16 9 > schedar/panel.svg.fragment
 python3 tools/terrace_panel.py caph 14 8 split > caph/panel.svg.fragment   (two half tops per cell: A then B)
 python3 tools/terrace_panel.py ruchbah 14 9 > ruchbah/panel.svg.fragment
 python3 tools/terrace_panel.py achird 16 8 riser > achird/panel.svg.fragment   (a riser, then a top)
-python3 tools/terrace_panel.py navi 16 9 > navi/panel.svg.fragment
+python3 tools/terrace_panel.py navi 36 7 > navi/panel.svg.fragment   (252 small tops for the banded stacks)
 """
 import sys
 mid, cols, rows = sys.argv[1], int(sys.argv[2]), int(sys.argv[3])

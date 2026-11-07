@@ -25,6 +25,8 @@ struct DisplayState {
     opxy::i32 due;        // ring steps owed, Q10 (689 a second)
     opxy::i16 cv[rows][cols];   // each cell's height: the ring there, Q15
     opxy::u16 cs[rows][cols];   // each cell's size: how fast the ring moves there, as a node scale (Q10)
+    opxy::i16 calm[cols];       // the front row's height, eased toward the ring (Q15)
+    opxy::i16 energy[cols];     // the front row's motion, a follower: quick to rise, slow to fall (Q15)
     opxy::u32 drawn[cells];     // what each node shows: y, scale and shade, packed
 };
 }
