@@ -6,8 +6,8 @@ on:
 permissions:
   contents: read
 env:
-  # Pinned: the SDK commit everyday-012 was built and tested on. Bump it on purpose.
-  OPEN_XY_REF: 14d595b0c018238e69f9c9e30a19e0deae7d055e
+  # Pinned: the SDK commit everyday-015 was built and tested on. Bump it on purpose.
+  OPEN_XY_REF: 319028204487f7f740502526d2d41c97d1022672
 jobs:
   machine:
     runs-on: ubuntu-latest
