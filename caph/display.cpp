@@ -6,7 +6,7 @@
 // while notes sound they slide apart and back at a beat rate that follows Detune, and at rest they ease
 // back into whole cells. Shape morphs the
 // profile from triangle to pulse to saw, Width moves the pulse edge and the triangle's apex. Going back,
-// each row eases toward the one in front (~140 ms), so Sweep's strike rolls away. At rest nothing redraws.
+// each row eases toward the one in front (~95 ms), so Sweep's strike rolls away. At rest nothing redraws.
 namespace caph {
 namespace screen {
 using opxy::i32;
@@ -17,8 +17,8 @@ const i32 left_px = 14, span_px = 360;
 const i32 row_dx = 11, row_dy = 15, base_y = 180, height_px = 30;
 const i32 half_dx = 11;                         // B's centre sits 11 px right of A's
 const u32 redraw_budget = 64;
-const i32 tau_front = 82;                       // Q10 seconds: the front row eases toward the sound over ~80 ms
-const i32 tau_row = 143;                        // Q10 seconds: each row eases toward the one in front over ~140 ms
+const i32 tau_front = 52;                       // Q10 seconds: the front row eases toward the sound over ~50 ms
+const i32 tau_row = 95;                         // Q10 seconds: each row over ~95 ms (owner: ~1 px a frame for Caph)
 }
 
 inline void display_reset(DisplayState& state) {
@@ -44,10 +44,10 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
 
     const i32 detune = input.slots[c_detune] < 0 ? 0 : input.slots[c_detune] >> 16;  // Q15
     const bool sounding = input.held_notes != 0 && input.held_notes <= 128;
-    // The beat: up to 2 cycles a second at 35 cents (half a 220 Hz note's, to keep the screen calm), only
-    // while notes sound.
+    // The beat: up to 3 cycles a second at 35 cents (three quarters of a 220 Hz note's), only while notes
+    // sound.
     // At rest the halves ease back together (the shorter way round), so the split means beating now.
-    if (sounding && !input.reduced_motion) state.offset += static_cast<u32>(detune) * 2u * static_cast<u32>(dt) * 128u;
+    if (sounding && !input.reduced_motion) state.offset += static_cast<u32>(detune) * 3u * static_cast<u32>(dt) * 128u;
     else {
         // Back together over ~0.25 s, then exactly together (an exponential alone takes seconds to stop).
         const i32 lead = static_cast<i32>(state.offset);
