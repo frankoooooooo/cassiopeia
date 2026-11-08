@@ -5,7 +5,7 @@
 // exactly as the voice builds them, so the terrace is made of flat blocks, and wherever a level steps
 // from the column before, a lit riser stands between them. Tilt brings in higher-sequency steps (more
 // risers), Balance trades odd against even, Fold wraps tall blocks back down. Going back, each row is the
-// terrace 70 ms earlier, so Sweep's strike rolls away. At rest nothing redraws.
+// terrace easing toward the row in front (~140 ms), so Sweep's strike rolls away. At rest nothing redraws.
 namespace achird {
 namespace screen {
 using opxy::i32;
@@ -16,7 +16,8 @@ const i32 left_px = 14, span_px = 360;
 const i32 row_dx = 11, row_dy = 15, base_y = 180, height_px = 28;
 const i32 riser_px = 32;                        // the authored riser's height at scale 1
 const u32 redraw_budget = 64;
-const i32 history_step = 72;
+const i32 tau_front = 82;                       // Q10 seconds: the front row eases toward the sound over ~80 ms
+const i32 tau_row = 143;                        // Q10 seconds: each row eases toward the one in front over ~140 ms
 }
 
 inline void display_reset(DisplayState& state) {
@@ -24,7 +25,6 @@ inline void display_reset(DisplayState& state) {
     state.started = 0;
     state.cursor = 0;
     state.env = 0;
-    state.clock = 0;
 }
 
 inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& frame) {
@@ -42,14 +42,16 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
     if (state.env < 0) state.env = 0;
 
     const i32 tilt = cz::swept(slot(c_tilt), input.slots[c_sweep] < 0 ? 0 : input.slots[c_sweep], state.env);
-    levels(state.lv[0], tilt, slot(c_balance), slot(c_fold), 0);
+    i32 target[cols];
+    levels(target, tilt, slot(c_balance), slot(c_fold), 0);
     if (!state.started || input.reduced_motion) {
-        for (u32 j = 1; j < rows; ++j)
-            for (u32 i = 0; i < cols; ++i) state.lv[j][i] = state.lv[0][i];
-    } else if ((state.clock += dt) >= history_step) {
-        state.clock = state.clock >= 4 * history_step ? 0 : state.clock - history_step;
+        for (u32 j = 0; j < rows; ++j)
+            for (u32 i = 0; i < cols; ++i) state.lv[j][i] = target[i];
+    } else {  // each row eases toward the one in front; the front row toward the voice's step levels
+        const i32 kf = cz::ease_rate(dt, tau_front), kr = cz::ease_rate(dt, tau_row);
         for (u32 j = rows - 1; j > 0; --j)
-            for (u32 i = 0; i < cols; ++i) state.lv[j][i] = state.lv[j - 1][i];
+            for (u32 i = 0; i < cols; ++i) state.lv[j][i] = cz::ease(state.lv[j][i], state.lv[j - 1][i], kr);
+        for (u32 i = 0; i < cols; ++i) state.lv[0][i] = cz::ease(state.lv[0][i], target[i], kf);
     }
 
     u32 left = state.started ? redraw_budget : parts;
@@ -63,7 +65,7 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
             const i32 y_q2 = base_q2 - ((v * height_px * 4) >> 15);
             const i32 lum = 155 + ((85 * v) >> 15) - 6 * static_cast<i32>(j);
             const u32 shade = static_cast<u32>(clamp(((lum - 30) * 2) / 27, 0, 15));
-            want = static_cast<u32>(y_q2 & 0xffff) | shade << 16 | 1u << 31;
+            want = static_cast<u32>((y_q2 >> 2) & 0xffff) | shade << 16 | 1u << 31;  // whole pixels
             if (state.started && want == state.drawn[n]) continue;
             opxy::draw::place(frame, n, cx_q2 * (unit / 4), y_q2 * (unit / 4), unit, shade, opxy::draw::fill_and_stroke);
         } else {  // the riser up from the lower of this level and the column before's, at the cell's front-left corner
@@ -72,9 +74,12 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
             const i32 y_q2 = base_q2 - ((low * height_px * 4) >> 15) + 12;  // the tops' front edge sits 3 px low
             const i32 scale = (rise_q2 * unit) / (riser_px * 4);
             const u32 shade = static_cast<u32>(clamp(((200 - 12 * static_cast<i32>(j) - 30) * 2) / 27, 0, 15));
-            want = rise_q2 < 4 ? 0x7fffffffu : static_cast<u32>(y_q2 & 0xffff) | static_cast<u32>(scale >> 3) << 16 | shade << 26;
+            // Hysteresis: a riser shows once its step passes 2 px and hides only under 1 px, so a step
+            // resting near a pixel doesn't blink.
+            const bool was = state.started && state.drawn[n] != 0x7fffffffu, hidden = was ? rise_q2 < 4 : rise_q2 < 8;
+            want = hidden ? 0x7fffffffu : static_cast<u32>((y_q2 >> 2) & 0xffff) | static_cast<u32>(scale >> 3) << 16 | shade << 26;
             if (state.started && want == state.drawn[n]) continue;
-            if (rise_q2 < 4) opxy::draw::hide(frame, n);  // under a pixel: no riser
+            if (hidden) opxy::draw::hide(frame, n);
             else opxy::draw::place(frame, n, (cx_q2 - 66) * (unit / 4), y_q2 * (unit / 4), clamp(scale, 32, 2 * unit), shade, opxy::draw::fill_and_stroke);
         }
         state.drawn[n] = want;

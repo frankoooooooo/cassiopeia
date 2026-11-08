@@ -2,15 +2,14 @@
 
 // Ruchbah's screen: the cell terrace of masses, one cell per stretch of the ring the scanner reads. The
 // screen strikes and steps its own copy of the voice's ring at the voice's rate (once per audio block,
-// 689 a second), so the cells move as the sound does, and each swells with how fast its masses are moving:
-// at rest a field of small, still cells; a strike sends a swell through it. Calm by design (owner: the
-// first version was frantic): heights are the ring averaged over neighbouring masses and eased over
-// ~0.1 s, the swell follows a motion envelope that falls over ~0.4 s, and the gain stops at 2×: a pluck's bump travels and spreads, Stiff
-// speeds it, Damping settles it, Excite chooses what each note throws in (turning it strikes once, to
-// show the shape). Rows going back are 35 ms
-// apart, so the motion shows as a wake. Heights carry up to 4× gain as the strike disperses (grey keeps the
-// true level). While nothing sounds and the ring is still, the terrace eases into a faint pose of the
-// Excite shape (display only), then nothing redraws.
+// 689 a second), so the cells move as the sound does: a pluck's bump travels and spreads, Stiff speeds
+// it, Damping settles it, Excite chooses what each note throws in (turning it strikes once, to show the
+// shape). Each cell swells with how fast its masses move: at rest a field of small, still cells; a
+// strike sends a swell through it. Calm by design (the first version was frantic): heights are the ring
+// averaged over neighbouring masses and eased over ~0.1 s, the swell follows a motion envelope that
+// falls over ~0.4 s, the gain stops at 2× (grey keeps the true level), and each row behind eases toward
+// the one in front (~140 ms), so motion shows as a wake. While nothing sounds and the ring is still,
+// the terrace eases into a faint pose of the Excite shape (display only), then nothing redraws.
 namespace ruchbah {
 namespace screen {
 using opxy::i32;
@@ -19,8 +18,8 @@ using opxy::draw::unit;
 
 const i32 left_px = 14, span_px = 360;
 const i32 row_dx = 11, row_dy = 15, base_y = 182, height_px = 28;
-const u32 redraw_budget = 56;
-const i32 history_step = 72;                  // Q10 seconds between rows (70 ms), as the family
+const u32 redraw_budget = cells;               // every node may update each frame (a small frame)
+const i32 tau_row = 143;                      // Q10 seconds: each row eases toward the one in front over ~140 ms
 const i32 steps_per_second = 689;             // 44100 / 64, the voice's block rate
 }
 
@@ -29,7 +28,6 @@ inline void display_reset(DisplayState& state) {
     state.started = 0;
     state.cursor = 0;
     state.env = 0;
-    state.clock = 0;
     state.due = 0;
     state.ring.lfsr = 0xace1u;
     state.rest_mix = 0;
@@ -102,10 +100,13 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
     if (!state.started || input.reduced_motion) {
         for (u32 j = 1; j < rows; ++j)
             for (u32 i = 0; i < cols; ++i) { state.cv[j][i] = state.cv[0][i]; state.cs[j][i] = state.cs[0][i]; }
-    } else if ((state.clock += dt) >= history_step) {
-        state.clock = state.clock >= 4 * history_step ? 0 : state.clock - history_step;
+    } else {  // each row eases toward the one in front (the front row already eases, through calm[])
+        const i32 kr = cz::ease_rate(dt, tau_row);
         for (u32 j = rows - 1; j > 0; --j)
-            for (u32 i = 0; i < cols; ++i) { state.cv[j][i] = state.cv[j - 1][i]; state.cs[j][i] = state.cs[j - 1][i]; }
+            for (u32 i = 0; i < cols; ++i) {
+                state.cv[j][i] = static_cast<opxy::i16>(cz::ease(state.cv[j][i], state.cv[j - 1][i], kr));
+                state.cs[j][i] = static_cast<opxy::u16>(cz::ease(state.cs[j][i], state.cs[j - 1][i], kr));
+            }
     }
 
     u32 left = state.started ? redraw_budget : cells;
@@ -117,7 +118,7 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
         // Grey follows height, and moving cells are brighter: a swell reads as a passing light.
         const i32 lum = 120 + ((70 * v) >> 15) + ((scale - 717) * 60) / 461 - 6 * static_cast<i32>(j);
         const u32 shade = static_cast<u32>(clamp(((lum - 30) * 2) / 27, 0, 15));
-        const u32 want = static_cast<u32>(y_q2 & 0xffff) | static_cast<u32>(scale >> 5) << 16 | shade << 24;
+        const u32 want = static_cast<u32>((y_q2 >> 2) & 0xffff) | static_cast<u32>(scale >> 5) << 16 | shade << 24;  // whole pixels
         if (state.started && want == state.drawn[n]) continue;
         opxy::draw::place(frame, n, x_q2 * (unit / 4), y_q2 * (unit / 4), scale, shade, opxy::draw::fill_and_stroke);
         state.drawn[n] = want;

@@ -72,6 +72,27 @@ inline void glide(i32* smooth, opxy::Parameters p, unsigned n, opxy::u8& primed)
     primed = 1;
 }
 
+// Screens: the fraction (Q12) of a gap that one frame of dt closes for a time constant tau (both Q10 s).
+inline i32 ease_rate(i32 dt, i32 tau) {
+    const i32 k = (dt << 12) / tau;
+    return k > 4096 ? 4096 : k;
+}
+// Screens: one eased step of v toward target, at least one unit and never past it, so easing always
+// arrives and a still screen stops redrawing. |target − v| stays under 2^18 here, so the product fits.
+inline i32 ease(i32 v, i32 target, i32 k12) {
+    const i32 gap = target - v;
+    if (!gap) return v;
+    i32 step = (gap * k12) >> 12;
+    if (!step) step = gap > 0 ? 1 : -1;
+    return v + step;
+}
+// Screens: a whole count with hysteresis. value_q8 is the count in Q8; the shown count changes only once
+// the value is `band` (Q8) past one of its boundaries, so a value resting on a boundary doesn't flicker.
+inline i32 sticky(i32 shown, i32 value_q8, i32 band) {
+    if (value_q8 >= (shown + 1) * 256 + band || value_q8 < shown * 256 - band) return value_q8 >> 8;
+    return shown;
+}
+
 // DC blocker (R = 0.9995) and output scaling from Q15 to 0.24 FS: a held cosine (Width) is a pulse that
 // the blocker can swing to nearly twice its amplitude, so this stays under outputPeakQ31 (0.5 FS).
 const i32 dc_r = 2146409906;

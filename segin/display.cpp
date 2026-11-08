@@ -5,7 +5,7 @@
 // no pitch) fires the burst: every pulse is an island of cells rising from the floor, each lower than
 // the last as Decay bites, and the cell where a pulse begins is lit so the pulses can be counted. Past
 // the burst the cycle is floor, drawn as dim outlines. Formant packs more, narrower islands into the
-// cycle and is captioned in Hz. Rows going back are 70 ms apart, so Sweep's strike rolls away.
+// cycle and is captioned in Hz. Rows going back each ease toward the one in front (~140 ms), so Sweep's strike rolls away.
 namespace segin {
 namespace screen {
 using opxy::i32;
@@ -14,8 +14,9 @@ using opxy::draw::unit;
 
 const i32 left_px = 14, span_px = 360;
 const i32 row_dx = 11, row_dy = 15, base_y = 196, height_px = 48;
-const u32 redraw_budget = 48;
-const i32 history_step = 72;
+const u32 redraw_budget = cells;  // every node may update each frame (a small frame)
+const i32 tau_front = 82;                       // Q10 seconds: the front row eases toward the sound over ~80 ms
+const i32 tau_row = 143;                        // Q10 seconds: each row eases toward the one in front over ~140 ms
 const u32 nominal_hz = 110;  // A2: low enough that the default burst leaves floor
 
 // "776" or "1.2k": the formant's caption.
@@ -41,7 +42,6 @@ inline void display_reset(DisplayState& state) {
     state.started = 0;
     state.cursor = 0;
     state.env = 0;
-    state.clock = 0;
 }
 
 inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& frame) {
@@ -68,6 +68,8 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
     if (ratio < 256) ratio = 256;
     const u32 pulses = 1 + cz::choice(input.slots[c_pulses], max_pulses);
     const i32 keep = decay_keep(slot(c_decay));
+    opxy::i16 old[cols];
+    for (u32 i = 0; i < cols; ++i) old[i] = state.cv[0][i];
     u32 last_n = 0xffffffffu;
     for (u32 i = 0; i < cols; ++i) {
         const u32 t = ((2 * i + 1) * ratio) / (2 * cols);  // pulses into the cycle, Q8
@@ -82,10 +84,16 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
     if (!state.started || input.reduced_motion) {
         for (u32 j = 1; j < rows; ++j)
             for (u32 i = 0; i < cols; ++i) { state.cv[j][i] = state.cv[0][i]; state.lead[j][i] = state.lead[0][i]; }
-    } else if ((state.clock += dt) >= history_step) {
-        state.clock = state.clock >= 4 * history_step ? 0 : state.clock - history_step;
+    } else {
+        // Each row eases toward the one in front (a sinking island turns to floor once it reaches it); the
+        // front row eases toward the burst. Which cells start a pulse follows straight through.
+        const i32 kf = cz::ease_rate(dt, tau_front), kr = cz::ease_rate(dt, tau_row);
         for (u32 j = rows - 1; j > 0; --j)
-            for (u32 i = 0; i < cols; ++i) { state.cv[j][i] = state.cv[j - 1][i]; state.lead[j][i] = state.lead[j - 1][i]; }
+            for (u32 i = 0; i < cols; ++i) {
+                state.cv[j][i] = static_cast<opxy::i16>(cz::ease(state.cv[j][i], state.cv[j - 1][i], kr));
+                state.lead[j][i] = state.lead[j - 1][i];
+            }
+        for (u32 i = 0; i < cols; ++i) state.cv[0][i] = static_cast<opxy::i16>(cz::ease(old[i], state.cv[0][i], kf));
     }
 
     u32 left = state.started ? redraw_budget : cells;
@@ -99,7 +107,7 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
                       : state.lead[j][i] ? 222 - 7 * static_cast<i32>(j) : 90 + ((110 * v) >> 15) - 7 * static_cast<i32>(j);
         const u32 shade = static_cast<u32>(clamp(((lum - 30) * 2) / 27, 0, 15));
         const opxy::draw::Paint paint = floor ? opxy::draw::stroke : opxy::draw::fill_and_stroke;
-        const u32 want = static_cast<u32>(y_q2 & 0xffff) | shade << 16 | static_cast<u32>(paint) << 20;
+        const u32 want = static_cast<u32>((y_q2 >> 2) & 0xffff) | shade << 16 | static_cast<u32>(paint) << 20;  // whole pixels
         if (state.started && want == state.drawn[n]) continue;
         opxy::draw::place(frame, n, x_q2 * (unit / 4), y_q2 * (unit / 4), unit, shade, paint);
         state.drawn[n] = want;

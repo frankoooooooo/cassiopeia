@@ -5,7 +5,7 @@
 // edges sit where the phase map reaches 0, 1/16, … 1, so cells crowd at the knee and stretch through
 // the slow half, and each cell's height is the cosine there. Waves with no map (Dbl, Res 1–3) space
 // their columns by where the wave does its work (cumulative |change|). Width pushes every column left of
-// the held gap. Going back, each row is the terrace as it was 70 ms earlier, so Sweep's strike rolls
+// the held gap. Going back, each row eases toward the one in front (~140 ms), so Sweep's strike rolls
 // away from the front. Grey follows height. At rest the rows converge and nothing redraws.
 namespace schedar {
 namespace screen {
@@ -16,8 +16,9 @@ using opxy::draw::unit;
 const i32 left_px = 14, span_px = 360;          // the front row's extent; each row back shifts right
 const i32 row_dx = 11, row_dy = 15, base_y = 180, height_px = 32;  // front troughs at 212, back peaks at 28
 const i32 cell_px = 20;                          // the authored top's width at scale 1
-const u32 redraw_budget = 48;                    // nodes rewritten a frame
-const i32 history_step = 72;                     // Q10 seconds between rows (70 ms)
+const u32 redraw_budget = cells;                 // every node may update each frame (a small frame)
+const i32 tau_front = 82;                       // Q10 seconds: the front row eases toward the sound over ~80 ms
+const i32 tau_row = 143;                        // Q10 seconds: each row eases toward the one in front over ~140 ms
 
 inline i32 cosine_at(u32 g16) { return cz::sine((g16 << 16) + 0x40000000u); }
 
@@ -84,7 +85,6 @@ inline void display_reset(DisplayState& state) {
     state.started = 0;
     state.cursor = 0;
     state.env = 0;
-    state.clock = 0;
 }
 
 inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& frame) {
@@ -100,14 +100,28 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
     state.env -= (state.env >> 9) * dt;  // exp(−t / 0.5 s), per frame
     if (state.env < 0) state.env = 0;
 
+    // The front row eases toward the sound; each row behind eases toward the one in front, so changes
+    // glide back through the terrace instead of stepping.
+    opxy::i16 ox[cols], ov[cols];
+    opxy::u16 os[cols];
+    for (u32 i = 0; i < cols; ++i) { ox[i] = state.cx[0][i]; os[i] = state.cs[0][i]; ov[i] = state.cv[0][i]; }
     front_row(state, input);
     if (!state.started || input.reduced_motion) {  // every row shows now
         for (u32 j = 1; j < rows; ++j)
             for (u32 i = 0; i < cols; ++i) { state.cx[j][i] = state.cx[0][i]; state.cs[j][i] = state.cs[0][i]; state.cv[j][i] = state.cv[0][i]; }
-    } else if ((state.clock += dt) >= history_step) {
-        state.clock = state.clock >= 4 * history_step ? 0 : state.clock - history_step;
+    } else {
+        const i32 kf = cz::ease_rate(dt, tau_front), kr = cz::ease_rate(dt, tau_row);
         for (u32 j = rows - 1; j > 0; --j)
-            for (u32 i = 0; i < cols; ++i) { state.cx[j][i] = state.cx[j - 1][i]; state.cs[j][i] = state.cs[j - 1][i]; state.cv[j][i] = state.cv[j - 1][i]; }
+            for (u32 i = 0; i < cols; ++i) {
+                state.cx[j][i] = static_cast<opxy::i16>(cz::ease(state.cx[j][i], state.cx[j - 1][i], kr));
+                state.cs[j][i] = static_cast<opxy::u16>(cz::ease(state.cs[j][i], state.cs[j - 1][i], kr));
+                state.cv[j][i] = static_cast<opxy::i16>(cz::ease(state.cv[j][i], state.cv[j - 1][i], kr));
+            }
+        for (u32 i = 0; i < cols; ++i) {
+            state.cx[0][i] = static_cast<opxy::i16>(cz::ease(ox[i], state.cx[0][i], kf));
+            state.cs[0][i] = static_cast<opxy::u16>(cz::ease(os[i], state.cs[0][i], kf));
+            state.cv[0][i] = static_cast<opxy::i16>(cz::ease(ov[i], state.cv[0][i], kf));
+        }
     }
 
     // Place what differs, at most redraw_budget nodes a frame (all of them on the first frame).

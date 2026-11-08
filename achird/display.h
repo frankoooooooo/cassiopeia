@@ -16,7 +16,6 @@ struct DisplayState {
     opxy::u32 started;    // 0 until the first frame has placed every part
     opxy::u32 cursor;     // where the redraw scan resumes
     opxy::i32 env;        // the Sweep envelope, Q31, restarted by each note
-    opxy::i32 clock;      // Q10 seconds toward the next history step
     opxy::i32 lv[rows][cols];   // each step's level, Q15
     opxy::u32 drawn[parts];     // what each node shows: y, scale and shade, packed
 };

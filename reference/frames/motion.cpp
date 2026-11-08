@@ -1,7 +1,7 @@
 // Plays a scripted take through an engine's real display() at 30 frames a second and writes the frames
 // as JSON deltas (only nodes that changed), for the review page's player.
 // c++ -std=c++17 -iquote <engine folder> -I ../open-xy-staging/sdk/include -DENGINE=navi motion.cpp -o m
-// m <out.json> p0 p1 p2 p3 sweep first_to second_to
+// m <out.json> p0 p1 p2 p3 sweep first_to second_to [frames, default 150]
 // Take (150 frames, 5 s): rest 1 s; a held note at 1 s; control 1 ramps to first_to over 2.5..3.8 s;
 // control 2 ramps to second_to over 3.8..5 s; the note is released at 4.7 s.
 #include "display.cpp"
@@ -26,7 +26,8 @@ int main(int argc, char** argv) {
     static char last_header[4][8];
     FILE* o = std::fopen(argv[1], "w");
     std::fprintf(o, "[");
-    for (int f = 0; f < 150; ++f) {
+    const int total = argc > 9 ? std::atoi(argv[9]) : 150;  // longer takes show the settle after release
+    for (int f = 0; f < total; ++f) {
         if (f == 30) { in.note_serial = 1; in.held_notes = 1; }
         if (f == 141) { in.held_notes = 0; in.note_off_serial = 1; }
         const double r1 = f < 75 ? 0 : f >= 114 ? 1 : (f - 75) / 39.0, r2 = f < 114 ? 0 : (f - 114) / 35.0;

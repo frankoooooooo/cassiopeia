@@ -21,7 +21,6 @@ struct DisplayState {
     opxy::u32 started;    // 0 until the first frame has placed every part
     opxy::u32 cursor;     // where the redraw scan resumes
     opxy::i32 env;        // the Sweep envelope, Q31, restarted by each note
-    opxy::i32 clock;      // Q10 seconds toward the next history step
     opxy::i32 due;        // ring steps owed, Q10 (689 a second)
     opxy::i16 cv[rows][cols];   // each cell's height: the ring there, Q15
     opxy::u16 cs[rows][cols];   // each cell's size: how fast the ring moves there, as a node scale (Q10)

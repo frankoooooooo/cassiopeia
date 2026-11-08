@@ -6,7 +6,7 @@
 // while notes sound they slide apart and back at a beat rate that follows Detune, and at rest they ease
 // back into whole cells. Shape morphs the
 // profile from triangle to pulse to saw, Width moves the pulse edge and the triangle's apex. Going back,
-// each row is the terrace 70 ms earlier, so Sweep's strike rolls away. At rest nothing redraws.
+// each row eases toward the one in front (~140 ms), so Sweep's strike rolls away. At rest nothing redraws.
 namespace caph {
 namespace screen {
 using opxy::i32;
@@ -16,8 +16,9 @@ using opxy::draw::unit;
 const i32 left_px = 14, span_px = 360;
 const i32 row_dx = 11, row_dy = 15, base_y = 180, height_px = 30;
 const i32 half_dx = 11;                         // B's centre sits 11 px right of A's
-const u32 redraw_budget = 56;
-const i32 history_step = 72;                    // Q10 seconds between rows (70 ms)
+const u32 redraw_budget = 64;
+const i32 tau_front = 82;                       // Q10 seconds: the front row eases toward the sound over ~80 ms
+const i32 tau_row = 143;                        // Q10 seconds: each row eases toward the one in front over ~140 ms
 }
 
 inline void display_reset(DisplayState& state) {
@@ -26,7 +27,6 @@ inline void display_reset(DisplayState& state) {
     state.cursor = 0;
     state.offset = 0;
     state.env = 0;
-    state.clock = 0;
 }
 
 inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& frame) {
@@ -44,12 +44,15 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
 
     const i32 detune = input.slots[c_detune] < 0 ? 0 : input.slots[c_detune] >> 16;  // Q15
     const bool sounding = input.held_notes != 0 && input.held_notes <= 128;
-    // The beat: up to 4 cycles a second at 35 cents (about a 220 Hz note's), only while notes sound.
+    // The beat: up to 2 cycles a second at 35 cents (half a 220 Hz note's, to keep the screen calm), only
+    // while notes sound.
     // At rest the halves ease back together (the shorter way round), so the split means beating now.
-    if (sounding && !input.reduced_motion) state.offset += static_cast<u32>(detune) * 4u * static_cast<u32>(dt) * 128u;
+    if (sounding && !input.reduced_motion) state.offset += static_cast<u32>(detune) * 2u * static_cast<u32>(dt) * 128u;
     else {
+        // Back together over ~0.25 s, then exactly together (an exponential alone takes seconds to stop).
         const i32 lead = static_cast<i32>(state.offset);
-        state.offset = static_cast<u32>(lead - ((lead >> 9) * dt));
+        const i32 next = lead - ((lead >> 8) * dt);
+        state.offset = static_cast<u32>(next > -(1 << 22) && next < (1 << 22) ? 0 : next);
     }
 
     // Detune's caption in cents (no printf on the device): "0ct" .. "35ct".
@@ -65,21 +68,22 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
     // The front row now.
     const i32 shape = cz::swept(input.slots[c_shape] < 0 ? 0 : input.slots[c_shape] >> 16, input.slots[c_sweep] < 0 ? 0 : input.slots[c_sweep], state.env);
     const u32 d = duty16(input.slots[c_width] < 0 ? 0 : input.slots[c_width] >> 16);
-    for (u32 i = 0; i < cols; ++i) {
+    const bool snap = !state.started || input.reduced_motion;
+    const i32 kf = cz::ease_rate(dt, tau_front), kr = cz::ease_rate(dt, tau_row);
+    if (!snap)  // each row eases toward the one in front, back row first
+        for (u32 j = rows - 1; j > 0; --j)
+            for (u32 h = 0; h < 2; ++h)
+                for (u32 i = 0; i < cols; ++i) state.cv[j][h][i] = static_cast<opxy::i16>(cz::ease(state.cv[j][h][i], state.cv[j - 1][h][i], kr));
+    for (u32 i = 0; i < cols; ++i) {  // the front row eases toward the sound
         const u32 x = ((2 * i + 1) << 16) / (2 * cols);
-        state.cv[0][0][i] = static_cast<opxy::i16>(naive_shape(x, shape, d));
-        state.cv[0][1][i] = static_cast<opxy::i16>(naive_shape((x + (state.offset >> 16)) & 0xffffu, shape, d));
+        const i32 a = naive_shape(x, shape, d), b = naive_shape((x + (state.offset >> 16)) & 0xffffu, shape, d);
+        state.cv[0][0][i] = static_cast<opxy::i16>(snap ? a : cz::ease(state.cv[0][0][i], a, kf));
+        state.cv[0][1][i] = static_cast<opxy::i16>(snap ? b : cz::ease(state.cv[0][1][i], b, kf));
     }
-    if (!state.started || input.reduced_motion) {
+    if (snap)
         for (u32 j = 1; j < rows; ++j)
             for (u32 h = 0; h < 2; ++h)
                 for (u32 i = 0; i < cols; ++i) state.cv[j][h][i] = state.cv[0][h][i];
-    } else if ((state.clock += dt) >= history_step) {
-        state.clock = state.clock >= 4 * history_step ? 0 : state.clock - history_step;
-        for (u32 j = rows - 1; j > 0; --j)
-            for (u32 h = 0; h < 2; ++h)
-                for (u32 i = 0; i < cols; ++i) state.cv[j][h][i] = state.cv[j - 1][h][i];
-    }
 
     u32 left = state.started ? redraw_budget : halves;
     for (u32 k = 0; k < halves && left; ++k) {
