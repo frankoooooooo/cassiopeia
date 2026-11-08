@@ -2,6 +2,7 @@
 #include "../engine.cpp"
 #include <cstdio>
 #include <initializer_list>
+#include <cmath>
 
 namespace {
 using opxy::i32;
@@ -89,6 +90,33 @@ int main() {
             std::printf("  sweep %.4f %.4f %.4f\n", up, mid, down);
             fail("Sweep direction", 0, 0, 0);
         }
+    }
+    // A wave change mid-note crossfades over one block: no sample step larger than steady playing makes.
+    {
+        u32 pitch[opxy::block_frames];
+        for (unsigned i = 0; i < opxy::block_frames; ++i) pitch[i] = 10713070u;  // 110 Hz
+        i32 out[opxy::block_frames];
+        double steady = 0, change = 0;
+        for (unsigned a = 0; a < 8; ++a)
+            for (unsigned b = 0; b < 8; ++b) {
+                if (a == b) continue;
+                static schedar::Voice v;
+                static schedar::Shared sh;
+                schedar::initialize(v, sh, 1);
+                i32 last = 0;
+                for (int blk = 0; blk < 60; ++blk) {
+                    const i32 p[8] = {word(0.45), 0, wave_word(blk < 37 ? a : b), word(0.5), 0, 0, 0, 0};
+                    schedar::render(v, sh, 1, out, p, pitch);
+                    for (unsigned i = 0; i < opxy::block_frames; ++i) {
+                        const double d = std::fabs((out[i] - last) / 2147483648.0);
+                        last = out[i];
+                        if (blk < 10) continue;
+                        double& worst = blk == 37 || blk == 38 ? change : steady;
+                        worst = d > worst ? d : worst;
+                    }
+                }
+            }
+        if (change > steady * 1.25) { std::printf("  step %.4f across a change vs %.4f steady\n", change, steady); fail("wave change clicks", 0, 0, 0); }
     }
     if (failures) std::printf("%d failures\n", failures);
     else std::puts("ok");

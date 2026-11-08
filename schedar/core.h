@@ -14,7 +14,9 @@ struct Voice {
     // This block's phase map: piecewise-linear segments in Q16 (start x, start g, slope·2^25).
     opxy::u32 seg_x[max_segments], seg_g[max_segments];
     opxy::i32 seg_s[max_segments];
+    opxy::i32 fade[opxy::block_frames];  // the old wave, for the one block that crossfades a wave change
     opxy::u8 primed;
+    opxy::u8 wave;                       // the last block's wave; none (0xff) after a note starts
 };
 struct Shared {};
 

@@ -75,6 +75,7 @@ __attribute__((noinline)) void res_pass(Voice& v, opxy::Output out, opxy::Pitch 
 }
 
 inline void start(Voice& v, Shared&, u32) {
+    v.wave = 0xff;  // no previous wave: a new note doesn't crossfade
     v.phase = 0;
     v.env = opxy::q31::maximum;
     v.primed = 0;  // the first block takes this note's knob values outright (a reused voice held the last note's)
@@ -86,6 +87,22 @@ inline void initialize(Voice& v, Shared& shared, u32 owner) {
 }
 
 inline void destroy(Voice&, Shared&, u32) {}
+
+// One block of `wave` into out (each wave's own pass).
+inline void wave_pass(Voice& v, opxy::Output out, opxy::Pitch pitch, u32 wave, u32 au, i32 gap) {
+    if (wave == w_double) return double_pass(v, out, pitch, gap, static_cast<i32>((32768u + au) << 10));
+    if (wave >= w_res1) {
+        const i32 k = static_cast<i32>((32768u + 7u * au) << 10);  // resonant multiple 1..8
+        if (wave == w_res1) return res_pass<0>(v, out, pitch, gap, k);
+        if (wave == w_res2) return res_pass<1>(v, out, pitch, gap, k);
+        return res_pass<2>(v, out, pitch, gap, k);
+    }
+    u32 x[6], g[6];
+    const unsigned n = map_points(wave, au, x, g);
+    unsigned count;
+    build(v, x, g, n, count);
+    map_pass(v, out, pitch, gap, count);
+}
 
 inline void render(Voice& v, Shared&, u32, opxy::Output output, opxy::Parameters parameters,
                    opxy::Pitch pitch) {
@@ -101,18 +118,22 @@ inline void render(Voice& v, Shared&, u32, opxy::Output output, opxy::Parameters
     const i32 gap = cz::slope25(65536u, 65536u - hold);
     const u32 au = static_cast<u32>(a);
 
-    if (wave == w_double) return double_pass(v, output, pitch, gap, static_cast<i32>((32768u + au) << 10));
-    if (wave >= w_res1) {
-        const i32 k = static_cast<i32>((32768u + 7u * au) << 10);  // resonant multiple 1..8
-        if (wave == w_res1) return res_pass<0>(v, output, pitch, gap, k);
-        if (wave == w_res2) return res_pass<1>(v, output, pitch, gap, k);
-        return res_pass<2>(v, output, pitch, gap, k);
-    }
-
-    u32 x[6], g[6];
-    const unsigned n = map_points(wave, au, x, g);
-    unsigned count;
-    build(v, x, g, n, count);
-    map_pass(v, output, pitch, gap, count);
+    // A wave change mid-cycle would jump the output (the map waves start each cycle at +1, Dbl and Res at
+    // 0), a click. For that one block, render the old wave too, from the same phase and DC state, and
+    // crossfade old -> new across it. Every other block renders once, as before.
+    const u32 old = v.wave;
+    v.wave = static_cast<opxy::u8>(wave);
+    if (old >= wave_count || old == wave) return wave_pass(v, output, pitch, wave, au, gap);
+    const u32 phase = v.phase;
+    const i32 dx = v.dc_x, dy = v.dc_y;
+    wave_pass(v, v.fade, pitch, old, au, gap);
+    v.phase = phase;
+    v.dc_x = dx;
+    v.dc_y = dy;
+    wave_pass(v, output, pitch, wave, au, gap);
+    for (unsigned i = 0; i + 1 < opxy::block_frames; ++i) {
+        const i32 t = static_cast<i32>((i + 1) << 25);  // (i + 1)/64 in Q31
+        output[i] = opxy::q31::multiply(v.fade[i], opxy::q31::maximum - t) + opxy::q31::multiply(output[i], t);
+    }  // the last sample is the new wave alone
 }
 }

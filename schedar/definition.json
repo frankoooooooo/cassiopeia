@@ -95,7 +95,7 @@
     }
   },
   "resources": {
-    "voiceBytes": 96,
+    "voiceBytes": 352,
     "voiceAlignment": 4,
     "voiceCapacity": 8,
     "sharedBytes": 0,
