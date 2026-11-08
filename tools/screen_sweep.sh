@@ -1,6 +1,7 @@
 #!/bin/sh
 # Runs every engine's real display() under the sanitizers (overflow, bad memory) at each control's
-# extremes, at rest and just after a note; any report fails. CI runs it; so can you:
+# extremes, at rest and just after a note, then plays its motion take and checks the screen comes to
+# rest after the note ends (stops redrawing). Any report fails. CI runs it; so can you:
 #   sh tools/screen_sweep.sh [path to open-xy/sdk/include] [c++ compiler] [engines…, default all six]
 set -e
 cd "$(dirname "$0")/.."
@@ -12,5 +13,7 @@ for e in $ENGINES; do
   for a in 0 0.5 1; do for b in 0 1; do for c in 0 0.5 0.999; do for d in 0 1; do for m in rest playing; do
     "$T/d" "$T/frame.txt" $m $a $b $c $d
   done; done; done; done; done
+  python3 reference/frames/takes.py --out "$T" --sdk "$SDK" --cxx "$CXX" $e
+  python3 reference/frames/busy.py --check-rest "$T/$e.json"
   echo "$e: clean"
 done

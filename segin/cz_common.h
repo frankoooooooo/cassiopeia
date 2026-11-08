@@ -86,10 +86,11 @@ inline i32 ease(i32 v, i32 target, i32 k12) {
     if (!step) step = gap > 0 ? 1 : -1;
     return v + step;
 }
-// Screens: a whole count with hysteresis. value_q8 is the count in Q8; the shown count changes only once
-// the value is `band` (Q8) past one of its boundaries, so a value resting on a boundary doesn't flicker.
+// Screens: a whole count with hysteresis. value_q8 is the count in Q8, rounded to the nearest whole; the
+// shown count changes only once the value is `band` (Q8) past a half-way boundary, so a value resting on
+// one doesn't flicker. (Boundaries at the halves, so the top count is reachable from below.)
 inline i32 sticky(i32 shown, i32 value_q8, i32 band) {
-    if (value_q8 >= (shown + 1) * 256 + band || value_q8 < shown * 256 - band) return value_q8 >> 8;
+    if (value_q8 >= shown * 256 + 128 + band || value_q8 < shown * 256 - 128 - band) return (value_q8 + 128) >> 8;
     return shown;
 }
 

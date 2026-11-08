@@ -25,8 +25,8 @@ Each folder is a self-contained machine. `tools/sync_common.sh` copies the share
 others; CI checks that the copies match. Tools:
 - `reference/render_all.sh <folder>`: listening renders of every preset and a tour.
 - `reference/frames/export.sh <folder>`: the screen's frames from its real `display()`.
-- `reference/frames/motion.cpp`: a scripted five-second take through `display()`, as frame deltas for a moving review page.
+- `reference/frames/motion.cpp`, `takes.py`, `busy.py`: scripted takes through `display()` as frame deltas, and how busy each screen is (px moved per square per frame, updates, settle time).
 - `reference/frames/check.sh <folder>`: operator-design's checks.
-- `tools/screen_sweep.sh`: every screen under the sanitizers at the controls' extremes (CI runs it).
+- `tools/screen_sweep.sh`: every screen under the sanitizers at the controls' extremes, and a check that it comes to rest after a note (CI runs it).
 - `tools/terrace_panel.py`: the terrace artwork.
 - `tools/make_presets.py`: the device presets.

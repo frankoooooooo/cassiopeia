@@ -75,7 +75,7 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
     state.gain += ((want_gain - state.gain) * dt) >> 8;
     const bool held = input.held_notes != 0 && input.held_notes <= 128;
     const i32 want_mix = !held && peak < 1600 ? 32767 : 0;
-    state.rest_mix = input.reduced_motion ? want_mix : state.rest_mix + (((want_mix - state.rest_mix) >> 6) * dt >> 4);
+    state.rest_mix = input.reduced_motion ? want_mix : state.rest_mix + (((want_mix - state.rest_mix) >> 4) * dt >> 4);  // ~0.25 s, so it rests within ~3 s of release
     Ring pose;
     for (u32 i = 0; i < masses; ++i) pose.x[i] = state.pose[i];
     const u32 mass = 0x08000000u;  // one mass along the ring, as a scan phase

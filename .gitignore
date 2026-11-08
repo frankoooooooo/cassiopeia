@@ -13,3 +13,4 @@ node_modules/
 reference/frames/*/*.svg
 reference/frames/*/*.png
 reference/frames/*/results.txt
+reference/frames/takes/
