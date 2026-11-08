@@ -2,6 +2,6 @@
   "schema": 1,
   "sdk": "1.10",
   "kind": "synth",
-  "description": "Phase distortion after the 1985 CZ: eight waves bent by one DCW Amount, a pulse-like Width gap and a bipolar Sweep envelope.",
+  "description": "Phase distortion after the 1985 CZ: eight waves bent by one Warp knob (the CZ's DCW), a pulse-like Width gap and a bipolar Sweep envelope.",
   "presets": "presets"
 }

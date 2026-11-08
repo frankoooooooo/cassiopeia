@@ -23,12 +23,12 @@ using opxy::u32;
 enum Wave { w_saw, w_square, w_pulse, w_double, w_sawpulse, w_res1, w_res2, w_res3, wave_count };
 inline bool is_mapped(u32 wave) { return wave <= w_pulse || wave == w_sawpulse; }
 
-// A mapped wave's phase map as Q16 points (x, g), at most 6, for Amount au (Q15); returns the count.
+// A mapped wave's phase map as Q16 points (x, g), at most 6, for Warp au (Q15); returns the count.
 // The engine reads a cosine through it; the screen spaces its columns by it.
 inline unsigned map_points(u32 wave, u32 au, u32* x, u32* g) {
     const u32 one = 65536u, half = 32768u;
     unsigned n = 0;
-    if (wave == w_square) {  // holds at the top and bottom of the cosine widen with Amount
+    if (wave == w_square) {  // holds at the top and bottom of the cosine widen with Warp
         const u32 hd = (au * 29491u) >> 15;  // 0.45·a, each hold
         const u32 r = half - hd;             // each ramp
         const u32 xs[5] = {0, hd, hd + r, 2 * hd + r, one}, gs[5] = {0, 0, half, half, one};
@@ -64,7 +64,7 @@ inline i32 res_window(u32 x) {
     return w > 32767 ? 32767 : w;
 }
 
-// One sample (Q15) of an unmapped wave (Dbl, Res 1–3) at Q16 phase x, for Amount au: the screen's
+// One sample (Q15) of an unmapped wave (Dbl, Res 1–3) at Q16 phase x, for Warp au: the screen's
 // scalar copy of the engine's double and resonant passes.
 inline i32 unmapped_sample(u32 wave, u32 au, u32 x) {
     if (wave == w_double) {

@@ -1,5 +1,5 @@
 // Schedar: phase-distortion voice. A clean-room take on the CZ technique: a linear phase is bent by a
-// piecewise-linear map before a cosine read (the DCW "Amount"), or a sine at k × the note is windowed
+// piecewise-linear map before a cosine read (Warp, the CZ's DCW), or a sine at k × the note is windowed
 // once per cycle (the resonant waves). Width ends each cycle early and holds its last value, the
 // pulse-like gap; Sweep is the DCW envelope.
 #include "core.h"
@@ -39,7 +39,7 @@ __attribute__((noinline)) void map_pass(Voice& v, opxy::Output out, opxy::Pitch 
     v.dc_y = y1;
 }
 
-// Double sine: a sine at (1 + Amount) × the note under a Hann window, so the cycle edge stays smooth.
+// Double sine: a sine at (1 + Warp) × the note under a Hann window, so the cycle edge stays smooth.
 __attribute__((noinline)) void double_pass(Voice& v, opxy::Output out, opxy::Pitch pitch, i32 gap, i32 k) {
     u32 p = v.phase;
     i32 x1 = v.dc_x, y1 = v.dc_y;

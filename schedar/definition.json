@@ -5,7 +5,7 @@
   "parameters": [
     {
       "id": "amount",
-      "label": "Amount",
+      "label": "Warp",
       "default": 0.45,
       "mapping": {
         "kind": "linear",

@@ -3,9 +3,9 @@
 A family of six [Open-XY](https://github.com/etcetc000/open-xy) synth engines for the OP-XY, one per
 oscillator of [PD Hybrid Synth](https://github.com/ChuckFleming/pd-hybrid-synth), each named after a star of Cassiopeia:
 
-| star | engine | 1st (Amount) | 2nd | 3rd | 4th | screen: the cell terrace as… |
+| star | engine | 1st (brightness) | 2nd | 3rd | 4th | screen: the cell terrace as… |
 |---|---|---|---|---|---|---|
-| Schedar `schedar` | Phase distortion, 8 CZ waves | Amount (DCW) | Width (cycle gap) | Wave | Sweep | warped columns, spaced by the phase map |
+| Schedar `schedar` | Phase distortion, 8 CZ waves | Warp (the CZ's DCW) | Width (cycle gap) | Wave | Sweep | warped columns, spaced by the phase map |
 | Caph `caph` | Analog pair, triangle → pulse → saw, polyBLEP | Shape | Width (duty, apex) | Detune (cents) | Sweep | split cells: A, then its detuned twin |
 | Navi `navi` | Vector phaseshaping | Formant | Inflect | Range | Sweep | banded stacks: piles as tall as the wave, solid or hollow by each cosine cycle the bend packs in |
 | Ruchbah `ruchbah` | Scanned synthesis, 32-mass ring | Stiff | Damping | Excite | Sweep | calm masses: eased heights that swell gently as the screen's copy of the ring moves |

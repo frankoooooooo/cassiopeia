@@ -20,6 +20,9 @@ const i32 left_px = 14, span_px = 360;
 const i32 row_dx = 11, row_dy = 15, base_y = 182, height_px = 28;
 const u32 redraw_budget = cells;               // every node may update each frame (a small frame)
 const i32 tau_row = 143;                      // Q10 seconds: each row eases toward the one in front over ~140 ms
+// The front row's second stage (after calm[]), so it is smoothed twice like the row behind it: the Tri
+// excite sloshes the whole ring at 5..15 Hz, which one stage passed to the front row as a jiggle.
+const i32 tau_front = 143;
 const i32 steps_per_second = 689;             // 44100 / 64, the voice's block rate
 }
 
@@ -79,6 +82,8 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
     Ring pose;
     for (u32 i = 0; i < masses; ++i) pose.x[i] = state.pose[i];
     const u32 mass = 0x08000000u;  // one mass along the ring, as a scan phase
+    const bool snap = !state.started || input.reduced_motion;
+    const i32 kf = cz::ease_rate(dt, tau_front);
     for (u32 i = 0; i < cols; ++i) {
         const u32 at = (2 * i + 1) * (0x80000000u / cols);  // each column's centre round the ring
         // The ring here averaged with its neighbours either side, so single-mass ripples don't jitter.
@@ -86,7 +91,7 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
         const i32 target = clamp(((ring * state.gain) >> 8) + ((((scan(pose, at) * 14746) >> 15) * state.rest_mix) >> 15), -32767, 32767);
         // Ease toward it over about 0.1 s (a frame's step is dt / 104 of the way).
         state.calm[i] = static_cast<opxy::i16>(!state.started || input.reduced_motion ? target : state.calm[i] + (((target - state.calm[i]) * clamp(dt * 10, 0, 1024)) >> 10));
-        state.cv[0][i] = state.calm[i];
+        state.cv[0][i] = static_cast<opxy::i16>(snap ? state.calm[i] : cz::ease(state.cv[0][i], state.calm[i], kf));
         // Motion: the ring's speed here (velocities, averaged the same way), into a follower that rises at
         // once and falls over about 0.4 s; it swells the cell 0.7x .. 1.15x.
         const u32 m = at >> 27, m2 = (m + 1) & (masses - 1), m0 = (m - 1) & (masses - 1);
@@ -95,7 +100,8 @@ inline void display(DisplayState& state, const opxy::draw::Input& input, Frame& 
         i32 e = state.energy[i];
         e = speed > e ? speed : e - ((e * dt) >> 9);
         state.energy[i] = static_cast<opxy::i16>(e < 0 ? 0 : e);
-        state.cs[0][i] = static_cast<opxy::u16>(717 + ((state.energy[i] * 461) >> 15));
+        const i32 size = 717 + ((state.energy[i] * 461) >> 15);
+        state.cs[0][i] = static_cast<opxy::u16>(snap ? size : cz::ease(state.cs[0][i], size, kf));
     }
     if (!state.started || input.reduced_motion) {
         for (u32 j = 1; j < rows; ++j)
