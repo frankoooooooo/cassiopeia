@@ -75,7 +75,7 @@ __attribute__((noinline)) void res_pass(Voice& v, opxy::Output out, opxy::Pitch 
 }
 
 inline void start(Voice& v, Shared&, u32) {
-    v.wave = 0xff;  // no previous wave: a new note doesn't crossfade
+    v.wave = 0xff;  // no previous wave: a new note doesn't join anything
     v.phase = 0;
     v.env = opxy::q31::maximum;
     v.primed = 0;  // the first block takes this note's knob values outright (a reused voice held the last note's)
@@ -119,21 +119,17 @@ inline void render(Voice& v, Shared&, u32, opxy::Output output, opxy::Parameters
     const u32 au = static_cast<u32>(a);
 
     // A wave change mid-cycle would jump the output (the map waves start each cycle at +1, Dbl and Res at
-    // 0), a click. For that one block, render the old wave too, from the same phase and DC state, and
-    // crossfade old -> new across it. Every other block renders once, as before.
+    // 0), a click. On that one block, the new wave carries a correction that starts at the gap between the
+    // last sample out and its first, and fades to nothing across the block: the join is smooth and the block
+    // still renders one wave (rendering both and crossfading doubled that block's cost on the device).
     const u32 old = v.wave;
     v.wave = static_cast<opxy::u8>(wave);
-    if (old >= wave_count || old == wave) return wave_pass(v, output, pitch, wave, au, gap);
-    const u32 phase = v.phase;
-    const i32 dx = v.dc_x, dy = v.dc_y;
-    wave_pass(v, v.fade, pitch, old, au, gap);
-    v.phase = phase;
-    v.dc_x = dx;
-    v.dc_y = dy;
     wave_pass(v, output, pitch, wave, au, gap);
-    for (unsigned i = 0; i + 1 < opxy::block_frames; ++i) {
-        const i32 t = static_cast<i32>((i + 1) << 25);  // (i + 1)/64 in Q31
-        output[i] = opxy::q31::multiply(v.fade[i], opxy::q31::maximum - t) + opxy::q31::multiply(output[i], t);
-    }  // the last sample is the new wave alone
+    if (old < wave_count && old != wave) {
+        const i32 gap_out = v.last - output[0];  // both within ±0.5 FS, so the gap fits
+        for (unsigned i = 0; i < opxy::block_frames; ++i)
+            output[i] += opxy::q31::multiply(gap_out, static_cast<i32>(((opxy::block_frames - i) << 25) - 1));  // (64 − i)/64, Q31
+    }
+    v.last = output[opxy::block_frames - 1];
 }
 }
