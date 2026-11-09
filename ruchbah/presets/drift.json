@@ -27,13 +27,13 @@
     "tuning.root": 0,
     "tuning.scale": 0,
     "velocity.sensitivity": 0,
-    "volume": 16384,
+    "volume": 22937,
     "width": 0,
     "params": [
-      1638,
+      655,
       0,
       4096,
-      6553,
+      0,
       0,
       0,
       0,
@@ -42,7 +42,7 @@
   },
   "envelope": {
     "amp": {
-      "attack": 10362,
+      "attack": 11351,
       "decay": 17947,
       "release": 12043,
       "sustain": 26214
@@ -82,7 +82,7 @@
     ],
     "type": "value"
   },
-  "octave": 0,
+  "octave": -1,
   "platform": "OP-XY",
   "regions": [],
   "version": 4,

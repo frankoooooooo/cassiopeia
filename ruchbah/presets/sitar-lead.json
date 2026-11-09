@@ -20,20 +20,20 @@
         "target": 0
       }
     },
-    "playmode": "poly",
-    "portamento.amount": 0,
+    "playmode": "mono",
+    "portamento.amount": 6553,
     "portamento.type": 0,
     "transpose": 0,
     "tuning.root": 0,
     "tuning.scale": 0,
     "velocity.sensitivity": 0,
-    "volume": 16384,
+    "volume": 21299,
     "width": 0,
     "params": [
-      4915,
-      1638,
-      28671,
-      16384,
+      27852,
+      6553,
+      4096,
+      27852,
       0,
       0,
       0,
@@ -42,31 +42,31 @@
   },
   "envelope": {
     "amp": {
-      "attack": 1465,
-      "decay": 20724,
-      "release": 14820,
-      "sustain": 9830
+      "attack": 1036,
+      "decay": 12691,
+      "release": 26214,
+      "sustain": 19660
     },
     "filter": {
       "attack": 0,
-      "decay": 0,
-      "release": 0,
-      "sustain": 32767
+      "decay": 9268,
+      "release": 26214,
+      "sustain": 13107
     }
   },
   "fx": {
-    "active": false,
+    "active": true,
+    "type": "svf",
     "params": [
+      18022,
+      19660,
+      9830,
+      9830,
       0,
       0,
-      0,
-      0,
-      0,
-      32767,
       0,
       0
-    ],
-    "type": "svf"
+    ]
   },
   "lfo": {
     "active": false,

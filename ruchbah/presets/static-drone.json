@@ -27,12 +27,12 @@
     "tuning.root": 0,
     "tuning.scale": 0,
     "velocity.sensitivity": 0,
-    "volume": 16384,
+    "volume": 19660,
     "width": 0,
     "params": [
-      32767,
-      13107,
-      12288,
+      21299,
+      983,
+      20479,
       16384,
       0,
       0,
@@ -42,31 +42,31 @@
   },
   "envelope": {
     "amp": {
-      "attack": 0,
-      "decay": 11351,
-      "release": 23499,
-      "sustain": 6553
+      "attack": 6553,
+      "decay": 14654,
+      "release": 16383,
+      "sustain": 32767
     },
     "filter": {
-      "attack": 0,
-      "decay": 0,
-      "release": 0,
-      "sustain": 32767
+      "attack": 6553,
+      "decay": 14654,
+      "release": 16383,
+      "sustain": 26214
     }
   },
   "fx": {
-    "active": false,
+    "active": true,
+    "type": "svf",
     "params": [
+      11468,
+      22937,
+      3277,
+      19660,
       0,
       0,
-      0,
-      0,
-      0,
-      32767,
       0,
       0
-    ],
-    "type": "svf"
+    ]
   },
   "lfo": {
     "active": false,

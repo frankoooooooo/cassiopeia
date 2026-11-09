@@ -7,7 +7,9 @@ tools/presets.json, per engine, a list of presets in friendly units:
   name, controls (the engine's controls, 0..1; an enum's choice i of n is (i + 0.5) / n),
   amp {attack, decay, release: seconds; sustain: 0..1},
   filter (optional: the track's SVF on) {cutoff, resonance, envelope (amount), keytrack: 0..1;
-          attack, decay, release: seconds; sustain: 0..1}.
+          attack, decay, release: seconds; sustain: 0..1},
+  and optionally octave (−3..+2), mode ("poly" or "mono"), glide, velocity and volume (0..1; defaults
+  0, poly, 0, 0 and 0.5, the stock init's).
 Times use the OP-XY's square-law scale, value = 32767·√(t / 10 s), and release runs the other way (a
 larger value is a shorter release), as stock reads it. Usage: python3 tools/make_presets.py [engine…]
 """
@@ -47,9 +49,10 @@ for mid in sys.argv[1:] or list(table):
         named[p['name']] = dict(zip(ids, controls))
         f = p.get('filter')
         preset = {
-            'engine': {'bendrange': 8191, 'highpass': 0, 'modulation': MOD, 'playmode': 'poly',
-                       'portamento.amount': 0, 'portamento.type': 0, 'transpose': 0, 'tuning.root': 0,
-                       'tuning.scale': 0, 'velocity.sensitivity': 0, 'volume': 16384, 'width': 0,
+            'engine': {'bendrange': 8191, 'highpass': 0, 'modulation': MOD, 'playmode': p.get('mode', 'poly'),
+                       'portamento.amount': level(p.get('glide', 0)), 'portamento.type': 0, 'transpose': 0, 'tuning.root': 0,
+                       'tuning.scale': 0, 'velocity.sensitivity': level(p.get('velocity', 0)),
+                       'volume': level(p.get('volume', 0.5)), 'width': 0,
                        'params': [level(c) for c in controls] + [0] * (8 - len(controls))},
             'envelope': {'amp': envelope(p['amp']),
                          'filter': envelope(f) if f else {'attack': 0, 'decay': 0, 'release': 0, 'sustain': 32767}},
@@ -57,7 +60,7 @@ for mid in sys.argv[1:] or list(table):
                     'params': [level(f['cutoff']), level(f['resonance']), level(f['envelope']), level(f['keytrack']), 0, 0, 0, 0]}
                    if f else {'active': False, 'params': [0, 0, 0, 0, 0, 32767, 0, 0], 'type': 'svf'}),
             'lfo': {'active': False, 'params': [0] * 8, 'type': 'value'},
-            'octave': 0, 'platform': 'OP-XY', 'regions': [], 'version': 4, 'type': definition['id'],
+            'octave': p.get('octave', 0), 'platform': 'OP-XY', 'regions': [], 'version': 4, 'type': definition['id'],
         }
         (out / f'{slug}.json').write_text(json.dumps(preset, indent=2) + '\n')
     definition['presets'] = named

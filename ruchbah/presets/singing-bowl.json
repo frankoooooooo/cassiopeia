@@ -27,13 +27,13 @@
     "tuning.root": 0,
     "tuning.scale": 0,
     "velocity.sensitivity": 0,
-    "volume": 16384,
+    "volume": 21299,
     "width": 0,
     "params": [
-      9830,
-      22937,
-      12288,
-      19660,
+      2621,
+      328,
+      28671,
+      16384,
       0,
       0,
       0,
@@ -42,26 +42,26 @@
   },
   "envelope": {
     "amp": {
-      "attack": 0,
-      "decay": 6951,
-      "release": 27092,
-      "sustain": 0
+      "attack": 1465,
+      "decay": 25381,
+      "release": 9597,
+      "sustain": 13107
     },
     "filter": {
       "attack": 0,
-      "decay": 5675,
-      "release": 28133,
-      "sustain": 0
+      "decay": 0,
+      "release": 32767,
+      "sustain": 32767
     }
   },
   "fx": {
     "active": true,
     "type": "svf",
     "params": [
-      14745,
-      1638,
-      13107,
-      6553,
+      16384,
+      18022,
+      0,
+      19660,
       0,
       0,
       0,
@@ -82,7 +82,7 @@
     ],
     "type": "value"
   },
-  "octave": 0,
+  "octave": 1,
   "platform": "OP-XY",
   "regions": [],
   "version": 4,

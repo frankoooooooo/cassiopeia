@@ -719,88 +719,141 @@
     "decay": 2.0,
     "sustain": 0.5,
     "release": 1.0
-   }
+   },
+   "volume": 0.65
   },
   {
-   "name": "Bowl",
+   "name": "Singing Bowl",
    "controls": [
-    0.15,
-    0.05,
+    0.08,
+    0.01,
     0.875,
     0.5
    ],
    "amp": {
     "attack": 0.02,
-    "decay": 4.0,
-    "sustain": 0.3,
-    "release": 3.0
-   }
+    "decay": 6.0,
+    "sustain": 0.4,
+    "release": 5.0
+   },
+   "filter": {
+    "cutoff": 0.5,
+    "resonance": 0.55,
+    "envelope": 0,
+    "keytrack": 0.6,
+    "attack": 0,
+    "decay": 0,
+    "sustain": 1,
+    "release": 0
+   },
+   "octave": 1,
+   "volume": 0.65
   },
   {
    "name": "Spark",
    "controls": [
-    0.8,
-    0.6,
+    1.0,
+    0.7,
+    0.375,
+    1.0
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.25,
+    "sustain": 0,
+    "release": 0.2
+   },
+   "filter": {
+    "cutoff": 0.8,
+    "resonance": 0.2,
+    "envelope": 0.2,
+    "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0.15,
+    "sustain": 0,
+    "release": 0.1
+   },
+   "octave": 2,
+   "velocity": 0.3,
+   "volume": 0.7
+  },
+  {
+   "name": "Static Drone",
+   "controls": [
+    0.65,
+    0.03,
+    0.625,
+    0.5
+   ],
+   "amp": {
+    "attack": 0.4,
+    "decay": 2.0,
+    "sustain": 1.0,
+    "release": 2.5
+   },
+   "filter": {
+    "cutoff": 0.35,
+    "resonance": 0.7,
+    "envelope": 0.1,
+    "keytrack": 0.6,
+    "attack": 0.4,
+    "decay": 2.0,
+    "sustain": 0.8,
+    "release": 2.5
+   },
+   "volume": 0.6
+  },
+  {
+   "name": "Drift",
+   "controls": [
+    0.02,
+    0,
+    0.125,
+    0.0
+   ],
+   "amp": {
+    "attack": 1.2,
+    "decay": 3.0,
+    "sustain": 0.8,
+    "release": 4.0
+   },
+   "octave": -1,
+   "volume": 0.7
+  },
+  {
+   "name": "Wire Bass",
+   "controls": [
+    1.0,
+    0.45,
     0.375,
     0.9
    ],
    "amp": {
     "attack": 0,
     "decay": 0.6,
-    "sustain": 0,
-    "release": 0.4
-   }
-  },
-  {
-   "name": "Static",
-   "controls": [
-    0.55,
-    0.2,
-    0.625,
-    0.5
-   ],
-   "amp": {
-    "attack": 0.01,
-    "decay": 1.5,
-    "sustain": 0.6,
-    "release": 1.0
-   }
-  },
-  {
-   "name": "Drift",
-   "controls": [
-    0.05,
-    0,
-    0.125,
-    0.2
-   ],
-   "amp": {
-    "attack": 1.0,
-    "decay": 3.0,
-    "sustain": 0.8,
-    "release": 4.0
-   }
-  },
-  {
-   "name": "Wire",
-   "controls": [
-    1.0,
-    0.4,
-    0.375,
-    0.5
-   ],
-   "amp": {
+    "sustain": 0.5,
+    "release": 0.15
+   },
+   "filter": {
+    "cutoff": 0.2,
+    "resonance": 0.45,
+    "envelope": 0.5,
+    "keytrack": 0.2,
     "attack": 0,
-    "decay": 1.2,
-    "sustain": 0.2,
-    "release": 0.8
-   }
+    "decay": 0.3,
+    "sustain": 0.1,
+    "release": 0.12
+   },
+   "octave": -2,
+   "mode": "mono",
+   "glide": 0.3,
+   "volume": 0.75
   },
   {
    "name": "Kalimba",
    "controls": [
     0.5,
-    0.45,
+    0.55,
     0.125,
     0.7
    ],
@@ -810,47 +863,43 @@
     "sustain": 0,
     "release": 0.6
    },
-   "filter": {
-    "cutoff": 0.55,
-    "resonance": 0.1,
-    "envelope": 0.3,
-    "keytrack": 0.2,
-    "attack": 0,
-    "decay": 0.5,
-    "sustain": 0.2,
-    "release": 0.4
-   }
+   "octave": 1,
+   "velocity": 0.3,
+   "volume": 0.7
   },
   {
-   "name": "Marimba",
+   "name": "Woodblock",
    "controls": [
-    0.3,
-    0.7,
+    0.2,
+    0.9,
     0.375,
     0.6
    ],
    "amp": {
     "attack": 0,
-    "decay": 0.45,
+    "decay": 0.12,
     "sustain": 0,
-    "release": 0.3
+    "release": 0.08
    },
    "filter": {
     "cutoff": 0.45,
-    "resonance": 0.05,
-    "envelope": 0.4,
+    "resonance": 0.3,
+    "envelope": 0.3,
     "keytrack": 0.2,
     "attack": 0,
-    "decay": 0.3,
+    "decay": 0.08,
     "sustain": 0,
-    "release": 0.2
-   }
+    "release": 0.06
+   },
+   "octave": 1,
+   "velocity": 0.4,
+   "volume": 0.75
   },
   {
    "name": "Rain Pad",
    "controls": [
-    0.25,
-    0.1,
+    0.3,
+    0.08,
     0.625,
     0.35
    ],
@@ -861,70 +910,97 @@
     "release": 4.0
    },
    "filter": {
-    "cutoff": 0.45,
-    "resonance": 0.15,
-    "envelope": 0.2,
+    "cutoff": 0.3,
+    "resonance": 0.2,
+    "envelope": 0.35,
     "keytrack": 0.2,
-    "attack": 1.0,
-    "decay": 2.0,
-    "sustain": 0.5,
+    "attack": 1.5,
+    "decay": 3.0,
+    "sustain": 0.6,
     "release": 3.0
-   }
+   },
+   "volume": 0.65
   },
   {
    "name": "Gong",
    "controls": [
-    0.1,
-    0.02,
+    0.06,
+    0.005,
     0.875,
-    0.9
+    1.0
    ],
    "amp": {
     "attack": 0,
-    "decay": 6.0,
-    "sustain": 0.2,
-    "release": 5.0
-   }
-  },
-  {
-   "name": "Sitar",
-   "controls": [
-    0.7,
-    0.25,
-    0.125,
-    0.85
-   ],
-   "amp": {
-    "attack": 0,
-    "decay": 1.5,
-    "sustain": 0.2,
-    "release": 0.6
+    "decay": 8.0,
+    "sustain": 0.25,
+    "release": 6.0
    },
    "filter": {
     "cutoff": 0.6,
     "resonance": 0.35,
-    "envelope": 0.3,
+    "envelope": 0,
     "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0,
+    "sustain": 1,
+    "release": 0
+   },
+   "octave": -1,
+   "volume": 0.7
+  },
+  {
+   "name": "Sitar Lead",
+   "controls": [
+    0.85,
+    0.2,
+    0.125,
+    0.85
+   ],
+   "amp": {
+    "attack": 0.01,
+    "decay": 1.5,
+    "sustain": 0.6,
+    "release": 0.4
+   },
+   "filter": {
+    "cutoff": 0.55,
+    "resonance": 0.6,
+    "envelope": 0.3,
+    "keytrack": 0.3,
     "attack": 0,
     "decay": 0.8,
     "sustain": 0.4,
-    "release": 0.5
-   }
+    "release": 0.4
+   },
+   "mode": "mono",
+   "glide": 0.2,
+   "volume": 0.65
   },
   {
    "name": "Breath Organ",
    "controls": [
     0.35,
-    0.15,
+    0.12,
     0.875,
     0.5
    ],
    "amp": {
     "attack": 0.3,
     "decay": 1.0,
-    "sustain": 0.85,
+    "sustain": 0.9,
     "release": 1.2
-   }
+   },
+   "filter": {
+    "cutoff": 0.45,
+    "resonance": 0.1,
+    "envelope": 0.15,
+    "keytrack": 0.2,
+    "attack": 0.3,
+    "decay": 1.0,
+    "sustain": 0.7,
+    "release": 1.2
+   },
+   "volume": 0.8
   }
  ],
  "segin": [

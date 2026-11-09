@@ -59,69 +59,69 @@
       "excite": 0.125,
       "sweep": 0.5
     },
-    "Bowl": {
-      "stiff": 0.15,
-      "damping": 0.05,
+    "Singing Bowl": {
+      "stiff": 0.08,
+      "damping": 0.01,
       "excite": 0.875,
       "sweep": 0.5
     },
     "Spark": {
-      "stiff": 0.8,
-      "damping": 0.6,
+      "stiff": 1.0,
+      "damping": 0.7,
       "excite": 0.375,
-      "sweep": 0.9
+      "sweep": 1.0
     },
-    "Static": {
-      "stiff": 0.55,
-      "damping": 0.2,
+    "Static Drone": {
+      "stiff": 0.65,
+      "damping": 0.03,
       "excite": 0.625,
       "sweep": 0.5
     },
     "Drift": {
-      "stiff": 0.05,
+      "stiff": 0.02,
       "damping": 0,
       "excite": 0.125,
-      "sweep": 0.2
+      "sweep": 0.0
     },
-    "Wire": {
+    "Wire Bass": {
       "stiff": 1.0,
-      "damping": 0.4,
+      "damping": 0.45,
       "excite": 0.375,
-      "sweep": 0.5
+      "sweep": 0.9
     },
     "Kalimba": {
       "stiff": 0.5,
-      "damping": 0.45,
+      "damping": 0.55,
       "excite": 0.125,
       "sweep": 0.7
     },
-    "Marimba": {
-      "stiff": 0.3,
-      "damping": 0.7,
+    "Woodblock": {
+      "stiff": 0.2,
+      "damping": 0.9,
       "excite": 0.375,
       "sweep": 0.6
     },
     "Rain Pad": {
-      "stiff": 0.25,
-      "damping": 0.1,
+      "stiff": 0.3,
+      "damping": 0.08,
       "excite": 0.625,
       "sweep": 0.35
     },
     "Gong": {
-      "stiff": 0.1,
-      "damping": 0.02,
+      "stiff": 0.06,
+      "damping": 0.005,
       "excite": 0.875,
-      "sweep": 0.9
+      "sweep": 1.0
     },
-    "Sitar": {
-      "stiff": 0.7,
-      "damping": 0.25,
+    "Sitar Lead": {
+      "stiff": 0.85,
+      "damping": 0.2,
       "excite": 0.125,
       "sweep": 0.85
     },
     "Breath Organ": {
       "stiff": 0.35,
-      "damping": 0.15,
+      "damping": 0.12,
       "excite": 0.875,
       "sweep": 0.5
     }
