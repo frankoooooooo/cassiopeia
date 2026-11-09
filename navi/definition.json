@@ -59,7 +59,7 @@
       "formant": 0.55,
       "inflect": 0.3,
       "range": 0.5,
-      "sweep": 0.6
+      "sweep": 0.55
     },
     "Sync": {
       "formant": 0.8,
@@ -76,7 +76,7 @@
     "Glass": {
       "formant": 0.65,
       "inflect": 0.6,
-      "range": 1,
+      "range": 1.0,
       "sweep": 0.95
     },
     "Swell": {
@@ -84,6 +84,42 @@
       "inflect": 0.4,
       "range": 0.6,
       "sweep": 0.05
+    },
+    "Choir": {
+      "formant": 0.45,
+      "inflect": 0.35,
+      "range": 0.45,
+      "sweep": 0.4
+    },
+    "Talk Bass": {
+      "formant": 0.6,
+      "inflect": 0.25,
+      "range": 0.35,
+      "sweep": 0.9
+    },
+    "Scream": {
+      "formant": 0.95,
+      "inflect": 0.9,
+      "range": 1.0,
+      "sweep": 0.5
+    },
+    "Ghost": {
+      "formant": 0.35,
+      "inflect": 0.7,
+      "range": 0.3,
+      "sweep": 0.2
+    },
+    "Formant Pluck": {
+      "formant": 0.7,
+      "inflect": 0.45,
+      "range": 0.6,
+      "sweep": 1.0
+    },
+    "Mouth Harp": {
+      "formant": 0.5,
+      "inflect": 0.2,
+      "range": 0.7,
+      "sweep": 0.7
     }
   },
   "resources": {

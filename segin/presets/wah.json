@@ -42,31 +42,31 @@
   },
   "envelope": {
     "amp": {
-      "attack": 128,
-      "decay": 8192,
-      "release": 32767,
-      "sustain": 32767
+      "attack": 1036,
+      "decay": 9268,
+      "release": 26214,
+      "sustain": 22937
     },
     "filter": {
       "attack": 0,
-      "decay": 0,
-      "release": 0,
-      "sustain": 32767
+      "decay": 7327,
+      "release": 27092,
+      "sustain": 6553
     }
   },
   "fx": {
-    "active": false,
+    "active": true,
+    "type": "svf",
     "params": [
+      13107,
+      13107,
+      14745,
+      6553,
       0,
       0,
-      0,
-      0,
-      0,
-      32767,
       0,
       0
-    ],
-    "type": "svf"
+    ]
   },
   "lfo": {
     "active": false,

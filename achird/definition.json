@@ -77,13 +77,49 @@
       "tilt": 0.45,
       "balance": 0.65,
       "fold": 0.25,
-      "sweep": 1
+      "sweep": 1.0
     },
     "Swell": {
       "tilt": 0.85,
       "balance": 0.4,
       "fold": 0.15,
-      "sweep": 0
+      "sweep": 0.0
+    },
+    "8-Bit Bass": {
+      "tilt": 0.5,
+      "balance": 0.7,
+      "fold": 0.1,
+      "sweep": 0.7
+    },
+    "Arcade Lead": {
+      "tilt": 0.65,
+      "balance": 0.9,
+      "fold": 0.05,
+      "sweep": 0.6
+    },
+    "Crushed Pad": {
+      "tilt": 0.4,
+      "balance": 0.3,
+      "fold": 0.35,
+      "sweep": 0.3
+    },
+    "Fold Pluck": {
+      "tilt": 0.55,
+      "balance": 0.5,
+      "fold": 0.8,
+      "sweep": 0.9
+    },
+    "Bit Bell": {
+      "tilt": 0.9,
+      "balance": 0.6,
+      "fold": 0.4,
+      "sweep": 0.85
+    },
+    "Square Drone": {
+      "tilt": 0.2,
+      "balance": 0.1,
+      "fold": 0.2,
+      "sweep": 0.5
     }
   },
   "resources": {

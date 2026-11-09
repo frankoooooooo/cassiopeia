@@ -32,7 +32,7 @@
     "params": [
       14745,
       0,
-      0,
+      2048,
       24575,
       0,
       0,
@@ -42,10 +42,10 @@
   },
   "envelope": {
     "amp": {
-      "attack": 128,
-      "decay": 8192,
-      "release": 32767,
-      "sustain": 32767
+      "attack": 0,
+      "decay": 11351,
+      "release": 26214,
+      "sustain": 22937
     },
     "filter": {
       "attack": 0,

@@ -1,0 +1,90 @@
+{
+  "engine": {
+    "bendrange": 8191,
+    "highpass": 0,
+    "modulation": {
+      "aftertouch": {
+        "amount": 16384,
+        "target": 0
+      },
+      "modwheel": {
+        "amount": 16384,
+        "target": 0
+      },
+      "pitchbend": {
+        "amount": 16384,
+        "target": 0
+      },
+      "velocity": {
+        "amount": 16384,
+        "target": 0
+      }
+    },
+    "playmode": "poly",
+    "portamento.amount": 0,
+    "portamento.type": 0,
+    "transpose": 0,
+    "tuning.root": 0,
+    "tuning.scale": 0,
+    "velocity.sensitivity": 0,
+    "volume": 16384,
+    "width": 0,
+    "params": [
+      9830,
+      22937,
+      12288,
+      19660,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "envelope": {
+    "amp": {
+      "attack": 0,
+      "decay": 6951,
+      "release": 27092,
+      "sustain": 0
+    },
+    "filter": {
+      "attack": 0,
+      "decay": 5675,
+      "release": 28133,
+      "sustain": 0
+    }
+  },
+  "fx": {
+    "active": true,
+    "type": "svf",
+    "params": [
+      14745,
+      1638,
+      13107,
+      6553,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "lfo": {
+    "active": false,
+    "params": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "type": "value"
+  },
+  "octave": 0,
+  "platform": "OP-XY",
+  "regions": [],
+  "version": 4,
+  "type": "ruchbah"
+}

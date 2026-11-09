@@ -60,7 +60,7 @@
     "Schedar": {
       "amount": 0.45,
       "width": 0,
-      "wave": 0,
+      "wave": 0.0625,
       "sweep": 0.75
     },
     "Brass": {
@@ -79,7 +79,7 @@
       "amount": 0.1,
       "width": 0,
       "wave": 0.6875,
-      "sweep": 1
+      "sweep": 1.0
     },
     "Vox": {
       "amount": 0.55,
@@ -92,6 +92,42 @@
       "width": 0,
       "wave": 0.3125,
       "sweep": 0.1
+    },
+    "Bass Drop": {
+      "amount": 0.55,
+      "width": 0,
+      "wave": 0.0625,
+      "sweep": 0.9
+    },
+    "Glass Bell": {
+      "amount": 0.25,
+      "width": 0,
+      "wave": 0.4375,
+      "sweep": 0.85
+    },
+    "Wow Lead": {
+      "amount": 0.5,
+      "width": 0.1,
+      "wave": 0.9375,
+      "sweep": 0.2
+    },
+    "Organ Stab": {
+      "amount": 0.2,
+      "width": 0.4,
+      "wave": 0.1875,
+      "sweep": 0.5
+    },
+    "Night Pad": {
+      "amount": 0.35,
+      "width": 0.25,
+      "wave": 0.8125,
+      "sweep": 0.35
+    },
+    "Tape Keys": {
+      "amount": 0.4,
+      "width": 0.15,
+      "wave": 0.5625,
+      "sweep": 0.7
     }
   },
   "resources": {

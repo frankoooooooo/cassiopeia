@@ -56,7 +56,7 @@
     "Ruchbah": {
       "stiff": 0.4,
       "damping": 0.3,
-      "excite": 0,
+      "excite": 0.125,
       "sweep": 0.5
     },
     "Bowl": {
@@ -84,9 +84,45 @@
       "sweep": 0.2
     },
     "Wire": {
-      "stiff": 1,
+      "stiff": 1.0,
       "damping": 0.4,
       "excite": 0.375,
+      "sweep": 0.5
+    },
+    "Kalimba": {
+      "stiff": 0.5,
+      "damping": 0.45,
+      "excite": 0.125,
+      "sweep": 0.7
+    },
+    "Marimba": {
+      "stiff": 0.3,
+      "damping": 0.7,
+      "excite": 0.375,
+      "sweep": 0.6
+    },
+    "Rain Pad": {
+      "stiff": 0.25,
+      "damping": 0.1,
+      "excite": 0.625,
+      "sweep": 0.35
+    },
+    "Gong": {
+      "stiff": 0.1,
+      "damping": 0.02,
+      "excite": 0.875,
+      "sweep": 0.9
+    },
+    "Sitar": {
+      "stiff": 0.7,
+      "damping": 0.25,
+      "excite": 0.125,
+      "sweep": 0.85
+    },
+    "Breath Organ": {
+      "stiff": 0.35,
+      "damping": 0.15,
+      "excite": 0.875,
       "sweep": 0.5
     }
   },

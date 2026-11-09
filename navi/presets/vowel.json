@@ -33,7 +33,7 @@
       18022,
       9830,
       16384,
-      19660,
+      18022,
       0,
       0,
       0,
@@ -42,10 +42,10 @@
   },
   "envelope": {
     "amp": {
-      "attack": 128,
-      "decay": 8192,
-      "release": 32767,
-      "sustain": 32767
+      "attack": 3277,
+      "decay": 9268,
+      "release": 24741,
+      "sustain": 26214
     },
     "filter": {
       "attack": 0,

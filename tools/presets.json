@@ -1,0 +1,1364 @@
+{
+ "schedar": [
+  {
+   "name": "Schedar",
+   "controls": [
+    0.45,
+    0,
+    0.0625,
+    0.75
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 1.2,
+    "sustain": 0.7,
+    "release": 0.4
+   }
+  },
+  {
+   "name": "Brass",
+   "controls": [
+    0.3,
+    0,
+    0.5625,
+    0.95
+   ],
+   "amp": {
+    "attack": 0.04,
+    "decay": 0.6,
+    "sustain": 0.8,
+    "release": 0.25
+   },
+   "filter": {
+    "cutoff": 0.35,
+    "resonance": 0.15,
+    "envelope": 0.45,
+    "keytrack": 0.2,
+    "attack": 0.05,
+    "decay": 0.5,
+    "sustain": 0.4,
+    "release": 0.3
+   }
+  },
+  {
+   "name": "Hollow",
+   "controls": [
+    0.6,
+    0.2,
+    0.1875,
+    0.5
+   ],
+   "amp": {
+    "attack": 0.01,
+    "decay": 0.8,
+    "sustain": 0.6,
+    "release": 0.5
+   }
+  },
+  {
+   "name": "Pluck",
+   "controls": [
+    0.1,
+    0,
+    0.6875,
+    1.0
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.35,
+    "sustain": 0,
+    "release": 0.2
+   },
+   "filter": {
+    "cutoff": 0.3,
+    "resonance": 0.25,
+    "envelope": 0.55,
+    "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0.25,
+    "sustain": 0,
+    "release": 0.15
+   }
+  },
+  {
+   "name": "Vox",
+   "controls": [
+    0.55,
+    0.35,
+    0.8125,
+    0.6
+   ],
+   "amp": {
+    "attack": 0.15,
+    "decay": 1.0,
+    "sustain": 0.8,
+    "release": 0.8
+   }
+  },
+  {
+   "name": "Swell",
+   "controls": [
+    0.7,
+    0,
+    0.3125,
+    0.1
+   ],
+   "amp": {
+    "attack": 1.2,
+    "decay": 2.0,
+    "sustain": 0.9,
+    "release": 2.5
+   }
+  },
+  {
+   "name": "Bass Drop",
+   "controls": [
+    0.55,
+    0,
+    0.0625,
+    0.9
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.5,
+    "sustain": 0.5,
+    "release": 0.1
+   },
+   "filter": {
+    "cutoff": 0.2,
+    "resonance": 0.3,
+    "envelope": 0.5,
+    "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0.3,
+    "sustain": 0.1,
+    "release": 0.1
+   }
+  },
+  {
+   "name": "Glass Bell",
+   "controls": [
+    0.25,
+    0,
+    0.4375,
+    0.85
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 2.5,
+    "sustain": 0,
+    "release": 2.5
+   }
+  },
+  {
+   "name": "Wow Lead",
+   "controls": [
+    0.5,
+    0.1,
+    0.9375,
+    0.2
+   ],
+   "amp": {
+    "attack": 0.02,
+    "decay": 0.5,
+    "sustain": 0.85,
+    "release": 0.3
+   },
+   "filter": {
+    "cutoff": 0.55,
+    "resonance": 0.35,
+    "envelope": 0.2,
+    "keytrack": 0.2,
+    "attack": 0.02,
+    "decay": 0.6,
+    "sustain": 0.6,
+    "release": 0.3
+   }
+  },
+  {
+   "name": "Organ Stab",
+   "controls": [
+    0.2,
+    0.4,
+    0.1875,
+    0.5
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.25,
+    "sustain": 0.4,
+    "release": 0.08
+   }
+  },
+  {
+   "name": "Night Pad",
+   "controls": [
+    0.35,
+    0.25,
+    0.8125,
+    0.35
+   ],
+   "amp": {
+    "attack": 2.5,
+    "decay": 3.0,
+    "sustain": 0.8,
+    "release": 4.0
+   },
+   "filter": {
+    "cutoff": 0.4,
+    "resonance": 0.1,
+    "envelope": 0.25,
+    "keytrack": 0.2,
+    "attack": 2.0,
+    "decay": 3.0,
+    "sustain": 0.6,
+    "release": 3.0
+   }
+  },
+  {
+   "name": "Tape Keys",
+   "controls": [
+    0.4,
+    0.15,
+    0.5625,
+    0.7
+   ],
+   "amp": {
+    "attack": 0.005,
+    "decay": 1.5,
+    "sustain": 0.3,
+    "release": 0.6
+   },
+   "filter": {
+    "cutoff": 0.5,
+    "resonance": 0.1,
+    "envelope": 0.3,
+    "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0.8,
+    "sustain": 0.2,
+    "release": 0.5
+   }
+  }
+ ],
+ "caph": [
+  {
+   "name": "Caph",
+   "controls": [
+    1.0,
+    0,
+    0.2,
+    0.5
+   ],
+   "amp": {
+    "attack": 0.01,
+    "decay": 1.0,
+    "sustain": 0.8,
+    "release": 0.5
+   }
+  },
+  {
+   "name": "Square",
+   "controls": [
+    0.5,
+    0,
+    0.1,
+    0.5
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.6,
+    "sustain": 0.7,
+    "release": 0.3
+   }
+  },
+  {
+   "name": "Reed",
+   "controls": [
+    0.5,
+    0.75,
+    0.15,
+    0.65
+   ],
+   "amp": {
+    "attack": 0.05,
+    "decay": 0.6,
+    "sustain": 0.8,
+    "release": 0.3
+   },
+   "filter": {
+    "cutoff": 0.45,
+    "resonance": 0.2,
+    "envelope": 0.2,
+    "keytrack": 0.2,
+    "attack": 0.05,
+    "decay": 0.5,
+    "sustain": 0.6,
+    "release": 0.3
+   }
+  },
+  {
+   "name": "Flute",
+   "controls": [
+    0.08,
+    0.2,
+    0.05,
+    0.7
+   ],
+   "amp": {
+    "attack": 0.12,
+    "decay": 0.5,
+    "sustain": 0.9,
+    "release": 0.4
+   }
+  },
+  {
+   "name": "Strings",
+   "controls": [
+    1.0,
+    0,
+    0.55,
+    0.2
+   ],
+   "amp": {
+    "attack": 0.8,
+    "decay": 1.5,
+    "sustain": 0.9,
+    "release": 2.0
+   }
+  },
+  {
+   "name": "Brass",
+   "controls": [
+    0.85,
+    0.3,
+    0.25,
+    0.95
+   ],
+   "amp": {
+    "attack": 0.06,
+    "decay": 0.5,
+    "sustain": 0.8,
+    "release": 0.3
+   },
+   "filter": {
+    "cutoff": 0.3,
+    "resonance": 0.2,
+    "envelope": 0.5,
+    "keytrack": 0.2,
+    "attack": 0.08,
+    "decay": 0.6,
+    "sustain": 0.4,
+    "release": 0.3
+   }
+  },
+  {
+   "name": "Acid Pair",
+   "controls": [
+    1.0,
+    0,
+    0.08,
+    0.85
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.3,
+    "sustain": 0.4,
+    "release": 0.1
+   },
+   "filter": {
+    "cutoff": 0.12,
+    "resonance": 0.7,
+    "envelope": 0.6,
+    "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0.25,
+    "sustain": 0,
+    "release": 0.1
+   }
+  },
+  {
+   "name": "Supersaw",
+   "controls": [
+    1.0,
+    0,
+    1.0,
+    0.5
+   ],
+   "amp": {
+    "attack": 0.3,
+    "decay": 1.0,
+    "sustain": 0.9,
+    "release": 1.5
+   }
+  },
+  {
+   "name": "Chord Stab",
+   "controls": [
+    0.9,
+    0.1,
+    0.4,
+    0.9
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.4,
+    "sustain": 0.2,
+    "release": 0.25
+   },
+   "filter": {
+    "cutoff": 0.35,
+    "resonance": 0.2,
+    "envelope": 0.55,
+    "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0.35,
+    "sustain": 0,
+    "release": 0.25
+   }
+  },
+  {
+   "name": "Sub Bass",
+   "controls": [
+    0.1,
+    0.5,
+    0.03,
+    0.5
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.8,
+    "sustain": 0.8,
+    "release": 0.12
+   },
+   "filter": {
+    "cutoff": 0.3,
+    "resonance": 0.1,
+    "envelope": 0.2,
+    "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0.4,
+    "sustain": 0.5,
+    "release": 0.1
+   }
+  },
+  {
+   "name": "Warm Pad",
+   "controls": [
+    0.7,
+    0.2,
+    0.7,
+    0.3
+   ],
+   "amp": {
+    "attack": 1.5,
+    "decay": 2.0,
+    "sustain": 0.85,
+    "release": 3.0
+   },
+   "filter": {
+    "cutoff": 0.4,
+    "resonance": 0.1,
+    "envelope": 0.3,
+    "keytrack": 0.2,
+    "attack": 1.5,
+    "decay": 2.0,
+    "sustain": 0.6,
+    "release": 3.0
+   }
+  },
+  {
+   "name": "Pulse Lead",
+   "controls": [
+    0.5,
+    0.85,
+    0.2,
+    0.6
+   ],
+   "amp": {
+    "attack": 0.02,
+    "decay": 0.6,
+    "sustain": 0.8,
+    "release": 0.3
+   }
+  }
+ ],
+ "navi": [
+  {
+   "name": "Navi",
+   "controls": [
+    0.3,
+    0.5,
+    0.4,
+    0.5
+   ],
+   "amp": {
+    "attack": 0.02,
+    "decay": 1.0,
+    "sustain": 0.8,
+    "release": 0.6
+   }
+  },
+  {
+   "name": "Vowel",
+   "controls": [
+    0.55,
+    0.3,
+    0.5,
+    0.55
+   ],
+   "amp": {
+    "attack": 0.1,
+    "decay": 0.8,
+    "sustain": 0.8,
+    "release": 0.6
+   }
+  },
+  {
+   "name": "Sync",
+   "controls": [
+    0.8,
+    0.85,
+    0.9,
+    0.8
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.6,
+    "sustain": 0.7,
+    "release": 0.3
+   },
+   "filter": {
+    "cutoff": 0.55,
+    "resonance": 0.2,
+    "envelope": 0.3,
+    "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0.5,
+    "sustain": 0.5,
+    "release": 0.3
+   }
+  },
+  {
+   "name": "Hollow",
+   "controls": [
+    0.2,
+    0.15,
+    0.2,
+    0.5
+   ],
+   "amp": {
+    "attack": 0.03,
+    "decay": 1.0,
+    "sustain": 0.7,
+    "release": 0.6
+   }
+  },
+  {
+   "name": "Glass",
+   "controls": [
+    0.65,
+    0.6,
+    1.0,
+    0.95
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 1.8,
+    "sustain": 0.2,
+    "release": 1.5
+   }
+  },
+  {
+   "name": "Swell",
+   "controls": [
+    0.6,
+    0.4,
+    0.6,
+    0.05
+   ],
+   "amp": {
+    "attack": 1.2,
+    "decay": 2.0,
+    "sustain": 0.9,
+    "release": 2.5
+   }
+  },
+  {
+   "name": "Choir",
+   "controls": [
+    0.45,
+    0.35,
+    0.45,
+    0.4
+   ],
+   "amp": {
+    "attack": 0.9,
+    "decay": 2.0,
+    "sustain": 0.85,
+    "release": 2.5
+   },
+   "filter": {
+    "cutoff": 0.5,
+    "resonance": 0.05,
+    "envelope": 0.1,
+    "keytrack": 0.2,
+    "attack": 0.9,
+    "decay": 2.0,
+    "sustain": 0.7,
+    "release": 2.5
+   }
+  },
+  {
+   "name": "Talk Bass",
+   "controls": [
+    0.6,
+    0.25,
+    0.35,
+    0.9
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.45,
+    "sustain": 0.5,
+    "release": 0.12
+   },
+   "filter": {
+    "cutoff": 0.25,
+    "resonance": 0.35,
+    "envelope": 0.55,
+    "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0.35,
+    "sustain": 0.1,
+    "release": 0.12
+   }
+  },
+  {
+   "name": "Scream",
+   "controls": [
+    0.95,
+    0.9,
+    1.0,
+    0.5
+   ],
+   "amp": {
+    "attack": 0.01,
+    "decay": 0.6,
+    "sustain": 0.85,
+    "release": 0.3
+   }
+  },
+  {
+   "name": "Ghost",
+   "controls": [
+    0.35,
+    0.7,
+    0.3,
+    0.2
+   ],
+   "amp": {
+    "attack": 1.8,
+    "decay": 3.0,
+    "sustain": 0.7,
+    "release": 4.0
+   }
+  },
+  {
+   "name": "Formant Pluck",
+   "controls": [
+    0.7,
+    0.45,
+    0.6,
+    1.0
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.4,
+    "sustain": 0,
+    "release": 0.3
+   },
+   "filter": {
+    "cutoff": 0.4,
+    "resonance": 0.3,
+    "envelope": 0.5,
+    "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0.3,
+    "sustain": 0,
+    "release": 0.2
+   }
+  },
+  {
+   "name": "Mouth Harp",
+   "controls": [
+    0.5,
+    0.2,
+    0.7,
+    0.7
+   ],
+   "amp": {
+    "attack": 0.01,
+    "decay": 0.9,
+    "sustain": 0.6,
+    "release": 0.4
+   }
+  }
+ ],
+ "ruchbah": [
+  {
+   "name": "Ruchbah",
+   "controls": [
+    0.4,
+    0.3,
+    0.125,
+    0.5
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 2.0,
+    "sustain": 0.5,
+    "release": 1.0
+   }
+  },
+  {
+   "name": "Bowl",
+   "controls": [
+    0.15,
+    0.05,
+    0.875,
+    0.5
+   ],
+   "amp": {
+    "attack": 0.02,
+    "decay": 4.0,
+    "sustain": 0.3,
+    "release": 3.0
+   }
+  },
+  {
+   "name": "Spark",
+   "controls": [
+    0.8,
+    0.6,
+    0.375,
+    0.9
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.6,
+    "sustain": 0,
+    "release": 0.4
+   }
+  },
+  {
+   "name": "Static",
+   "controls": [
+    0.55,
+    0.2,
+    0.625,
+    0.5
+   ],
+   "amp": {
+    "attack": 0.01,
+    "decay": 1.5,
+    "sustain": 0.6,
+    "release": 1.0
+   }
+  },
+  {
+   "name": "Drift",
+   "controls": [
+    0.05,
+    0,
+    0.125,
+    0.2
+   ],
+   "amp": {
+    "attack": 1.0,
+    "decay": 3.0,
+    "sustain": 0.8,
+    "release": 4.0
+   }
+  },
+  {
+   "name": "Wire",
+   "controls": [
+    1.0,
+    0.4,
+    0.375,
+    0.5
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 1.2,
+    "sustain": 0.2,
+    "release": 0.8
+   }
+  },
+  {
+   "name": "Kalimba",
+   "controls": [
+    0.5,
+    0.45,
+    0.125,
+    0.7
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.9,
+    "sustain": 0,
+    "release": 0.6
+   },
+   "filter": {
+    "cutoff": 0.55,
+    "resonance": 0.1,
+    "envelope": 0.3,
+    "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0.5,
+    "sustain": 0.2,
+    "release": 0.4
+   }
+  },
+  {
+   "name": "Marimba",
+   "controls": [
+    0.3,
+    0.7,
+    0.375,
+    0.6
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.45,
+    "sustain": 0,
+    "release": 0.3
+   },
+   "filter": {
+    "cutoff": 0.45,
+    "resonance": 0.05,
+    "envelope": 0.4,
+    "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0.3,
+    "sustain": 0,
+    "release": 0.2
+   }
+  },
+  {
+   "name": "Rain Pad",
+   "controls": [
+    0.25,
+    0.1,
+    0.625,
+    0.35
+   ],
+   "amp": {
+    "attack": 1.5,
+    "decay": 3.0,
+    "sustain": 0.8,
+    "release": 4.0
+   },
+   "filter": {
+    "cutoff": 0.45,
+    "resonance": 0.15,
+    "envelope": 0.2,
+    "keytrack": 0.2,
+    "attack": 1.0,
+    "decay": 2.0,
+    "sustain": 0.5,
+    "release": 3.0
+   }
+  },
+  {
+   "name": "Gong",
+   "controls": [
+    0.1,
+    0.02,
+    0.875,
+    0.9
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 6.0,
+    "sustain": 0.2,
+    "release": 5.0
+   }
+  },
+  {
+   "name": "Sitar",
+   "controls": [
+    0.7,
+    0.25,
+    0.125,
+    0.85
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 1.5,
+    "sustain": 0.2,
+    "release": 0.6
+   },
+   "filter": {
+    "cutoff": 0.6,
+    "resonance": 0.35,
+    "envelope": 0.3,
+    "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0.8,
+    "sustain": 0.4,
+    "release": 0.5
+   }
+  },
+  {
+   "name": "Breath Organ",
+   "controls": [
+    0.35,
+    0.15,
+    0.875,
+    0.5
+   ],
+   "amp": {
+    "attack": 0.3,
+    "decay": 1.0,
+    "sustain": 0.85,
+    "release": 1.2
+   }
+  }
+ ],
+ "segin": [
+  {
+   "name": "Segin",
+   "controls": [
+    0.45,
+    0.3,
+    0.3125,
+    0.5
+   ],
+   "amp": {
+    "attack": 0.02,
+    "decay": 1.0,
+    "sustain": 0.8,
+    "release": 0.5
+   }
+  },
+  {
+   "name": "Ah",
+   "controls": [
+    0.55,
+    0.15,
+    0.4375,
+    0.55
+   ],
+   "amp": {
+    "attack": 0.08,
+    "decay": 0.8,
+    "sustain": 0.85,
+    "release": 0.6
+   }
+  },
+  {
+   "name": "Oo",
+   "controls": [
+    0.25,
+    0.4,
+    0.1875,
+    0.5
+   ],
+   "amp": {
+    "attack": 0.1,
+    "decay": 1.0,
+    "sustain": 0.85,
+    "release": 0.7
+   }
+  },
+  {
+   "name": "Chip",
+   "controls": [
+    0.75,
+    0,
+    0.9375,
+    0.5
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.3,
+    "sustain": 0.6,
+    "release": 0.08
+   }
+  },
+  {
+   "name": "Wah",
+   "controls": [
+    0.35,
+    0.25,
+    0.5625,
+    1.0
+   ],
+   "amp": {
+    "attack": 0.01,
+    "decay": 0.8,
+    "sustain": 0.7,
+    "release": 0.4
+   },
+   "filter": {
+    "cutoff": 0.4,
+    "resonance": 0.4,
+    "envelope": 0.45,
+    "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0.5,
+    "sustain": 0.2,
+    "release": 0.3
+   }
+  },
+  {
+   "name": "Breath",
+   "controls": [
+    0.85,
+    0.7,
+    0.0625,
+    0.15
+   ],
+   "amp": {
+    "attack": 0.6,
+    "decay": 1.5,
+    "sustain": 0.7,
+    "release": 2.0
+   }
+  },
+  {
+   "name": "Robot",
+   "controls": [
+    0.6,
+    0.05,
+    0.6875,
+    0.5
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.5,
+    "sustain": 0.8,
+    "release": 0.15
+   }
+  },
+  {
+   "name": "Choir",
+   "controls": [
+    0.4,
+    0.35,
+    0.3125,
+    0.35
+   ],
+   "amp": {
+    "attack": 1.0,
+    "decay": 2.0,
+    "sustain": 0.85,
+    "release": 3.0
+   },
+   "filter": {
+    "cutoff": 0.45,
+    "resonance": 0.1,
+    "envelope": 0.15,
+    "keytrack": 0.2,
+    "attack": 1.0,
+    "decay": 2.0,
+    "sustain": 0.6,
+    "release": 3.0
+   }
+  },
+  {
+   "name": "Bass Voice",
+   "controls": [
+    0.2,
+    0.3,
+    0.1875,
+    0.8
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.5,
+    "sustain": 0.6,
+    "release": 0.15
+   },
+   "filter": {
+    "cutoff": 0.3,
+    "resonance": 0.25,
+    "envelope": 0.45,
+    "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0.35,
+    "sustain": 0.15,
+    "release": 0.15
+   }
+  },
+  {
+   "name": "Whisper Pad",
+   "controls": [
+    0.9,
+    0.8,
+    0.0625,
+    0.3
+   ],
+   "amp": {
+    "attack": 2.0,
+    "decay": 3.0,
+    "sustain": 0.7,
+    "release": 4.0
+   }
+  },
+  {
+   "name": "Throat",
+   "controls": [
+    0.15,
+    0.1,
+    0.8125,
+    0.6
+   ],
+   "amp": {
+    "attack": 0.03,
+    "decay": 0.9,
+    "sustain": 0.75,
+    "release": 0.5
+   }
+  },
+  {
+   "name": "Bleep",
+   "controls": [
+    0.8,
+    0.2,
+    0.4375,
+    0.9
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.18,
+    "sustain": 0,
+    "release": 0.1
+   }
+  }
+ ],
+ "achird": [
+  {
+   "name": "Achird",
+   "controls": [
+    0.3,
+    0.5,
+    0,
+    0.5
+   ],
+   "amp": {
+    "attack": 0.01,
+    "decay": 1.0,
+    "sustain": 0.8,
+    "release": 0.5
+   }
+  },
+  {
+   "name": "Chip",
+   "controls": [
+    0.7,
+    0.85,
+    0,
+    0.5
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.4,
+    "sustain": 0.7,
+    "release": 0.08
+   }
+  },
+  {
+   "name": "Organ",
+   "controls": [
+    0.15,
+    0.25,
+    0,
+    0.5
+   ],
+   "amp": {
+    "attack": 0.02,
+    "decay": 0.5,
+    "sustain": 0.9,
+    "release": 0.3
+   }
+  },
+  {
+   "name": "Grit",
+   "controls": [
+    0.6,
+    0.5,
+    0.55,
+    0.7
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.7,
+    "sustain": 0.6,
+    "release": 0.3
+   },
+   "filter": {
+    "cutoff": 0.5,
+    "resonance": 0.3,
+    "envelope": 0.35,
+    "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0.6,
+    "sustain": 0.4,
+    "release": 0.3
+   }
+  },
+  {
+   "name": "Ladder",
+   "controls": [
+    0.45,
+    0.65,
+    0.25,
+    1.0
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.6,
+    "sustain": 0.5,
+    "release": 0.3
+   }
+  },
+  {
+   "name": "Swell",
+   "controls": [
+    0.85,
+    0.4,
+    0.15,
+    0.0
+   ],
+   "amp": {
+    "attack": 1.2,
+    "decay": 2.0,
+    "sustain": 0.9,
+    "release": 2.5
+   }
+  },
+  {
+   "name": "8-Bit Bass",
+   "controls": [
+    0.5,
+    0.7,
+    0.1,
+    0.7
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.35,
+    "sustain": 0.6,
+    "release": 0.06
+   },
+   "filter": {
+    "cutoff": 0.3,
+    "resonance": 0.2,
+    "envelope": 0.4,
+    "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0.25,
+    "sustain": 0.1,
+    "release": 0.06
+   }
+  },
+  {
+   "name": "Arcade Lead",
+   "controls": [
+    0.65,
+    0.9,
+    0.05,
+    0.6
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.5,
+    "sustain": 0.8,
+    "release": 0.15
+   }
+  },
+  {
+   "name": "Crushed Pad",
+   "controls": [
+    0.4,
+    0.3,
+    0.35,
+    0.3
+   ],
+   "amp": {
+    "attack": 1.5,
+    "decay": 2.5,
+    "sustain": 0.8,
+    "release": 3.0
+   },
+   "filter": {
+    "cutoff": 0.4,
+    "resonance": 0.15,
+    "envelope": 0.25,
+    "keytrack": 0.2,
+    "attack": 1.5,
+    "decay": 2.0,
+    "sustain": 0.5,
+    "release": 3.0
+   }
+  },
+  {
+   "name": "Fold Pluck",
+   "controls": [
+    0.55,
+    0.5,
+    0.8,
+    0.9
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 0.35,
+    "sustain": 0,
+    "release": 0.25
+   },
+   "filter": {
+    "cutoff": 0.45,
+    "resonance": 0.3,
+    "envelope": 0.5,
+    "keytrack": 0.2,
+    "attack": 0,
+    "decay": 0.3,
+    "sustain": 0,
+    "release": 0.2
+   }
+  },
+  {
+   "name": "Bit Bell",
+   "controls": [
+    0.9,
+    0.6,
+    0.4,
+    0.85
+   ],
+   "amp": {
+    "attack": 0,
+    "decay": 1.6,
+    "sustain": 0,
+    "release": 1.4
+   }
+  },
+  {
+   "name": "Square Drone",
+   "controls": [
+    0.2,
+    0.1,
+    0.2,
+    0.5
+   ],
+   "amp": {
+    "attack": 0.8,
+    "decay": 2.0,
+    "sustain": 1.0,
+    "release": 3.0
+   }
+  }
+ ]
+}

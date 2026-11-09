@@ -85,13 +85,49 @@
       "formant": 0.35,
       "decay": 0.25,
       "pulses": 0.5625,
-      "sweep": 1
+      "sweep": 1.0
     },
     "Breath": {
       "formant": 0.85,
       "decay": 0.7,
       "pulses": 0.0625,
       "sweep": 0.15
+    },
+    "Robot": {
+      "formant": 0.6,
+      "decay": 0.05,
+      "pulses": 0.6875,
+      "sweep": 0.5
+    },
+    "Choir": {
+      "formant": 0.4,
+      "decay": 0.35,
+      "pulses": 0.3125,
+      "sweep": 0.35
+    },
+    "Bass Voice": {
+      "formant": 0.2,
+      "decay": 0.3,
+      "pulses": 0.1875,
+      "sweep": 0.8
+    },
+    "Whisper Pad": {
+      "formant": 0.9,
+      "decay": 0.8,
+      "pulses": 0.0625,
+      "sweep": 0.3
+    },
+    "Throat": {
+      "formant": 0.15,
+      "decay": 0.1,
+      "pulses": 0.8125,
+      "sweep": 0.6
+    },
+    "Bleep": {
+      "formant": 0.8,
+      "decay": 0.2,
+      "pulses": 0.4375,
+      "sweep": 0.9
     }
   },
   "resources": {

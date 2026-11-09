@@ -42,10 +42,10 @@
   },
   "envelope": {
     "amp": {
-      "attack": 128,
-      "decay": 8192,
-      "release": 32767,
-      "sustain": 32767
+      "attack": 8026,
+      "decay": 12691,
+      "release": 18113,
+      "sustain": 22937
     },
     "filter": {
       "attack": 0,

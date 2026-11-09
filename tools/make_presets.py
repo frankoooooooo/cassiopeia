@@ -1,39 +1,70 @@
 #!/usr/bin/env python3
-"""Writes <engine>/presets/<name>.json (device presets, version 4) from each definition.json's named
-presets, and points machine.json at them. The envelope is stock's init amp envelope unless machine.json
-sets presetDefaults.amp. Usage: python3 tools/make_presets.py schedar caph navi ruchbah segin achird
+"""Writes every engine's presets from tools/presets.json: <engine>/presets/<name>.json (device presets,
+version 4) and the named presets in <engine>/definition.json (the browser preview's list), and points
+machine.json at the presets folder.
+
+tools/presets.json, per engine, a list of presets in friendly units:
+  name, controls (the engine's controls, 0..1; an enum's choice i of n is (i + 0.5) / n),
+  amp {attack, decay, release: seconds; sustain: 0..1},
+  filter (optional: the track's SVF on) {cutoff, resonance, envelope (amount), keytrack: 0..1;
+          attack, decay, release: seconds; sustain: 0..1}.
+Times use the OP-XY's square-law scale, value = 32767·√(t / 10 s), and release runs the other way (a
+larger value is a shorter release), as stock reads it. Usage: python3 tools/make_presets.py [engine…]
 """
-import json, re, sys
+import json, math, re, sys
 from pathlib import Path
 
 root = Path(__file__).resolve().parent.parent
+table = json.loads((root / 'tools/presets.json').read_text())
 MOD = {s: {'amount': 16384, 'target': 0} for s in ['aftertouch', 'modwheel', 'pitchbend', 'velocity']}
-for mid in sys.argv[1:]:
-    d = json.loads((root / mid / 'definition.json').read_text())
-    machine_path = root / mid / 'machine.json'
-    machine = json.loads(machine_path.read_text())
-    amp = {'attack': 128, 'decay': 8192, 'release': 32767, 'sustain': 32767, **machine.get('presetDefaults', {}).get('amp', {})}
-    order = [p['id'] for p in d['parameters']]
+
+def time(t):
+    return round(32767 * math.sqrt(min(max(t, 0.0), 10.0) / 10.0))
+
+def level(x):
+    return round(min(max(x, 0.0), 1.0) * 32767)
+
+def envelope(e):
+    return {'attack': time(e['attack']), 'decay': time(e['decay']), 'release': 32767 - time(e['release']),
+            'sustain': level(e['sustain'])}
+
+for mid in sys.argv[1:] or list(table):
+    definition_path = root / mid / 'definition.json'
+    definition = json.loads(definition_path.read_text())
+    ids = [p['id'] for p in definition['parameters']]
+    presets = table[mid]
+    assert 1 <= len(presets) <= 16, mid
     out = root / mid / 'presets'
     out.mkdir(exist_ok=True)
-    for old in out.glob('*.json'): old.unlink()
-    assert 1 <= len(d['presets']) <= 16
-    for name, values in d['presets'].items():
-        slug = re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
+    for old in out.glob('*.json'):
+        old.unlink()
+    named = {}
+    for p in presets:
+        slug = re.sub(r'[^a-z0-9]+', '-', p['name'].lower()).strip('-')
         assert re.fullmatch(r'[a-z0-9_-]{1,24}', slug), slug
-        params = [round(values[k] * 32767) for k in order] + [0] * (8 - len(order))
-        assert all(0 <= p <= 32767 for p in params)
+        controls = p['controls']
+        assert len(controls) == len(ids) and all(0 <= c <= 1 for c in controls), p['name']
+        named[p['name']] = dict(zip(ids, controls))
+        f = p.get('filter')
         preset = {
             'engine': {'bendrange': 8191, 'highpass': 0, 'modulation': MOD, 'playmode': 'poly',
                        'portamento.amount': 0, 'portamento.type': 0, 'transpose': 0, 'tuning.root': 0,
-                       'tuning.scale': 0, 'velocity.sensitivity': 0, 'volume': 16384, 'width': 0, 'params': params},
-            'envelope': {'amp': amp, 'filter': {'attack': 0, 'decay': 0, 'release': 0, 'sustain': 32767}},
-            'fx': {'active': False, 'params': [0, 0, 0, 0, 0, 32767, 0, 0], 'type': 'svf'},
+                       'tuning.scale': 0, 'velocity.sensitivity': 0, 'volume': 16384, 'width': 0,
+                       'params': [level(c) for c in controls] + [0] * (8 - len(controls))},
+            'envelope': {'amp': envelope(p['amp']),
+                         'filter': envelope(f) if f else {'attack': 0, 'decay': 0, 'release': 0, 'sustain': 32767}},
+            'fx': ({'active': True, 'type': 'svf',
+                    'params': [level(f['cutoff']), level(f['resonance']), level(f['envelope']), level(f['keytrack']), 0, 0, 0, 0]}
+                   if f else {'active': False, 'params': [0, 0, 0, 0, 0, 32767, 0, 0], 'type': 'svf'}),
             'lfo': {'active': False, 'params': [0] * 8, 'type': 'value'},
-            'octave': 0, 'platform': 'OP-XY', 'regions': [], 'version': 4, 'type': d['id'],
+            'octave': 0, 'platform': 'OP-XY', 'regions': [], 'version': 4, 'type': definition['id'],
         }
         (out / f'{slug}.json').write_text(json.dumps(preset, indent=2) + '\n')
+    definition['presets'] = named
+    definition_path.write_text(json.dumps(definition, indent=2, ensure_ascii=False) + '\n')
+    machine_path = root / mid / 'machine.json'
+    machine = json.loads(machine_path.read_text())
     if machine.get('presets') != 'presets':
         machine['presets'] = 'presets'
         machine_path.write_text(json.dumps(machine, indent=2, ensure_ascii=False) + '\n')
-    print(mid, len(d['presets']), 'presets')
+    print(mid, len(presets), 'presets,', sum(1 for p in presets if 'filter' in p), 'with the filter on')

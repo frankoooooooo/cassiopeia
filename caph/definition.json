@@ -50,7 +50,7 @@
   ],
   "presets": {
     "Caph": {
-      "shape": 1,
+      "shape": 1.0,
       "width": 0,
       "detune": 0.2,
       "sweep": 0.5
@@ -74,7 +74,7 @@
       "sweep": 0.7
     },
     "Strings": {
-      "shape": 1,
+      "shape": 1.0,
       "width": 0,
       "detune": 0.55,
       "sweep": 0.2
@@ -84,6 +84,42 @@
       "width": 0.3,
       "detune": 0.25,
       "sweep": 0.95
+    },
+    "Acid Pair": {
+      "shape": 1.0,
+      "width": 0,
+      "detune": 0.08,
+      "sweep": 0.85
+    },
+    "Supersaw": {
+      "shape": 1.0,
+      "width": 0,
+      "detune": 1.0,
+      "sweep": 0.5
+    },
+    "Chord Stab": {
+      "shape": 0.9,
+      "width": 0.1,
+      "detune": 0.4,
+      "sweep": 0.9
+    },
+    "Sub Bass": {
+      "shape": 0.1,
+      "width": 0.5,
+      "detune": 0.03,
+      "sweep": 0.5
+    },
+    "Warm Pad": {
+      "shape": 0.7,
+      "width": 0.2,
+      "detune": 0.7,
+      "sweep": 0.3
+    },
+    "Pulse Lead": {
+      "shape": 0.5,
+      "width": 0.85,
+      "detune": 0.2,
+      "sweep": 0.6
     }
   },
   "resources": {
