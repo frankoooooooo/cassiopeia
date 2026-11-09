@@ -2,6 +2,6 @@
   "schema": 1,
   "sdk": "1.10",
   "kind": "synth",
-  "description": "An analog pair a few cents apart: each a triangle-to-pulse-to-saw morph with band-limited edges, a Width for duty and apex, and the family's bipolar Sweep.",
+  "description": "Virtual analogue: a gritty pair of detuned oscillators that morph from triangle to pulse to saw and beat against each other, for rich leads and complex pads.",
   "presets": "presets"
 }
